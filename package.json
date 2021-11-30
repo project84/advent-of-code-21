@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/project84/advent-of-code-21#readme",
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4"
   }
