@@ -1,0 +1,1 @@
+console.log('Content from solution 01');
