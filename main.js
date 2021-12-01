@@ -1,11 +1,30 @@
 import readlineSync from 'readline-sync';
-import { execSync } from 'child_process';
+import { access } from 'fs';
 
-let day = readlineSync.question('Which day would you like to run? ');
-day = String(day).padStart(2, '0');
+const currentDate = new Date();
+let year = currentDate.getFullYear();
+let day = currentDate.getDate();
 
-console.log('Running solution for day ' + day);
+if (
+  currentDate.getMonth != 12 || 
+  readlineSync.question(`Do you wish to run the solution for day ${day} of ${year}? (Y/N) `).toUpperCase() != 'Y'
+) {
+  year = readlineSync.question('Which year would you like to run? ');
+  day = readlineSync.question('Which day would you like to run? ');
+}
 
-// Execute specified file and log result
-const output = execSync(`npx babel-node days/${day}.js`, { encoding: 'utf-8' });
-console.log('The answer is:\n' + output);
+const filePath = `solutions/${year}/${String(day).padStart(2, '0')}.js`;
+
+access(filePath, err => {
+  if (err) {
+    console.log('Solution file not found, check and try again');
+    return;
+  } 
+
+  console.log(`Running solution for day ${day} of ${year}`);
+
+  const solution = require('./' + filePath).default();
+
+  console.log(`Step 1: ${solution.step1}\nStep 2: ${solution.step2}`);
+  
+});
