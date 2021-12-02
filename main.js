@@ -6,7 +6,7 @@ let year = currentDate.getFullYear();
 let day = currentDate.getDate();
 
 if (
-  currentDate.getMonth != 12 || 
+  currentDate.getMonth() != 11 || 
   readlineSync.question(`Do you wish to run the solution for day ${day} of ${year}? (Y/N) `).toUpperCase() != 'Y'
 ) {
   year = readlineSync.question('Which year would you like to run? ');
