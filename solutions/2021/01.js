@@ -1,4 +1,3 @@
-import fs from 'fs';
 import pairValueComparison from '../../utils/general/pair-value-comparison';
 
 export default function(inputFile) {
