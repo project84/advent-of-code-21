@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { moveSubmarine } from '../../utils/2021/movement';
 
 export default function(inputFile) {
