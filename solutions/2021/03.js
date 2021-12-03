@@ -1,65 +1,48 @@
-import { sum as arraySum } from '../../utils/general/array-tools';
+import analyseDiagnostics from '../../utils/2021/diagnostic-analysis';
 
 export default function(inputFile) {
 
 	const reportItemLength = inputFile[0].length;
 
-	let condensedReport = inputFile.reduce((digitSum, reportItem) => {
-		for (let i = 0; i < reportItemLength; i++) {
-			digitSum[i] = (digitSum[i] || 0) + parseInt(reportItem[i]);
-		}
-
-		return digitSum;
-	}, {});
-
 	let gammaRate = '';
 	let epsilonRate = '';
+	let oxygenGeneratorRating = JSON.parse(JSON.stringify(inputFile));
+	let co2scrubberRating = JSON.parse(JSON.stringify(inputFile));
 
 	for (let i = 0; i < reportItemLength; i++) {
-		const mostCommonBit = condensedReport[i] >= inputFile.length / 2 ? '1' : '0';
+		// Determine most / least frequent digit at specified position for full
+		// array and construct gamma / epsilon rates accordingly
+		const rateAnalysis = analyseDiagnostics(inputFile, i);
+		gammaRate += rateAnalysis.most;
+		epsilonRate += rateAnalysis.least;
 
-		gammaRate += mostCommonBit;
-		epsilonRate += parseInt(mostCommonBit) ? '0' : '1';
-	}
+		if (oxygenGeneratorRating.length > 1) {
+			// Determine most / least frequent digit at specified position for
+			// current o2 generator readings
+			const gasAnalysis = analyseDiagnostics(oxygenGeneratorRating, i);
 
-	let oRating = JSON.parse(JSON.stringify(inputFile));
-	let cRating = JSON.parse(JSON.stringify(inputFile));
-	let i = 0;
-
-	while (oRating.length > 1 || cRating.length > 1) {
-
-		if (oRating.length > 1) {
-			let oPositionItems = oRating.map(reportItem => {
-				return parseInt(reportItem[i]);
-			});
-	
-			let oPositionSum = arraySum(oPositionItems);
-			let oFilter = oPositionSum >= (oPositionItems.length / 2) ? '1' : '0';
-	
-			oRating = oRating.filter(item => {
-				return item[i] === oFilter;
+			// Filter o2 generator readings based on most frequent digit at the specified position
+			oxygenGeneratorRating = oxygenGeneratorRating.filter(item => {
+				return parseInt(item[i]) === gasAnalysis.most;
 			});
 		}
 
-		if (cRating.length > 1) {
-			let cPositionItems = cRating.map(reportItem => {
-				return parseInt(reportItem[i]);
-			});
-	
-			let cPositionSum = arraySum(cPositionItems);
-			let cFilter = cPositionSum >= (cPositionItems.length / 2) ? '0' : '1';
-	
-			cRating = cRating.filter(item => {
-				return item[i] === cFilter;
+		if (co2scrubberRating.length > 1) {
+			// Determine most / least frequent digit at specified position for
+			// current co2 scrubber readings
+			const gasAnalysis = analyseDiagnostics(co2scrubberRating, i);
+
+			// Filter co2 scrubber readings based on most frequent digit at the specified position
+			co2scrubberRating = co2scrubberRating.filter(item => {
+				return parseInt(item[i]) === gasAnalysis.least;
 			});
 		}
-
-		i++;
 	}
 
+	// Convert binary to digit and multiply readings for final result
 	return {
 		step1: parseInt(gammaRate, 2) * parseInt(epsilonRate, 2),
-		step2: parseInt(oRating[0], 2) * parseInt(cRating[0], 2)
+		step2: parseInt(oxygenGeneratorRating[0], 2) * parseInt(co2scrubberRating[0], 2)
 	}
 
 }
