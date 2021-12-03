@@ -1,26 +1,26 @@
 {
-  "name": "advent-of-code-21",
-  "version": "1.0.0",
-  "description": "Advent of code 2021 solutions",
-  "main": "main.js",
-  "scripts": {
-    "solution": "npx babel-node main.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/project84/advent-of-code-21.git"
-  },
-  "author": "Philip Rozycki-Burn",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/project84/advent-of-code-21/issues"
-  },
-  "homepage": "https://github.com/project84/advent-of-code-21#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/node": "^7.16.0",
-    "@babel/preset-env": "^7.16.4",
-    "readline-sync": "^1.4.10"
-  }
+	"name": "advent-of-code-21",
+	"version": "1.0.0",
+	"description": "Advent of code 2021 solutions",
+	"main": "main.js",
+	"scripts": {
+		"solution": "npx babel-node main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/project84/advent-of-code-21.git"
+	},
+	"author": "Philip Rozycki-Burn",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/project84/advent-of-code-21/issues"
+	},
+	"homepage": "https://github.com/project84/advent-of-code-21#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.16.0",
+		"@babel/core": "^7.16.0",
+		"@babel/node": "^7.16.0",
+		"@babel/preset-env": "^7.16.4",
+		"readline-sync": "^1.4.10"
+	}
 }

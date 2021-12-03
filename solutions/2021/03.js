@@ -1,6 +1,6 @@
 import analyseDiagnostics from '../../utils/2021/diagnostic-analysis';
 
-export default function(inputFile) {
+export default function (inputFile) {
 
 	const reportItemLength = inputFile[0].length;
 
