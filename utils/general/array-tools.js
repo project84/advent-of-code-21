@@ -1,5 +1,6 @@
 export function sum(inputArray) {
-    return inputArray.reduce((prev, next) => {
-        return parseInt(prev) + parseInt(next);
-    })
+	// Adds all items in a provided array of integers
+	return inputArray.reduce((prev, next) => {
+		return parseInt(prev) + parseInt(next);
+	});
 }
