@@ -1,4 +1,5 @@
 export default function(inputFile) {
+
 	const reportItemLength = inputFile[0].length;
 
 	let condensedReport = inputFile.reduce((digitSum, reportItem) => {
