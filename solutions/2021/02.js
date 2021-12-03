@@ -1,11 +1,9 @@
 import fs from 'fs';
-import { moveSubmarine } from '../../utils/movement';
+import { moveSubmarine } from '../../utils/2021/movement';
 
-export default function() {
+export default function(inputFile) {
     // Read input file and convert values to integer
-  const commands = fs.readFileSync('files/2021/day-02-input.txt', 'utf-8')
-    .split('\n')
-    .map(command => {
+  const commands = inputFile.map(command => {
       let parts = command.split(' ');
 
       return {

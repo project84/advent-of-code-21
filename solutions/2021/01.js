@@ -1,11 +1,9 @@
 import fs from 'fs';
-import pairValueComparison from '../../utils/pairValueComparison';
+import pairValueComparison from '../../utils/general/pair-value-comparison';
 
-export default function() {
+export default function(inputFile) {
   // Read input file and convert values to integer
-  const measurements = fs.readFileSync('files/2021/day-01-input.txt', 'utf-8')
-    .split('\n')
-    .map(measurement => parseInt(measurement));
+  const measurements = inputFile.map(measurement => parseInt(measurement));
   
   // Create array of rolling measurements
   const rollingMeasurements = measurements.map((measurement, i) => {
