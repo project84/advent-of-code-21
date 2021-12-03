@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { access } from 'fs';
+import * as file from './utils/general/file-tools';
 
 const currentDate = new Date();
 let year = currentDate.getFullYear();
@@ -13,18 +13,21 @@ if (
   day = readlineSync.question('Which day would you like to run? ');
 }
 
-const filePath = `solutions/${year}/${String(day).padStart(2, '0')}.js`;
+const dateString = `${year}/${String(day).padStart(2, '0')}`;
+const solutionFilePath = `solutions/${dateString}.js`;
+const inputFilePath = `input-files/${dateString}.txt`;
 
-access(filePath, err => {
-  if (err) {
-    console.log('Solution file not found, check and try again');
-    return;
-  } 
+const solutionExists = file.exists(solutionFilePath);
+const inputExists = file.exists(inputFilePath);
 
-  console.log(`Running solution for day ${day} of ${year}`);
+if (solutionExists && inputExists) {
 
-  const solution = require('./' + filePath).default();
+	const inputFile = file.retrieveTextFile(inputFilePath, true);
 
-  console.log(`Step 1: ${solution.step1}\nStep 2: ${solution.step2}`);
-  
-});
+	console.log(`Running solution for day ${day} of ${year}`);
+	const solution = require('./' + solutionFilePath).default(inputFile);
+	console.log(`Step 1: ${solution.step1}\nStep 2: ${solution.step2}`);
+
+} else {
+	console.log('Solution or input file not found, check and try again');
+}
