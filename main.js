@@ -25,8 +25,11 @@ if (solutionExists && inputExists) {
 	const inputFile = file.retrieveTextFile(inputFilePath, true);
 
 	console.log(`Running solution for day ${day} of ${year}`);
+    const startTime = new Date();
+
 	const solution = require('./' + solutionFilePath).default(inputFile);
-	console.log(`Step 1: ${solution.step1}\nStep 2: ${solution.step2}`);
+	console.log(`\nStep 1: ${solution.step1}\nStep 2: ${solution.step2}\n`);
+    console.log((new Date() - startTime) + ' ms');
 
 } else {
 	console.log('Solution or input file not found, check and try again');
