@@ -43,3 +43,27 @@ export function mapMovementCommands(commands, useAim) {
 	});
 
 }
+
+export function mapMovementCommandsNew(commands, useAim) {
+
+	return commands.map(command => {
+
+		command = {
+			direction: command.replace(/\s|\d/g,''),
+			value: parseInt(command.replace(/\D/g,''))
+		}
+
+		// Simplify direction and distance parameters
+		const value = command.direction === 'up' ? -command.value : command.value;
+		const forward = command.direction === 'forward';
+
+		// Return command list in useable format
+		return {
+			horizontal: forward ? value : 0,
+			vertical: (forward && useAim) || (!forward && !useAim) ? value : 0,
+			aim: !forward && useAim ? value : 0
+		}
+
+	});
+
+}
