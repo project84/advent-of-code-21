@@ -2,6 +2,9 @@ import analyseDiagnostics from '../../utils/2021/diagnostic-analysis';
 
 export default function (inputFile) {
 
+	// Step 1: 3901196
+	// Step 2: 4412188
+
 	const reportItemLength = inputFile[0].length;
 
 	let gammaRate = '';

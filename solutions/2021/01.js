@@ -1,6 +1,10 @@
 import pairValueComparison from '../../utils/general/pair-value-comparison';
 
 export default function (inputFile) {
+
+	// Step 1: 1553
+	// Step 2: 1597
+
 	// Read input file and convert values to integer
 	const measurements = inputFile.map(measurement => parseInt(measurement));
 

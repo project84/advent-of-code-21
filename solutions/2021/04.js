@@ -2,6 +2,9 @@ import { parseBingoBoards } from "../../utils/2021/bingo";
 
 export default function(inputFile) {
 
+	// Step 1: 4662
+	// Step 2: 12080
+
 	// Retrieve bingo input, and create array of bingo boards
 	const bingoNumbers = inputFile.shift().split(',');
 	const bingoBoards = parseBingoBoards(inputFile);

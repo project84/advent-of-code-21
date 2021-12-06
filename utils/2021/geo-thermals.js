@@ -1,7 +1,10 @@
 export function parseReadings(readings) {
 	return readings.map(reading => {
 
+		// Flatten reading into simple array
 		let coordinatesArray = reading.replace(' -> ', ',').split(',');
+		
+		// Deserialise coordinates by position
 		let coordinates = {
 			pos1: {
 				x: parseInt(coordinatesArray[0]),
@@ -13,6 +16,7 @@ export function parseReadings(readings) {
 			}
 		}
 
+		// Determine line type
 		coordinates.horizontal = coordinates.pos1.y === coordinates.pos2.y;
 		coordinates.vertical = coordinates.pos1.x === coordinates.pos2.x;
 		coordinates.diagonal = !coordinates.horizontal && !coordinates.vertical;
@@ -28,6 +32,8 @@ export class GeoThermalMap {
 	}
 
 	initialiseMap(fieldSize) {
+
+		// Generate empty map based on field size
 		let map = [];
 
 		for (let i = 0; i < fieldSize; i++) {
@@ -41,12 +47,15 @@ export class GeoThermalMap {
 	}
 
 	drawHorizontal(reading) {
+
+		// Determine starting position of vent
 		const yPos = reading.pos1.y;
 		const startPos = reading.pos1.x < reading.pos2.x ?
 			'pos1' : 'pos2';
 		const endPos = startPos === 'pos1' ? 'pos2' : 'pos1';
 		let currentPos = reading[startPos].x;
 
+		// Draw vent in map
 		while (currentPos <= reading[endPos].x) {
 			this.map[yPos][currentPos]++;
 			currentPos++;
@@ -55,12 +64,15 @@ export class GeoThermalMap {
 	}
 
 	drawVertical(reading) {
+
+		// Determine starting position of vent
 		const xPos = reading.pos1.x;
 		const startPos = reading.pos1.y < reading.pos2.y ?
 			'pos1' : 'pos2';
 		const endPos = startPos === 'pos1' ? 'pos2' : 'pos1';
 		let currentPos = reading[startPos].y;
 
+		// Draw vent in map
 		while (currentPos <= reading[endPos].y) {
 			this.map[currentPos][xPos]++;
 			currentPos++;
@@ -69,10 +81,12 @@ export class GeoThermalMap {
 
 	drawDiagonal(reading) {
 
+		// Determine length of vent and diagonal direction
 		const length = Math.abs(reading.pos1.x - reading.pos2.x) + 1;
 		const xIncrease = reading.pos1.x < reading.pos2.x;
 		const yIncrease = reading.pos1.y < reading.pos2.y;
 
+		// Draw diagonal vent in map
 		for (let i = 0; i < length; i++) {
 
 			const xPos = xIncrease ? reading.pos1.x + i : reading.pos1.x - i;
@@ -83,11 +97,11 @@ export class GeoThermalMap {
 	}
 
 	countOverlaps() {
+
+		// Count number of overlapping vents within the field
 		let overlapCount = 0;
 
-		this.map.forEach(row => {
-			overlapCount += row.filter(position => position > 1).length;
-		});
+		this.map.forEach(row => overlapCount += row.filter(position => position > 1).length );
 
 		return overlapCount;
 	}
