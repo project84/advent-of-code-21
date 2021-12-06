@@ -2,6 +2,9 @@ import { moveSubmarine } from '../../utils/2021/movement';
 
 export default function (inputFile) {
 
+	// Step 1: 2150351
+	// Step 2: 1842742223
+
 	const commands = inputFile.map(command => {
 		let parts = command.split(' ');
 
