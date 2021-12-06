@@ -1,16 +1,24 @@
 import readlineSync from 'readline-sync';
 import * as file from './utils/general/file-tools';
+import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
 
-// Get current date and set month / year
-const currentDate = new Date();
-let year = currentDate.getFullYear();
-let day = currentDate.getDate();
+const argv = yargs(hideBin(process.argv)).argv
 
-if (
-	currentDate.getMonth() != 11 ||
-	readlineSync.question(`Do you wish to run the solution for day ${day} of ${year}? (Y/N) `).toUpperCase() != 'Y'
-) {
-	// Allows the user to override the determined date
+let year;
+let day;
+
+if (argv.today) {
+	// Get current date and set day / year
+	const currentDate = new Date();
+	year = currentDate.getFullYear();
+	day = currentDate.getDate();
+} else if (argv.year && argv.day) {
+	// Read desired date from command line if specified and today NOT specified
+	year = argv.year;
+	day = argv.day
+} else {
+	// Allows the user to select the date to run
 	year = readlineSync.question('Which year would you like to run? ');
 	day = readlineSync.question('Which day would you like to run? ');
 }
@@ -18,12 +26,9 @@ if (
 // Determine file paths for solution and input file, and checks if they exist
 const dateString = `${year}/${String(day).padStart(2, '0')}`;
 const solutionFilePath = `solutions/${dateString}.js`;
-const inputFilePath = `input-files/${dateString}.txt`;
+const inputFilePath = `input-files/${dateString}-${argv.example ? 'example' : 'actual'}.txt`;
 
-const solutionExists = file.exists(solutionFilePath);
-const inputExists = file.exists(inputFilePath);
-
-if (solutionExists && inputExists) {
+if (file.exists(solutionFilePath) && file.exists(inputFilePath)) {
 
 	// Retrieve input file content for specified day
 	const inputFile = file.retrieveTextFile(inputFilePath, true);
