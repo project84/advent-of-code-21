@@ -2,6 +2,11 @@ import { parseReadings, GeoThermalMap } from "../../utils/2021/geo-thermals";
 
 export default function (inputFile) {
 
+	/* Example */
+	// Step 1: 5
+	// Step 2: 12
+
+	/* Actual */
 	// Step 1: 8060
 	// Step 2: 21577
 

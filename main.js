@@ -26,7 +26,7 @@ if (argv.today) {
 // Determine file paths for solution and input file, and checks if they exist
 const dateString = `${year}/${String(day).padStart(2, '0')}`;
 const solutionFilePath = `solutions/${dateString}.js`;
-const inputFilePath = `input-files/${dateString}-${argv.example ? 'example' : 'actual'}.txt`;
+const inputFilePath = `input-files/${dateString}/${argv.example ? 'example' : 'actual'}.txt`;
 
 if (file.exists(solutionFilePath) && file.exists(inputFilePath)) {
 

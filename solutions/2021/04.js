@@ -2,6 +2,11 @@ import { parseBingoBoards } from "../../utils/2021/bingo";
 
 export default function(inputFile) {
 
+	/* Example */
+	// Step 1: 4512
+	// Step 2: 1924
+
+	/* Actual */
 	// Step 1: 4662
 	// Step 2: 12080
 

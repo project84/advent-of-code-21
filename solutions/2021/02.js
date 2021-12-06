@@ -2,6 +2,11 @@ import { moveSubmarine } from '../../utils/2021/movement';
 
 export default function (inputFile) {
 
+	/* Example */
+	// Step 1: 150
+	// Step 2: 900
+
+	/* Actual */
 	// Step 1: 2150351
 	// Step 2: 1842742223
 
