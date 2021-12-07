@@ -1,4 +1,4 @@
-import { sum as arraySum } from '../../utils/general/array-tools';
+import { sum as sumArray } from '../../utils/general/array-tools';
 import calculateFuelConsumption from '../../utils/2021/crab-fuel-consumption';
 
 export default function(inputFile) {
@@ -18,11 +18,11 @@ export default function(inputFile) {
 		.sort((a, b) => a - b);
 
 	// Determine median and average position of crabs
-	const medianPosition = crabPositions[Math.floor(crabPositions.length / 2) - 1];
-	const averagePosition = arraySum(crabPositions) / crabPositions.length;
+	const midPoint = Math.floor(crabPositions.length / 2);
+	const averagePosition = sumArray(crabPositions) / crabPositions.length;
 
 	return {
-		step1: calculateFuelConsumption(crabPositions, medianPosition),
-		step2: calculateFuelConsumption(crabPositions, averagePosition, true)
+		step1: calculateFuelConsumption(crabPositions, [crabPositions[midPoint - 1], crabPositions[midPoint]]),
+		step2: calculateFuelConsumption(crabPositions, [Math.floor(averagePosition), Math.ceil(averagePosition)], true)
 	}
 }
