@@ -1,3 +1,4 @@
+import { sum as arraySum } from '../../utils/general/array-tools';
 import calculateFuelConsumption from '../../utils/2021/crab-fuel-consumption';
 
 export default function(inputFile) {
