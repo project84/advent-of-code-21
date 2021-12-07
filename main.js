@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-
-import { getSolutionInfo, retrieveTextFile } from './utils/general/file-tools';
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
+import { getSolutionInfo, retrieveTextFile } from './utils/general/file-tools';
+import { deduplicate as deduplicateArray } from './utils/general/array-tools';
 
 const argv = yargs(hideBin(process.argv)).argv
 
@@ -24,8 +24,8 @@ if (!argv.today && !(argv.year && argv.day)) {
 	datesToRun.push(getSolutionInfo(year, day));
 }
 
-// Filter to only dates with solution and input files available
-datesToRun = datesToRun.filter(date => {
+// Remove duplicates and filter to only dates with solution and input files available
+datesToRun = deduplicateArray(datesToRun).filter(date => {
 	return date.solution.exists && date.example.exists && date.actual.exists;
 });
 
@@ -33,6 +33,7 @@ if (!datesToRun.length) {
 	console.log('No solutions available to run, please check and try again');
 }
 
+// Determine files to be run based on CLI commands
 let filesToRun = [ 'example', 'actual' ];
 if (argv.example != argv.actual) {
 

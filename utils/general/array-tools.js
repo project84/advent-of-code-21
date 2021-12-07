@@ -4,3 +4,9 @@ export function sum(inputArray) {
 		return parseInt(prev) + parseInt(next);
 	});
 }
+
+export function deduplicate(inputArray) {
+	// Convert array 
+	const stringified = inputArray.map(item => JSON.stringify(item));
+	return [...new Set(stringified)].map(item => JSON.parse(item));
+}
