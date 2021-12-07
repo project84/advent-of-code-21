@@ -2,6 +2,11 @@ import pairValueComparison from '../../utils/general/pair-value-comparison';
 
 export default function (inputFile) {
 
+	/* Example */
+	// Step 1: 7
+	// Step 2: 5
+
+	/* Actual */
 	// Step 1: 1553
 	// Step 2: 1597
 

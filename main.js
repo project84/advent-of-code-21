@@ -1,42 +1,54 @@
 import readlineSync from 'readline-sync';
-import * as file from './utils/general/file-tools';
 
-// Get current date and set month / year
-const currentDate = new Date();
-let year = currentDate.getFullYear();
-let day = currentDate.getDate();
+import { getSolutionInfo, retrieveTextFile } from './utils/general/file-tools';
+import yargs from 'yargs/yargs';
+import { hideBin } from 'yargs/helpers';
 
-if (
-	currentDate.getMonth() != 11 ||
-	readlineSync.question(`Do you wish to run the solution for day ${day} of ${year}? (Y/N) `).toUpperCase() != 'Y'
-) {
-	// Allows the user to override the determined date
-	year = readlineSync.question('Which year would you like to run? ');
-	day = readlineSync.question('Which day would you like to run? ');
+const argv = yargs(hideBin(process.argv)).argv
+
+let datesToRun = [];
+
+// Set dates to run based on CLI inputs or queries
+if (argv.today) {
+	datesToRun.push(getSolutionInfo());
 }
 
-// Determine file paths for solution and input file, and checks if they exist
-const dateString = `${year}/${String(day).padStart(2, '0')}`;
-const solutionFilePath = `solutions/${dateString}.js`;
-const inputFilePath = `input-files/${dateString}.txt`;
-
-const solutionExists = file.exists(solutionFilePath);
-const inputExists = file.exists(inputFilePath);
-
-if (solutionExists && inputExists) {
-
-	// Retrieve input file content for specified day
-	const inputFile = file.retrieveTextFile(inputFilePath, true);
-
-	console.log(`Running solution for day ${day} of ${year}`);
-	const startTime = new Date();
-
-	// Run solution for specified day and log result
-	const solution = require('./' + solutionFilePath).default(inputFile);
-	console.log(`\nStep 1: ${solution.step1}\nStep 2: ${solution.step2}\n`);
-	console.log((new Date() - startTime) + ' ms');
-
-} else {
-	// Return error if a file is unavailable and exit
-	console.log('Solution or input file not found, check and try again');
+if (argv.year && argv.day) {
+	datesToRun.push(getSolutionInfo(argv.year, argv.day));
 }
+
+if (!argv.today && !(argv.year && argv.day)) {
+	let year = readlineSync.question('Which year would you like to run? ');
+	let day = readlineSync.question('Which day would you like to run? ');
+
+	datesToRun.push(getSolutionInfo(year, day));
+}
+
+// Filter to only dates with solution and input files available
+datesToRun = datesToRun.filter(date => {
+	return date.solution.exists && date.example.exists && date.actual.exists;
+});
+
+if (!datesToRun.length) {
+	console.log('No solutions available to run, please check and try again');
+}
+
+datesToRun.forEach(date => {
+
+	['example', 'actual'].forEach(type => {
+		
+		// Retrieve input file
+		const inputFile = retrieveTextFile(date[type].path, true);
+		const startTime = new Date();
+
+		// Run solution for specified day and log result
+		const solution = require('./' + date.solution.path).default(inputFile);
+
+		const endTime = new Date();
+
+		console.log(`${date.fileString} (${type}) - ${(endTime - startTime)} ms`);
+		console.log(`Step 1: ${solution.step1}\nStep 2: ${solution.step2}\n`);
+
+	});
+
+});

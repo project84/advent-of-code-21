@@ -2,6 +2,11 @@ import analyseDiagnostics from '../../utils/2021/diagnostic-analysis';
 
 export default function (inputFile) {
 
+	/* Example */
+	// Step 1: 198
+	// Step 2: 230
+
+	/* Actual */
 	// Step 1: 3901196
 	// Step 2: 4412188
 
