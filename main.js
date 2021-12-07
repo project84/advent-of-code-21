@@ -33,12 +33,17 @@ if (!datesToRun.length) {
 	console.log('No solutions available to run, please check and try again');
 }
 
+let filesToRun = [ 'example', 'actual' ];
+if (argv.example != argv.actual) {
+
+	filesToRun = !argv.example ? filesToRun.filter(type => type != 'example') : filesToRun;
+	filesToRun = !argv.actual ? filesToRun.filter(type => type != 'actual') : filesToRun;
+
+} 
+
 datesToRun.forEach(date => {
 
-	[
-		'example'
-		,'actual'
-	].forEach(type => {
+	filesToRun.forEach(type => {
 		
 		// Retrieve input file
 		const inputFile = retrieveTextFile(date[type].path, true);
