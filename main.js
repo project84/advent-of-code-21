@@ -35,7 +35,10 @@ if (!datesToRun.length) {
 
 datesToRun.forEach(date => {
 
-	['example', 'actual'].forEach(type => {
+	[
+		'example'
+		,'actual'
+	].forEach(type => {
 		
 		// Retrieve input file
 		const inputFile = retrieveTextFile(date[type].path, true);
