@@ -1,15 +1,14 @@
-import { sum as arraySum } from '../general/array-tools';
+import * as array from '../general/array-tools';
 
-export default function(crabPositions, targetPos, triangular) {
+export default function(crabPositions, targetValues, triangular) {
 
-	// Get min / max target values
-	let targetValues = [ Math.floor(targetPos), Math.ceil(targetPos) ];
+	targetValues = array.deduplicate(targetValues);
 	let fuelConsumption = [];
 
 	targetValues.forEach(value => {
-		fuelConsumption.push(arraySum(crabPositions.map(crab => {
+		fuelConsumption.push(array.sum(crabPositions.map(crab => {
 			
-			// Determine fuel consumption for each target value
+			// Determine fuel consumption for each target value supplied
 			const distanceToMove = Math.abs(crab - value);
 			return triangular ? 
 				distanceToMove * (distanceToMove + 1) / 2 :
