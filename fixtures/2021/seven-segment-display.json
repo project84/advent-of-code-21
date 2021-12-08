@@ -1,0 +1,101 @@
+[
+	{
+		"displayValue": 0,
+		"activeSegments": [
+			"a",
+			"b",
+			"c",
+			"e",
+			"f",
+			"g"
+		]
+	},
+	{
+		"displayValue": 1,
+		"activeSegments": [
+			"c",
+			"f"
+		]
+	},
+	{
+		"displayValue": 2,
+		"activeSegments": [
+			"a",
+			"c",
+			"d",
+			"e",
+			"g"
+		]
+	},
+	{
+		"displayValue": 3,
+		"activeSegments": [
+			"a",
+			"c",
+			"d",
+			"f",
+			"g"
+		]
+	},
+	{
+		"displayValue": 4,
+		"activeSegments": [
+			"b",
+			"c",
+			"d",
+			"f"
+		]
+	},
+	{
+		"displayValue": 5,
+		"activeSegments": [
+			"a",
+			"b",
+			"d",
+			"f",
+			"g"
+		]
+	},
+	{
+		"displayValue": 6,
+		"activeSegments": [
+			"a",
+			"b",
+			"d",
+			"e",
+			"f",
+			"g"
+		]
+	},
+	{
+		"displayValue": 7,
+		"activeSegments": [
+			"a",
+			"c",
+			"f"
+		]
+	},
+	{
+		"displayValue": 8,
+		"activeSegments": [
+			"a",
+			"b",
+			"c",
+			"d",
+			"e",
+			"f",
+			"g"
+		]
+	},
+	{
+		"displayValue": 9,
+		"activeSegments": [
+			"a",
+			"b",
+			"c",
+			"d",
+			"f",
+			"g"
+		]
+	}
+]
