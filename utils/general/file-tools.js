@@ -61,3 +61,27 @@ export function getSolutionInfo(year, day) {
 
 	return info;
 }
+
+export function getDirectoryContent(path) {
+	const absPath = getAbsolutePath(path);
+
+	let contentList = fs.readdirSync(absPath);
+
+	contentList = contentList.map(item => {
+		const itemAbsPath = absPath + '/' + item
+		const itemStats = fs.statSync(itemAbsPath);
+
+		return {
+			path: itemAbsPath,
+			isFile: itemStats.isFile(),
+			isFolder: itemStats.isDirectory()
+		}
+	});
+
+	contentList.filter(item => item.isFolder).forEach(folder => {
+		contentList = [...contentList, ...getDirectoryContent(folder.path)];
+	});
+
+	return contentList;
+
+}
