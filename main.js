@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
-import { getSolutionInfo, retrieveTextFile } from './utils/general/file-tools';
+import { getSolutionInfo, retrieveTextFile, getFilteredSolutionList } from './utils/general/file-tools';
 import { deduplicate as deduplicateArray } from './utils/general/array-tools';
 
 const argv = yargs(hideBin(process.argv)).argv
@@ -9,6 +9,27 @@ const argv = yargs(hideBin(process.argv)).argv
 let datesToRun = [];
 
 // Set dates to run based on CLI inputs or queries
+if (argv.all) {
+	let solutionList = getFilteredSolutionList();
+	solutionList.forEach(solution => {
+		datesToRun.push(getSolutionInfo(solution.year, solution.day));
+	});
+}
+
+if (argv.year && !argv.day) {
+	let solutionList = getFilteredSolutionList(argv.year)
+	solutionList.forEach(solution => {
+		datesToRun.push(getSolutionInfo(solution.year, solution.day));
+	});
+}
+
+if (argv.currentMonth || argv.currentYear) {
+	let solutionList = getFilteredSolutionList(new Date().getFullYear());
+	solutionList.forEach(solution => {
+		datesToRun.push(getSolutionInfo(solution.year, solution.day));
+	});
+}
+
 if (argv.today) {
 	datesToRun.push(getSolutionInfo());
 }
@@ -17,7 +38,7 @@ if (argv.year && argv.day) {
 	datesToRun.push(getSolutionInfo(argv.year, argv.day));
 }
 
-if (!argv.today && !(argv.year && argv.day)) {
+if (!datesToRun.length) {
 	let year = readlineSync.question('Which year would you like to run? ');
 	let day = readlineSync.question('Which day would you like to run? ');
 

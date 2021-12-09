@@ -63,10 +63,13 @@ export function getSolutionInfo(year, day) {
 }
 
 export function getDirectoryContent(path) {
+	
+	// Convert supplied path to absolute and read directory content
 	const absPath = getAbsolutePath(path);
-
 	let contentList = fs.readdirSync(absPath);
 
+	// Remap directory content to include abs path & flag if item
+	// is file or folder
 	contentList = contentList.map(item => {
 		const itemAbsPath = absPath + '/' + item
 		const itemStats = fs.statSync(itemAbsPath);
@@ -78,10 +81,38 @@ export function getDirectoryContent(path) {
 		}
 	});
 
+	// Scan through any folders identified recursively to build full
+	// directory content
 	contentList.filter(item => item.isFolder).forEach(folder => {
 		contentList = [...contentList, ...getDirectoryContent(folder.path)];
 	});
 
 	return contentList;
+
+}
+
+export function getFilteredSolutionList(year) {
+	
+	// Retrieve list of files within solutions folder
+	const solutionFolderPath = getAbsolutePath('solutions');
+	const dirContent = getDirectoryContent(solutionFolderPath)
+		.filter(item => item.isFile)
+		.map(file => {
+			const solutionDate = file
+				.path
+				.replace(solutionFolderPath + '/', '')
+				.replace('.js', '')
+				.split('/');
+
+			return {
+				year: parseInt(solutionDate[0]),
+				day: parseInt(solutionDate[1])
+			}
+
+		});
+
+	let filteredList = dirContent.filter(item => item.year === year);
+
+	return year ? filteredList : dirContent;
 
 }
