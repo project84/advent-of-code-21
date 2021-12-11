@@ -1,4 +1,4 @@
-import { Cave } from '../../utils/2021/lava-tubes';
+import { LavaTube } from '../../utils/2021/lava-tubes';
 import { sum as arraySum } from '../../utils/general/array-tools';
 
 export default function(inputFile) {
@@ -12,15 +12,15 @@ export default function(inputFile) {
 	// Step 2: 847504
 	
 	// Map input readings to the cave floor
-	const cave = new Cave(inputFile);
+	const cave = new LavaTube(inputFile);
 
 	let lowPoints = [];
 
-	cave.heightMap.forEach(reading => {
+	cave.map.forEach(reading => {
 
 		// Retrieve readings adjacent to current position and determines if it counts
 		// as a low point
-		const adjacentReadings = cave.getAdjacentReadings(reading.x, reading.y);
+		const adjacentReadings = cave.getAdjacentPositions(reading.x, reading.y);
 		if (adjacentReadings.every(adjReading => adjReading.value > reading.value)) {
 			lowPoints.push(reading);
 		}
