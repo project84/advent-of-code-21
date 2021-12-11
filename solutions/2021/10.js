@@ -1,26 +1,17 @@
 import { checkIllegalChunks  } from '../../utils/2021/navigation';
 import { sum as arraySum } from '../../utils/general/array-tools';
 
-const charScores = {
-	')': 3,
-	']': 57,
-	'}': 1197,
-	'>': 25137,
-	'(': 1,
-	'[': 2,
-	'{': 3,
-	'<': 4
-}
+const charScores = require('../../fixtures/2021/chunk-character-scores');
 
 export default function(inputFile) {
 
 	/* Example */
 	// Step 1: 26397
-	// Step 2: null
+	// Step 2: 288957
 	
 	/* Actual */
 	// Step 1: 399153
-	// Step 2: null
+	// Step 2: 2995077699
 
 	// Check navigation readings for illegal lines, and reduce all others to incomplete chunks
     let navigationOutput = inputFile
