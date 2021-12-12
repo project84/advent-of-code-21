@@ -1,4 +1,4 @@
-import { checkIllegalChunks  } from '../../utils/2021/navigation';
+import { checkIllegalChunks } from '../../utils/2021/navigation';
 import { sum as arraySum } from '../../utils/general/array-tools';
 
 const charScores = require('../../fixtures/2021/chunk-character-scores');
@@ -8,13 +8,13 @@ export default function(inputFile) {
 	/* Example */
 	// Step 1: 26397
 	// Step 2: 288957
-	
+
 	/* Actual */
 	// Step 1: 399153
 	// Step 2: 2995077699
 
 	// Check navigation readings for illegal lines, and reduce all others to incomplete chunks
-    let navigationOutput = inputFile
+	let navigationOutput = inputFile
 		.map(x => checkIllegalChunks({ value: x }));
 
 	// Determine score for the illegal characters found
@@ -30,23 +30,23 @@ export default function(inputFile) {
 	let autoCompleteScore = navigationOutput
 		.filter(x => !x.illegalCharacter)
 		.map(y => {
-			
+
 			const reading = y.value;
 			let score = 0;
 
 			// Autocomplete score multiplies by 5, then adds mapped score from static
 			for (let i = reading.length - 1; i >= 0; i--) {
-				score = ( score * 5 ) + charScores[reading[i]];
+				score = (score * 5) + charScores[reading[i]];
 			}
 
 			return score;
 		})
 		.sort((a, b) => a - b);
 
-	
-    return {
+
+	return {
 		step1: illegalCharScore,
 		step2: autoCompleteScore[Math.floor(autoCompleteScore.length / 2)]
 	}
-	
+
 }
