@@ -12,10 +12,7 @@ solutionsToRun.forEach(date => {
 
 	fileTypes.forEach(type => {
 		
-		const answer = runSolution(date, type);
-
-		console.log(`${date.fileString} (${type}) - ${(answer.duration)} ms`);
-		console.log(`Step 1: ${answer.step1}\nStep 2: ${answer.step2}\n`);
+		runSolution(date, type);
 
 	});
 
