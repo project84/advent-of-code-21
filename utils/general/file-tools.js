@@ -46,18 +46,15 @@ export function getSolutionInfo(year, day) {
 		path: `solutions/${info.fileString}.js`
 	}
 
-	info.example = {
-		path: `input-files/${info.fileString}/example.txt`
-	}
+	let inputFiles = getDirectoryContent(`input-files/${info.fileString}`).map(file => file.path);
 
-	info.actual = {
-		path: `input-files/${info.fileString}/actual.txt`
-	}
+	info.example = inputFiles.filter(path => path.includes('example'));
+	info.actual = inputFiles.filter(path => path.includes('actual'));
 
 	// Check if solution files exist
 	info.solution.exists = exists(info.solution.path);
-	info.example.exists = exists(info.example.path);
-	info.actual.exists = exists(info.actual.path);
+	info.exampleExists = info.example.length > 0;
+	info.actualExists = info.actual.length > 0;
 
 	return info;
 }

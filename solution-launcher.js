@@ -48,7 +48,7 @@ export function getSolutionsToRun() {
 
 	// Remove duplicates and filter to only dates with solution and input files available
 	datesToRun = deduplicateArray(datesToRun).filter(date => {
-		return date.solution.exists && date.example.exists && date.actual.exists;
+		return date.solution.exists && date.exampleExists && date.actualExists;
 	});
 
 	return datesToRun;
@@ -68,15 +68,27 @@ export function getFileTypes() {
 }
 
 export function runSolution(date, type) {
-	// Retrieve input file
-	const inputFile = retrieveTextFile(date[type].path, true);
-	const startTime = new Date();
 
-	// Run solution for specified day and log result
-	const answer = require('./' + date.solution.path).default(inputFile);
+	const toRun = date[type].length;
 
-	const endTime = new Date();
-	answer.duration = endTime - startTime;
+	date[type].forEach((path, i) => {
 
-	return answer;
+		// Retrieve input file
+		const inputFile = retrieveTextFile(path, true);
+		const startTime = new Date();
+
+		// Run solution for specified day and log result
+		const answer = require('./' + date.solution.path).default(inputFile);
+
+		const endTime = new Date();
+		const duration = endTime - startTime;
+
+		const typeString = type + (toRun > 1 ? ` #${i + 1}` : '');
+
+		console.log(`${date.fileString} (${typeString}) - ${(duration)} ms`);
+		console.log(`Step 1: ${answer.step1}\nStep 2: ${answer.step2}\n`);
+
+	})
+
+	
 }
