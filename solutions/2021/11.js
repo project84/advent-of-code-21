@@ -5,7 +5,7 @@ export default function(inputFile) {
 	/* Example */
 	// Step 1: 1656
 	// Step 2: 195
-	
+
 	/* Actual */
 	// Step 1: 1620
 	// Step 2: 371
@@ -45,5 +45,5 @@ export default function(inputFile) {
 		step1: flashCount100,
 		step2: synchronisedFlash + 1
 	}
-	
+
 }

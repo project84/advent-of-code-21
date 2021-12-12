@@ -34,7 +34,7 @@ export class DumboOctopi extends Area {
 
 		// Continue to recursively search for flashing octopi
 		return this.flash(count);
-		
+
 	}
-	
+
 }
