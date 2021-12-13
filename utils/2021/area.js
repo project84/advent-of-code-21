@@ -50,34 +50,5 @@ export class Area {
 		console.log(mapString);
 		
 	}
-
-	static coordinatesToMap(coordinates, absentValue = 0, presentValue = 1) {
-		
-		const maxX = Math.max(...coordinates.map(coordinate => coordinate.x)) + 1;
-		const maxY = Math.max(...coordinates.map(coordinate => coordinate.y)) + 1;
-
-		let mappedCoordinates = [];
-
-		for (let i = 0; i < maxY; i++) {
-
-			let rowCoordinates = [];
-
-			for (let j = 0; j < maxX; j++) {
-				rowCoordinates.push(absentValue)
-			}
-
-			mappedCoordinates.push(rowCoordinates);
-
-		}
-
-		coordinates.forEach(coordinate => {
-
-			mappedCoordinates[coordinate.y][coordinate.x] = presentValue;
-
-		});
-
-		return mappedCoordinates;
-
-	}
 	
 }

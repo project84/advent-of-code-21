@@ -1,40 +1,31 @@
-import { Orgigami } from "../../utils/2021/origami";
+import { Orgigami } from '../../utils/2021/origami';
 
 export default function(inputFile) {
 
-	const separator = inputFile.findIndex(row => row === '');
-		
-	const dotCoordinates = inputFile
-		.slice(0, separator)
-		.map(coordinate => {
-			const parts = coordinate.split(',');
-			return {
-				x: parts[0],
-				y: parts[1]
-			}
-		});
+	/* Example */
+	// Step 1: 17
+	// Step 2: O
 
-	const foldInstructions = inputFile
-		.slice(separator + 1, inputFile.length)
-		.map(instruction => {
-			const parts = instruction.split('=');
-			return {
-				foldAlong: parts[0][parts[0].length - 1],
-				position: parts[1]
-			}
-		});
+	/* Actual */
+	// Step 1: 788
+	// Step 2: KJBKEUBG
 
-	console.log(foldInstructions);
+	let codePuzzle = new Orgigami(inputFile);
 
-	let codePuzzle = new Orgigami(Orgigami.coordinatesToMap(dotCoordinates));
-	
-	
+	// Separate first instruction from the list, process that fold and determine 
+	// the number of coordinates after the fold (part 1 answer)
+	const firstIntruction = codePuzzle.instructions.shift();
+	codePuzzle.processFold(firstIntruction.foldAlong, firstIntruction.position);
+	const dotsAfterFirstFold = codePuzzle.coordinates.length;
 
-	// console.log(JSON.stringify(Orgigami.coordinatesToMap(dotCoordinates)));
+	// Process the remaining fold - part 2 answer is the printed code
+	codePuzzle.instructions.forEach(instruction => {
+		codePuzzle.processFold(instruction.foldAlong, instruction.position);
+	});
 
 	return {
-		step1: null,
-		step2: null
+		step1: dotsAfterFirstFold,
+		step2: codePuzzle.getCodeOuput()
 	}
 
 }
