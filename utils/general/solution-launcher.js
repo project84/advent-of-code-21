@@ -88,8 +88,7 @@ export function runSolution(date, type) {
 
 		console.log(`${date.fileString} (${typeString}) - ${(duration)} ms`);
 		console.log(`Step 1: ${result.step1}\nStep 2: ${result.step2}`);
-
-		recordResult(date, type, i, result, duration);
+		console.log(recordResult(date, type, i, result, duration));
 
 	})
 
@@ -100,32 +99,34 @@ export function recordResult(date, type, index, result, duration) {
 
 	let results = require('../../fixtures/general/solution-results.json');
 	let solutionInfo = results.filter(result => result.year === date.year && result.day === date.day)[0];
+	let outcome;
 
 	if (!solutionInfo) {
 		let newSolution = { year: date.year, day: date.day, example: [], actual: [] };
 		newSolution[type][index] = { part1: result.step1, part2: result.step2, durationMs: duration, verified: false };
 		results.push(newSolution);
-		console.log('New result recorded.\n');
+		outcome = 'New result recorded.\n';
 	} else {
 		let previousResult = solutionInfo[type][index];
 		if (!previousResult) {
 			solutionInfo[type][index] = { part1: result.step1, part2: result.step2, durationMs: duration, verified: false };
-			console.log('New result recorded.\n');
+			outcome = 'New result recorded.\n';
 		} else {
-			previousResult.durationMs = duration < previousResult.duration ? duration : previousResult.duration;
+			previousResult.durationMs = duration < previousResult.durationMs ? duration : previousResult.durationMs;
 
 			if (previousResult.verified) {
-				console.log(result.step1 === previousResult.part1 && result.step2 === previousResult.part2 ?
+				outcome = result.step1 === previousResult.part1 && result.step2 === previousResult.part2 ?
 					'Result verified!\n' :
-					`Result differs from known result... expected:\nPart 1: ${previousResult.part1}\nPart 2: ${previousResult.part2}\n`)
+					`Result differs from known result... expected:\nPart 1: ${previousResult.part1}\nPart 2: ${previousResult.part2}\n`;
 			} else {
 				solutionInfo[type][index].part1 = result.step1;
 				solutionInfo[type][index].part2 = result.step2;
-				console.log('No verified result known, updated existing result.\n')
+				outcome = 'No verified result known, updated existing result.\n';
 			}
 		}
 	}
 
 	writeFileSync('fixtures/general/solution-results.json', JSON.stringify(results, null, 4));
+	return outcome;
 
 }
