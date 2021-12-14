@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import yargs from 'yargs/yargs';
 import { hideBin } from 'yargs/helpers';
-import { getSolutionInfo, getFilteredSolutionList, retrieveTextFile } from './utils/general/file-tools';
-import { deduplicate as deduplicateArray } from './utils/general/array-tools';
+import { getSolutionInfo, getFilteredSolutionList, retrieveTextFile } from './file-tools';
+import { deduplicate as deduplicateArray } from './array-tools';
 import { writeFileSync } from 'fs';
 
 const argv = yargs(hideBin(process.argv)).argv
@@ -79,7 +79,7 @@ export function runSolution(date, type) {
 		const startTime = new Date();
 
 		// Run solution for specified day and log result
-		const result = require('./' + date.solution.path).default(inputFile);
+		const result = require('../../' + date.solution.path).default(inputFile);
 
 		const endTime = new Date();
 		const duration = endTime - startTime;
@@ -98,7 +98,7 @@ export function runSolution(date, type) {
 
 export function recordResult(date, type, index, result, duration) {
 
-	let results = require('./fixtures/general/solution-results.json');
+	let results = require('../../fixtures/general/solution-results.json');
 	let solutionInfo = results.filter(result => result.year === date.year && result.day === date.day)[0];
 
 	if (!solutionInfo) {
