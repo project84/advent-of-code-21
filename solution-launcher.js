@@ -1,10 +1,8 @@
 import readlineSync from 'readline-sync';
-import yargs from 'yargs/yargs';
-import { hideBin } from 'yargs/helpers';
 import { getSolutionInfo, getFilteredSolutionList, retrieveTextFile } from './utils/general/file-tools';
 import { deduplicate as deduplicateArray } from './utils/general/array-tools';
 
-const argv = yargs(hideBin(process.argv)).argv
+const argv = require('minimist')(process.argv.slice(2));
 
 export function getSolutionsToRun() {
 	let datesToRun = [];

@@ -21,9 +21,9 @@ export class Area {
 		return map;
 	}
 
-	getAdjacentPositions(x, y, includeDiagonal) {
+	getNeighbours(x, y, includeDiagonal) {
 		
-		// For given co-ordinates, returns the readings at adjacent positions
+		// For given co-ordinates, returns the readings at neighbouring positions
 		return this.map.filter(position => {
 			return (position.x === x - 1 && position.y === y) ||
 				(position.x === x + 1 && position.y === y) ||
