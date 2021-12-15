@@ -2,6 +2,10 @@ export class Area {
 	
 	constructor(readings) {
 		this.map = this.parseInput(readings);
+		this.size = {
+			x: this.map[this.map.length - 1].x + 1,
+			y: this.map[this.map.length - 1].y + 1
+		};
 	}
 
 	parseInput(readings) {
@@ -20,6 +24,14 @@ export class Area {
 
 		return map;
 	}
+
+	getPositionIndex(x, y) {
+		return this.map.findIndex(position => position.x === x && position.y === y);
+	}
+
+	updatePosition(x, y, property, value) {
+		this.map[this.getPositionIndex(x, y)][property] = value;
+	} 
 
 	getNeighbours(x, y, includeDiagonal) {
 		
