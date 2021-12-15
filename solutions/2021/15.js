@@ -16,8 +16,8 @@ export default function(inputFile) {
     const expandedMap = mapExpander(inputFile.map(row => row.split('').map(value => parseInt(value))), 5, 1, 9, 1).map(row => row.join(''));
     let fullCavern = new PathFinder(expandedMap);
 
-    smallCavern.findShortestPath();
-    fullCavern.findShortestPath();
+    smallCavern.newShortestPath();
+    fullCavern.newShortestPath();
 
     return {
         step1: smallCavern.map[smallCavern.getPositionIndex(smallCavern.size.x - 1, smallCavern.size.y - 1)].distance,
