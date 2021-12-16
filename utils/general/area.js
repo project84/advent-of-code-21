@@ -49,6 +49,21 @@ export class Area {
 
 	}
 
+	getNeighboursIndex(x, y, maxX, maxY) {
+
+		let neighbours = [];
+
+		let currentIndex = (y * maxX) + x;
+
+		if (x > 0) neighbours.push(currentIndex - 1);
+		if (x < maxX - 1) neighbours.push(currentIndex + 1);
+		if (y > 0) neighbours.push(currentIndex - maxX);
+		if (y < maxY - 1) neighbours.push(currentIndex + maxX);
+
+		return neighbours;
+
+	}
+
 	printMap() {
 		let mapString = '';
 
