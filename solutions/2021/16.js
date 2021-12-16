@@ -1,5 +1,4 @@
 import { Bits } from '../../utils/2021/bits';
-import { sum as arraySum } from '../../utils/general/array-tools';
 
 export default function(inputFile) {
 
