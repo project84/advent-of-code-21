@@ -5,32 +5,16 @@ export class Bits {
 
     constructor(hex) {
         this.bin = hexToBinary(hex).split('');
-        this.packets = [];
     }
 
-    processPackets() {
+    parsePackets() {
 
-        while (this.bin.length) {
-
-            // If there are any bits left to process, parse the next package and remove trailing 0s
-            let packet = this.parsePacket();
-            const remainingDigits = 8 - (packet.bin.length % 8);        
-            this.bin.splice(0, remainingDigits).join('');
-
-        }       
-        
-
-    }
-
-    parsePacket() {
-
-        let packet = { bin: '' }
+        let packet = { bin: '' };
 
         // Identify packet version and type
         let version = this.bin.splice(0, 3).join('');
         let typeId = this.bin.splice(0, 3).join('');
 
-        packet.bin += version + typeId;
         packet.version = parseInt(version, 2);
         packet.typeId = parseInt(typeId, 2);
 
@@ -41,8 +25,6 @@ export class Bits {
             packet = this.processSubPackets(packet);
         }
 
-        // Add packet to list of packets
-        this.packets.push(packet);
         return packet;
 
     }
@@ -56,7 +38,6 @@ export class Bits {
 
             // Whilst there are digits to parse, retrieve the next group (prefix and digit)
             let group = this.bin.splice(0, 5).join('');
-            packet.bin += group;
 
             // Add digit (without prefix) to digit string and check if this is the final group
             digit += group.slice(1);
@@ -76,54 +57,31 @@ export class Bits {
         packet.subPacketBin = '';
         packet.subPackets = [];
 
-        // Determine the length type of the sub packet
-        let lengthIndicator = this.bin.splice(0, 1);
-        packet.bin += lengthIndicator;
+        // Determine the length type of the sub packet and retrieve the sub packet length information
+        let lengthType = parseInt(this.bin.splice(0, 1));
+        let subPacketsLength = this.bin.splice(0, lengthType ? 11 : 15).join('');
 
-        if (parseInt(lengthIndicator)) {
+        // Determine the target count based on the subpacket length, store current length of bits for later use
+        let targetCount = parseInt(subPacketsLength, 2);
+        let preprocessLength = this.bin.length;
+        let targetMet;
 
-            // For type 1, retrieve and parse the 11 digit length
-            // Length indicates the number of sub packets present
-            let totalSubPackets = this.bin.splice(0, 11).join('');
-            packet.bin += totalSubPackets;
+        while (!targetMet) {
 
-            let subPacketCount = parseInt(totalSubPackets, 2);
+            // Parse all sub packets and store them within the parent
+            let subPacket = this.parsePackets();
+            packet.subPackets.push(subPacket);
 
-            while (packet.subPackets.length < subPacketCount) {
-
-                // Parse all sub packets and store them within the parent
-                let subPacket = this.parsePacket();
-                packet.subPackets.push(subPacket);
-
-                packet.bin += subPacket.bin;
-                packet.subPacketBin += subPacket.bin;
-
-            }
-
-        } else {
-
-            // For type 0, retrieve and parse the 15 digit length
-            // Length indicates the total number of bits for the sub packets
-            let totalBitsBin = this.bin.splice(0, 15).join('');
-            packet.bin += totalBitsBin;
-
-            let subPacketLength = parseInt(totalBitsBin, 2);
-
-            while (packet.subPacketBin.length < subPacketLength) {
-
-                // Parse all sub packets and store them within the parent
-                let subPacket = this.parsePacket();
-                packet.subPackets.push(subPacket);
-
-                packet.bin += subPacket.bin;
-                packet.subPacketBin += subPacket.bin;
-
-            }
+            // Determine whether target count has been met
+            targetMet = lengthType ?
+                packet.subPackets.length === targetCount :
+                (preprocessLength - this.bin.length) === targetCount;
 
         }
 
         // Determine the value of the packet based on it's sub packets
         packet.value = this.calculatePacketValue(packet.typeId, packet.subPackets.map(packet => packet.value));
+        packet.versionSum = arraySum(packet.subPackets.map(s => s.version + (s.versionSum || 0)));
 
         return packet;
 
