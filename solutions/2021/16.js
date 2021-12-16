@@ -69,11 +69,11 @@ export default function(inputFile) {
 
     let bits = new Bits(inputFile[0]);
 
-    bits.processPackets();
+    let packets = bits.parsePackets();
 
     return {
-        step1: arraySum(bits.packets.map(packet => packet.version)),
-        step2: bits.packets[bits.packets.length - 1].value
+        step1: (packets.versionSum || 0) + packets.version,
+        step2: packets.value
     }
 
 }
