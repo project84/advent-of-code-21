@@ -20,8 +20,8 @@ export default function(inputFile) {
     fullCavern.findShortestPath();
 
     return {
-        step1: smallCavern.map[smallCavern.getPositionIndex(smallCavern.size.x - 1, smallCavern.size.y - 1)].distance,
-        step2: fullCavern.map[fullCavern.getPositionIndex(fullCavern.size.x - 1, fullCavern.size.y - 1)].distance
+        step1: smallCavern.map[smallCavern.map.length - 1].distance,
+        step2: fullCavern.map[fullCavern.map.length - 1].distance
     }
 
 }

@@ -9,46 +9,58 @@ export class PathFinder extends Area {
     findShortestPath() {
 
         // Generate initial list of unvisited nodes
-        let nodesToVisit = JSON.parse(JSON.stringify(this.map))
-            .map(position => {
-                position.distance = position.x === 0 && position.y === 0 ? 0 : Infinity;
-                return position;
-            });
+        let nodesToVisit = this.map.map((node, i) => {
+            return {
+                index: i,
+                neighbours: this.getNeighboursIndex(node.x, node.y, this.size.x, this.size.y),
+                distance: Infinity
+            }
+        });
+        nodesToVisit[0].distance = 0;
 
         while (nodesToVisit.length) {
 
-            // Determine current minimum distance in the nodes to visit
-            const minimumDistance = Math.min(
-                ...nodesToVisit
-                .filter(node => node.distance != Infinity)
-                .map(node => node.distance)
-            );
+            // Filter nodes that don't have infinite distance, find the minimum distance and
+            // the index of the next node to visit
+            const filteredNodes = nodesToVisit.filter(node => node.distance != Infinity);
+            const distanceOnly = filteredNodes.map(node => node.distance);
+            const minimumDistance = Math.min(...distanceOnly);
+            const nextNodeIndex = nodesToVisit.findIndex(node => node.distance === minimumDistance);
 
-            // Remove next node to visit (capturing it's current information)
-            const nextNode = nodesToVisit.splice([nodesToVisit.findIndex(node => node.distance === minimumDistance)], 1)[0];
-            
-            // Find neighbouring nodes for the next node to visit
-            const neighbouringNodes = this
-                .getNeighbours(nextNode.x, nextNode.y)
+            // Remove next node to visit (capturing it's current information), 
+            // and mark that it is visited in the source map
+            const nextNode = nodesToVisit.splice(nextNodeIndex, 1)[0];            
+            this.map[nextNode.index].visited = true;
 
-            neighbouringNodes.forEach(node => {
+            // Retrieve neighbours of next node that haven't been visited
+            const nextNeighbours = nextNode.neighbours.filter(neighbour => !this.map[neighbour].visited);
+            let updatedCount = nextNeighbours.length;
 
-                // For each neighbouring node, find it's index in the nodes left to visit
-                const qIndex = nodesToVisit.findIndex(nv => nv.x === node.x && nv.y === node.y);
+            nextNeighbours.forEach(neighbour => {
 
-                if (qIndex >= 0) {
+                // Calculate the distance of the neighbour from the current visited node
+                // and update if it is less than the current distance to that node
+                const distanceFromNext = this.map[neighbour].value + nextNode.distance;
 
-                    // If the node hasn't been visited, calculate it's distance from the current visited node
-                    // and update if it is less than the current distance to that node
-                    const distanceFromNext = node.value + nextNode.distance;
-                
-                    if (distanceFromNext < (node.distance || Infinity)) {
-                        this.updatePosition(node.x, node.y, 'distance', distanceFromNext);
-                        nodesToVisit[qIndex].distance = distanceFromNext;
-                    }
-                }                
+                if (distanceFromNext < (this.map[neighbour].distance || Infinity)) {
+                    this.map[neighbour].distance = distanceFromNext;
+                }
 
             });
+
+            let i = 0;
+
+            while (updatedCount) {
+
+                // Update nodes to visit array if the node in the source map has been updated
+                if (nextNeighbours.includes(nodesToVisit[i].index)) {
+                    nodesToVisit[i].distance = this.map[nodesToVisit[i].index].distance;
+                    updatedCount--;
+                }
+
+                i++;
+
+            }
 
         }
 
