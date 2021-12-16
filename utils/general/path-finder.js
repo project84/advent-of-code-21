@@ -68,10 +68,20 @@ export class PathFinder extends Area {
 
         while (nodesToVisit.length) {
 
-            nodesToVisit = nodesToVisit.sort((a, b) => a.distance - b.distance);
+            // nodesToVisit = nodesToVisit.sort((a, b) => a.distance - b.distance);
+
+            const filteredNodes = nodesToVisit.filter(node => !node.visited && node.distance != Infinity);
+            const distanceOnly = filteredNodes.map(node => node.distance);
+            const minimumDistance = Math.min(...distanceOnly);
+            const nextNodeIndex = nodesToVisit.findIndex(node => !node.visited && node.distance === minimumDistance);
+
+            console.log(nextNodeIndex);
+            console.log(nodesToVisit[0]);
 
             // Remove next node to visit (capturing it's current information)
-            const nextNode = nodesToVisit.shift();
+            const nextNode = nodesToVisit.splice(nextNodeIndex, 1);
+
+            
             this.map[nextNode.index].visited = true;
 
             const nextNeighbours = nextNode.neighbours.filter(neighbour => !this.map[neighbour].visited);
