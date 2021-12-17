@@ -1,8 +1,12 @@
+import triangularNumber from '../general/triangular-number';
+
 export class ProbeLauncher {
 
     constructor(targetArea) {
         this.target = this.parseTargetArea(targetArea);
+        this.minXVelocity = this.calculateMinX();
         this.maxYVelocity = Math.abs(this.target.min.y) - 1;
+        this.maxYHeight = triangularNumber(this.maxYVelocity);
     }
 
     parseTargetArea(targetArea) {
@@ -24,6 +28,18 @@ export class ProbeLauncher {
         targetCoordinates.max.y = parseInt(coordinates[1][1]);
 
         return targetCoordinates;
+
+    }
+
+    calculateMinX() {
+
+        // Find first x velocity that reachs the target area
+        let x = 0;
+        while (triangularNumber(x) < this.target.min.x) {
+            x++;
+        }
+
+        return x;
 
     }
 
