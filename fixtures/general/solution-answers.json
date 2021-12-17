@@ -11,7 +11,7 @@
                         "answer": 5,
                         "verified": false
                     },
-                    "durationMs": 60
+                    "durationMs": 5
                 }
             },
             "actual": {
@@ -24,7 +24,7 @@
                         "answer": 1597,
                         "verified": false
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 }
             }
         },
@@ -39,7 +39,7 @@
                         "answer": 900,
                         "verified": false
                     },
-                    "durationMs": 22
+                    "durationMs": 8
                 }
             },
             "actual": {
@@ -67,7 +67,7 @@
                         "answer": 230,
                         "verified": false
                     },
-                    "durationMs": 58
+                    "durationMs": 5
                 }
             },
             "actual": {
@@ -95,7 +95,7 @@
                         "answer": 1924,
                         "verified": false
                     },
-                    "durationMs": 35
+                    "durationMs": 6
                 }
             },
             "actual": {
@@ -108,7 +108,7 @@
                         "answer": 12080,
                         "verified": false
                     },
-                    "durationMs": 12
+                    "durationMs": 11
                 }
             }
         },
@@ -123,7 +123,7 @@
                         "answer": 12,
                         "verified": false
                     },
-                    "durationMs": 58
+                    "durationMs": 38
                 }
             },
             "actual": {
@@ -136,7 +136,7 @@
                         "answer": 21577,
                         "verified": false
                     },
-                    "durationMs": 43
+                    "durationMs": 45
                 }
             }
         },
@@ -151,7 +151,7 @@
                         "answer": 26984457539,
                         "verified": false
                     },
-                    "durationMs": 11
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -179,7 +179,7 @@
                         "answer": 168,
                         "verified": false
                     },
-                    "durationMs": 79
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -207,7 +207,7 @@
                         "answer": 5353,
                         "verified": false
                     },
-                    "durationMs": 23
+                    "durationMs": 4
                 },
                 "2": {
                     "part1": {
@@ -231,7 +231,7 @@
                         "answer": 986163,
                         "verified": false
                     },
-                    "durationMs": 19
+                    "durationMs": 15
                 }
             }
         },
@@ -246,7 +246,7 @@
                         "answer": 1134,
                         "verified": false
                     },
-                    "durationMs": 23
+                    "durationMs": 10
                 }
             },
             "actual": {
@@ -259,7 +259,7 @@
                         "answer": 847504,
                         "verified": false
                     },
-                    "durationMs": 1743
+                    "durationMs": 1439
                 }
             }
         },
@@ -274,7 +274,7 @@
                         "answer": 288957,
                         "verified": false
                     },
-                    "durationMs": 16
+                    "durationMs": 5
                 }
             },
             "actual": {
@@ -302,7 +302,7 @@
                         "answer": 195,
                         "verified": false
                     },
-                    "durationMs": 36
+                    "durationMs": 25
                 }
             },
             "actual": {
@@ -315,7 +315,7 @@
                         "answer": 371,
                         "verified": false
                     },
-                    "durationMs": 35
+                    "durationMs": 22
                 }
             }
         },
@@ -330,7 +330,7 @@
                         "answer": 36,
                         "verified": false
                     },
-                    "durationMs": 15
+                    "durationMs": 3
                 },
                 "2": {
                     "part1": {
@@ -341,7 +341,7 @@
                         "answer": 103,
                         "verified": false
                     },
-                    "durationMs": 4
+                    "durationMs": 2
                 },
                 "3": {
                     "part1": {
@@ -352,7 +352,7 @@
                         "answer": 3509,
                         "verified": false
                     },
-                    "durationMs": 223
+                    "durationMs": 217
                 }
             },
             "actual": {
@@ -365,7 +365,7 @@
                         "answer": 146553,
                         "verified": false
                     },
-                    "durationMs": 6498
+                    "durationMs": 6215
                 }
             }
         },
@@ -380,7 +380,7 @@
                         "answer": "\n■■■■■\n■   ■\n■   ■\n■   ■\n■■■■■\n     \n     ",
                         "verified": false
                     },
-                    "durationMs": 14
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -393,7 +393,7 @@
                         "answer": "\n■  ■   ■■ ■■■  ■  ■ ■■■■ ■  ■ ■■■   ■■  \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■■      ■ ■■■  ■■   ■■■  ■  ■ ■■■  ■    \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■ ■■ \n■ ■  ■  ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■  ■  ■■  ■■■  ■  ■ ■■■■  ■■  ■■■   ■■■ ",
                         "verified": false
                     },
-                    "durationMs": 7
+                    "durationMs": 6
                 }
             }
         },
@@ -408,7 +408,7 @@
                         "answer": 2188189693529,
                         "verified": false
                     },
-                    "durationMs": 18
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -436,7 +436,7 @@
                         "answer": 315,
                         "verified": false
                     },
-                    "durationMs": 139
+                    "durationMs": 17
                 }
             },
             "actual": {
@@ -449,7 +449,7 @@
                         "answer": 2806,
                         "verified": false
                     },
-                    "durationMs": 572
+                    "durationMs": 508
                 }
             }
         },
@@ -464,7 +464,7 @@
                         "answer": 2021,
                         "verified": false
                     },
-                    "durationMs": 15
+                    "durationMs": 6
                 },
                 "2": {
                     "part1": {
@@ -475,7 +475,7 @@
                         "answer": 7,
                         "verified": false
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 },
                 "3": {
                     "part1": {
@@ -530,7 +530,7 @@
                         "answer": 1,
                         "verified": false
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 },
                 "8": {
                     "part1": {
@@ -659,7 +659,7 @@
                         "answer": 3785,
                         "verified": false
                     },
-                    "durationMs": 8
+                    "durationMs": 7
                 }
             }
         }

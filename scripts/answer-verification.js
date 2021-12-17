@@ -1,4 +1,4 @@
-const { recordResult } = require('../utils/general/result-recording');
+const { recordAnswer } = require('../utils/general/result-recording');
 
 const argv = require('minimist')(process.argv.slice(2));
 
@@ -13,7 +13,7 @@ if (
     let index = argv.index || 1;
 
     console.log(
-        recordResult(
+        recordAnswer(
             { year: argv.year, day: argv.day }, 
             argv.type, 
             index, 

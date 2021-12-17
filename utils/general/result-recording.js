@@ -1,46 +1,58 @@
 import { readFileSync, writeFileSync } from 'fs';
 
-export function recordResult(date, type, index, result, duration, verified = false) {
+export function recordAnswer(date, type, index, answer, duration, verified = false) {
 
-    let results = getPreviousResults(date);
-	let prevResultsForDay = results[date.year][date.day][type];
+	// Retrieve and check previous answers for the date supplied and input file type
+    let answers = getPreviousAnswers(date);
+	let prevAnswersForDay = answers[date.year][date.day][type];
 	let outcome = '';
 
-    if (!prevResultsForDay[index]) {
-		prevResultsForDay[index] = {
-			part1: { answer: result.part1, verified },
-			part2: { answer: result.part2, verified },
+    if (!prevAnswersForDay[index]) {
+
+		// Record answers for the supplied date if none already exist
+		prevAnswersForDay[index] = {
+			part1: { answer: answer.part1, verified },
+			part2: { answer: answer.part2, verified },
 			durationMs: duration
 		}
-		outcome = 'New result recorded.\n';
+		outcome = 'New answer recorded.\n';
+
 	} else {
 
-		let previousResult = prevResultsForDay[index];
+		// Otherwise find existing answer and current best time
+		let previousAnswer = prevAnswersForDay[index];
+		let previousDuration = previousAnswer.durationMs;
 
-		let previousDuration = previousResult.durationMs;
-		previousResult.durationMs = duration < previousDuration ? duration : previousDuration;
+		// Check for new best time and update accordingly
+		if (duration < previousDuration) {
+			previousAnswer.durationMs = duration;
+			outcome += 'New best time!\n';
+		}
 
+		// For each part of the executed iteration
 		[ 'part1', 'part2' ].forEach(part => {
 
 			let partText = part[part.length - 1] === '1' ? 'Part 1' : 'Part 2';
 			
-			if (previousResult[part].verified) {
+			if (previousAnswer[part].verified) {
 
+				// If the answer has already been verified, and an unverified answer is supplied, 
+				// check if the answer is the same and report back if not
 				if (verified) {
 					outcome += `Verified answer for ${partText} already recorded... please check and try again\n`
 				} else {
-					outcome += result[part] != previousResult[part] ? 
+					outcome += answer[part] != previousAnswer[part] ? 
 						`${partText} answer verified!\n` :
 						`${partText} answer differs from known result... expected: ${previousResult[part].answer}\n`;
 				}
 
 			} else {
 
-				if (result[part]) {
+				if (answer[part]) {
 
-					// Otherwise update the result with the latest attempt
-					previousResult[part].answer = result[part];
-					previousResult[part].verified = verified;
+					// Otherwise update the answer with the latest attempt
+					previousAnswer[part].answer = answer[part];
+					previousAnswer[part].verified = verified;
 					outcome += verified ? `${partText} verified answer recorded!\n` : `No verified answer for ${partText.toLowerCase()} known, updated existing answer.\n`;
 
 				}
@@ -51,23 +63,25 @@ export function recordResult(date, type, index, result, duration, verified = fal
 
 	}
 
-	writeFileSync('fixtures/general/solution-results.json', JSON.stringify(results, null, 4));
+	writeFileSync('fixtures/general/solution-answers.json', JSON.stringify(answers, null, 4));
     return outcome;
 
 }
 
-function getPreviousResults(date) {
+function getPreviousAnswers(date) {
 
-    let results = JSON.parse(readFileSync('fixtures/general/solution-results.json', 'utf-8'));
+	// Read previous answers from file
+    let answers = JSON.parse(readFileSync('fixtures/general/solution-answers.json', 'utf-8'));
 
-    if (!results[date.year]) {
-        results[date.year] = {};
+	// Check if year and day exist in the previous answers, otherwise create empty structure for them
+    if (!answers[date.year]) {
+        answers[date.year] = {};
     }
 
-    if (!results[date.year][date.day]) {
-        results[date.year][date.day] = { example: {}, actual: {} }
+    if (!answers[date.year][date.day]) {
+        answers[date.year][date.day] = { example: {}, actual: {} }
     }
 
-    return results;
+    return answers;
 
 }

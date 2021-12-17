@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getSolutionInfo, getFilteredSolutionList, retrieveTextFile } from './file-tools';
 import { deduplicate as deduplicateArray } from './array-tools';
-import { recordResult } from './result-recording';
+import { recordAnswer } from './result-recording';
 
 const argv = require('minimist')(process.argv.slice(2));
 
@@ -82,11 +82,11 @@ export function runSolution(date, type) {
 		const endTime = new Date();
 		const duration = endTime - startTime;
 
-		const typeString = type + (toRun > 1 ? `-${i + 1}` : '');
+		const typeString = toRun > 1 ? `${type} #${i + 1}` : type;
 
 		console.log(`${date.fileString} (${typeString}) - ${(duration)} ms`);
 		console.log(`Part 1: ${result.part1}\nPart 2: ${result.part2}`);
-		console.log(recordResult(date, type, i + 1, result, duration));
+		console.log(recordAnswer(date, type, i + 1, result, duration));
 
 	})
 
