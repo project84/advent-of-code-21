@@ -3,12 +3,12 @@ import { Orgigami } from '../../utils/2021/origami';
 export default function(inputFile) {
 
 	/* Example */
-	// Step 1: 17
-	// Step 2: O
+	// Part 1: 17
+	// Part 2: O
 
 	/* Actual */
-	// Step 1: 788
-	// Step 2: KJBKEUBG
+	// Part 1: 788
+	// Part 2: KJBKEUBG
 
 	let codePuzzle = new Orgigami(inputFile);
 
@@ -24,8 +24,8 @@ export default function(inputFile) {
 	});
 
 	return {
-		step1: dotsAfterFirstFold,
-		step2: codePuzzle.getCodeOuput()
+		part1: dotsAfterFirstFold,
+		part2: codePuzzle.getCodeOuput()
 	}
 
 }

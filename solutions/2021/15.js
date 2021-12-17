@@ -4,12 +4,12 @@ import mapExpander from '../../utils/general/map-expander';
 export default function(inputFile) {
 
     /* Example */
-    // Step 1: 40
-    // Step 2: 315
+    // Part 1: 40
+    // Part 2: 315
 
     /* Actual */
-    // Step 1: 386
-    // Step 2: 2806
+    // Part 1: 386
+    // Part 2: 2806
 
     let smallCavern = new PathFinder(inputFile);
 
@@ -20,8 +20,8 @@ export default function(inputFile) {
     fullCavern.findShortestPath();
 
     return {
-        step1: smallCavern.map[smallCavern.map.length - 1].distance,
-        step2: fullCavern.map[fullCavern.map.length - 1].distance
+        part1: smallCavern.map[smallCavern.map.length - 1].distance,
+        part2: fullCavern.map[fullCavern.map.length - 1].distance
     }
 
 }

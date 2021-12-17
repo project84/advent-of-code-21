@@ -85,7 +85,7 @@ export function runSolution(date, type) {
 		const typeString = type + (toRun > 1 ? `-${i + 1}` : '');
 
 		console.log(`${date.fileString} (${typeString}) - ${(duration)} ms`);
-		console.log(`Step 1: ${result.step1}\nStep 2: ${result.step2}`);
+		console.log(`Part 1: ${result.part1}\nPart 2: ${result.part2}`);
 		console.log(recordResult(date, type, i, result, duration));
 
 	})
