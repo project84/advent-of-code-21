@@ -3,14 +3,6 @@ import calculateFuelConsumption from '../../utils/2021/crab-fuel-consumption';
 
 export default function(inputFile) {
 
-	/* Example */
-	// Part 1: 37
-	// Part 2: 168
-
-	/* Actual */
-	// Part 1: 335271
-	// Part 2: 95851339
-
 	// Sort crab positions to allow simple determination of median position
 	const crabPositions = inputFile[0]
 		.split(',')

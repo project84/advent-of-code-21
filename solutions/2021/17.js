@@ -2,14 +2,6 @@ import { ProbeLauncher } from '../../utils/2021/probe-launcher'
 
 export default function(inputFile) {
 
-    /* Example */
-    // Part 1: 45
-    // Part 2: 112
-
-    /* Actual */
-    // Part 1: 12561
-    // Part 2: 3785
-
     let probeLauncher = new ProbeLauncher(inputFile[0]);
 
     // Loop through all values that could hit the target to check if they do

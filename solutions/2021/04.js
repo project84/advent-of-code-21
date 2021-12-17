@@ -2,14 +2,6 @@ import { parseBingoBoards } from "../../utils/2021/bingo";
 
 export default function(inputFile) {
 
-	/* Example */
-	// Part 1: 4512
-	// Part 2: 1924
-
-	/* Actual */
-	// Part 1: 4662
-	// Part 2: 12080
-
 	// Retrieve bingo input, and create array of bingo boards
 	const bingoNumbers = inputFile.shift().split(',');
 	const bingoBoards = parseBingoBoards(inputFile);

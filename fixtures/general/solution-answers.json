@@ -5,11 +5,11 @@
                 "1": {
                     "part1": {
                         "answer": 7,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 5,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 5
                 }
@@ -18,11 +18,11 @@
                 "1": {
                     "part1": {
                         "answer": 1553,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1597,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 }
@@ -33,11 +33,11 @@
                 "1": {
                     "part1": {
                         "answer": 150,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 900,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 8
                 }
@@ -46,11 +46,11 @@
                 "1": {
                     "part1": {
                         "answer": 2150351,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1842742223,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 1
                 }
@@ -61,11 +61,11 @@
                 "1": {
                     "part1": {
                         "answer": 198,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 230,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 5
                 }
@@ -74,11 +74,11 @@
                 "1": {
                     "part1": {
                         "answer": 3901196,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 4412188,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 2
                 }
@@ -89,11 +89,11 @@
                 "1": {
                     "part1": {
                         "answer": 4512,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1924,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 6
                 }
@@ -102,11 +102,11 @@
                 "1": {
                     "part1": {
                         "answer": 4662,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 12080,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 11
                 }
@@ -117,11 +117,11 @@
                 "1": {
                     "part1": {
                         "answer": 5,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 12,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 38
                 }
@@ -129,11 +129,11 @@
             "actual": {
                 "1": {
                     "part1": {
-                        "answer": 8060,
+                        "answer": true,
                         "verified": false
                     },
                     "part2": {
-                        "answer": 21577,
+                        "answer": true,
                         "verified": false
                     },
                     "durationMs": 45
@@ -145,11 +145,11 @@
                 "1": {
                     "part1": {
                         "answer": 5934,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 26984457539,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 3
                 }
@@ -158,11 +158,11 @@
                 "1": {
                     "part1": {
                         "answer": 353079,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1605400130036,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 }
@@ -173,11 +173,11 @@
                 "1": {
                     "part1": {
                         "answer": 37,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 168,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 4
                 }
@@ -186,11 +186,11 @@
                 "1": {
                     "part1": {
                         "answer": 335271,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 95851339,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 1
                 }
@@ -240,11 +240,11 @@
                 "1": {
                     "part1": {
                         "answer": 15,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1134,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 10
                 }
@@ -253,11 +253,11 @@
                 "1": {
                     "part1": {
                         "answer": 541,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 847504,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 1439
                 }
@@ -268,11 +268,11 @@
                 "1": {
                     "part1": {
                         "answer": 26397,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 288957,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 5
                 }
@@ -281,11 +281,11 @@
                 "1": {
                     "part1": {
                         "answer": 399153,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 2995077699,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 2
                 }
@@ -296,11 +296,11 @@
                 "1": {
                     "part1": {
                         "answer": 1656,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 195,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 25
                 }
@@ -309,11 +309,11 @@
                 "1": {
                     "part1": {
                         "answer": 1620,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 371,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 22
                 }
@@ -324,11 +324,11 @@
                 "1": {
                     "part1": {
                         "answer": 10,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 36,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 3
                 },
@@ -359,11 +359,11 @@
                 "1": {
                     "part1": {
                         "answer": 5333,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 146553,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 6215
                 }
@@ -374,11 +374,11 @@
                 "1": {
                     "part1": {
                         "answer": 17,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": "\n■■■■■\n■   ■\n■   ■\n■   ■\n■■■■■\n     \n     ",
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 4
                 }
@@ -387,11 +387,11 @@
                 "1": {
                     "part1": {
                         "answer": 788,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": "\n■  ■   ■■ ■■■  ■  ■ ■■■■ ■  ■ ■■■   ■■  \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■■      ■ ■■■  ■■   ■■■  ■  ■ ■■■  ■    \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■ ■■ \n■ ■  ■  ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■  ■  ■■  ■■■  ■  ■ ■■■■  ■■  ■■■   ■■■ ",
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 6
                 }
@@ -402,11 +402,11 @@
                 "1": {
                     "part1": {
                         "answer": 1588,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 2188189693529,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 4
                 }
@@ -415,11 +415,11 @@
                 "1": {
                     "part1": {
                         "answer": 2233,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 2884513602164,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 2
                 }
@@ -430,11 +430,11 @@
                 "1": {
                     "part1": {
                         "answer": 40,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 315,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 17
                 }
@@ -443,11 +443,11 @@
                 "1": {
                     "part1": {
                         "answer": 386,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 2806,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 508
                 }
@@ -458,165 +458,165 @@
                 "1": {
                     "part1": {
                         "answer": 6,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 2021,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 6
                 },
                 "2": {
                     "part1": {
                         "answer": 15,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 7,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "3": {
                     "part1": {
                         "answer": 11,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 9,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "4": {
                     "part1": {
                         "answer": 13,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "5": {
                     "part1": {
                         "answer": 19,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 0,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "6": {
                     "part1": {
                         "answer": 16,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 0,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "7": {
                     "part1": {
                         "answer": 20,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "8": {
                     "part1": {
                         "answer": 9,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 1,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "9": {
                     "part1": {
                         "answer": 14,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 3,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "10": {
                     "part1": {
                         "answer": 16,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 15,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "11": {
                     "part1": {
                         "answer": 12,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 46,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "12": {
                     "part1": {
                         "answer": 23,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 46,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "13": {
                     "part1": {
                         "answer": 31,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 54,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "14": {
                     "part1": {
                         "answer": 14,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 3,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 },
                 "15": {
                     "part1": {
                         "answer": 8,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 54,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 0
                 }
@@ -625,11 +625,11 @@
                 "1": {
                     "part1": {
                         "answer": 986,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 18234816469452,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 1
                 }
@@ -640,11 +640,11 @@
                 "1": {
                     "part1": {
                         "answer": 45,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 112,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 5
                 }
@@ -653,11 +653,11 @@
                 "1": {
                     "part1": {
                         "answer": 12561,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 3785,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 7
                 }

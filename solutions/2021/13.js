@@ -2,14 +2,6 @@ import { Orgigami } from '../../utils/2021/origami';
 
 export default function(inputFile) {
 
-	/* Example */
-	// Part 1: 17
-	// Part 2: O
-
-	/* Actual */
-	// Part 1: 788
-	// Part 2: KJBKEUBG
-
 	let codePuzzle = new Orgigami(inputFile);
 
 	// Separate first instruction from the list, process that fold and determine 

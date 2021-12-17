@@ -2,13 +2,7 @@ import { PathFinder } from '../../utils/2021/navigation';
 
 export default function(inputFile) {
 
-	/* Example */
-	// Part 1: 10
-	// Part 2: 36
-
-	/* Actual */
-	// Part 1: 5333
-	// Part 2: 146553
+	/* Examples 2-3? */
 
     const cavePassages = new PathFinder(inputFile);
 
