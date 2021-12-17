@@ -86,7 +86,7 @@ export function runSolution(date, type) {
 
 		console.log(`${date.fileString} (${typeString}) - ${(duration)} ms`);
 		console.log(`Part 1: ${result.part1}\nPart 2: ${result.part2}`);
-		console.log(recordResult(date, type, i, result, duration));
+		console.log(recordResult(date, type, i + 1, result, duration));
 
 	})
 

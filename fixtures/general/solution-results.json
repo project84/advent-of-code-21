@@ -1,1 +1,32 @@
-{}
+{
+    "2021": {
+        "17": {
+            "example": {
+                "1": {
+                    "part1": {
+                        "answer": 45,
+                        "verified": false
+                    },
+                    "part2": {
+                        "answer": 112,
+                        "verified": false
+                    },
+                    "durationMs": 10
+                }
+            },
+            "actual": {
+                "1": {
+                    "part1": {
+                        "answer": 12561,
+                        "verified": false
+                    },
+                    "part2": {
+                        "answer": 3785,
+                        "verified": false
+                    },
+                    "durationMs": 6
+                }
+            }
+        }
+    }
+}
