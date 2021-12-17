@@ -1,4 +1,5 @@
 import * as array from '../general/array-tools';
+import triangularNumber from '../general/triangular-number';
 
 export default function(crabPositions, targetValues, triangular) {
 
@@ -11,7 +12,7 @@ export default function(crabPositions, targetValues, triangular) {
 			// Determine fuel consumption for each target value supplied
 			const distanceToMove = Math.abs(crab - value);
 			return triangular ? 
-				distanceToMove * (distanceToMove + 1) / 2 :
+				triangularNumber(distanceToMove) :
 				distanceToMove;
 
 		})));
