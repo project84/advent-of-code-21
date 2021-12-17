@@ -3,12 +3,12 @@ import { ProbeLauncher } from '../../utils/2021/probe-launcher'
 export default function(inputFile) {
 
     /* Example */
-    // Step 1: 45
-    // Step 2: 112
+    // Part 1: 45
+    // Part 2: 112
 
     /* Actual */
-    // Step 1: 12561
-    // Step 2: 3785
+    // Part 1: 12561
+    // Part 2: 3785
 
     let probeLauncher = new ProbeLauncher(inputFile[0]);
 
@@ -25,8 +25,8 @@ export default function(inputFile) {
 
 
     return {
-        step1: probeLauncher.maxYHeight,
-        step2: validVelocityCount
+        part1: probeLauncher.maxYHeight,
+        part2: validVelocityCount
     }
 
 }

@@ -4,12 +4,12 @@ import { sum as sumArray } from '../../utils/general/array-tools';
 export default function(inputFile) {
 
 	/* Example */
-	// Step 1: 26
-	// Step 2: 61229
+	// Part 1: 26
+	// Part 2: 61229
 
 	/* Actual */
-	// Step 1: 421
-	// Step 2: 986163
+	// Part 1: 421
+	// Part 2: 986163
 
 	// Create array of digital display instances from input string
 	let displays = inputFile.map(reading => {
@@ -26,8 +26,8 @@ export default function(inputFile) {
 	const totalDisplayValue = sumArray(displays.map(display => display.outputValue));
 
 	return {
-		step1: uniqueOutputs,
-		step2: totalDisplayValue
+		part1: uniqueOutputs,
+		part2: totalDisplayValue
 	}
 
 }

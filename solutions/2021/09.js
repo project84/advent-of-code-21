@@ -4,12 +4,12 @@ import { sum as arraySum } from '../../utils/general/array-tools';
 export default function(inputFile) {
 
 	/* Example */
-	// Step 1: 15
-	// Step 2: 1134
+	// Part 1: 15
+	// Part 2: 1134
 
 	/* Actual */
-	// Step 1: 541
-	// Step 2: 847504
+	// Part 1: 541
+	// Part 2: 847504
 	
 	// Map input readings to the cave floor
 	const cave = new LavaTube(inputFile);
@@ -34,8 +34,8 @@ export default function(inputFile) {
 		.sort((a, b) => a - b);
 
 	return {
-		step1: arraySum(lowPoints.map(reading => reading.value + 1)),
-		step2: basins[basins.length - 1] *
+		part1: arraySum(lowPoints.map(reading => reading.value + 1)),
+		part2: basins[basins.length - 1] *
 			basins[basins.length - 2] *
 			basins[basins.length - 3]
 	}

@@ -3,12 +3,12 @@ import pairValueComparison from '../../utils/general/pair-value-comparison';
 export default function (inputFile) {
 
 	/* Example */
-	// Step 1: 7
-	// Step 2: 5
+	// Part 1: 7
+	// Part 2: 5
 
 	/* Actual */
-	// Step 1: 1553
-	// Step 2: 1597
+	// Part 1: 1553
+	// Part 2: 1597
 
 	// Read input file and convert values to integer
 	const measurements = inputFile.map(measurement => parseInt(measurement));
@@ -19,7 +19,7 @@ export default function (inputFile) {
 	});
 
 	return {
-		step1: pairValueComparison(measurements, 'increase'),
-		step2: pairValueComparison(rollingMeasurements, 'increase')
+		part1: pairValueComparison(measurements, 'increase'),
+		part2: pairValueComparison(rollingMeasurements, 'increase')
 	}
 }
