@@ -27,7 +27,7 @@ export function recordResult(date, type, index, result, duration, verified = fal
 			if (previousResult[part].verified) {
 
 				if (verified) {
-					outcome += `Verified answer for ${partText} already recorded... please check and try again`
+					outcome += `Verified answer for ${partText} already recorded... please check and try again\n`
 				} else {
 					outcome += result[part] != previousResult[part] ? 
 						`${partText} answer verified!\n` :
@@ -36,11 +36,14 @@ export function recordResult(date, type, index, result, duration, verified = fal
 
 			} else {
 
-				// Otherwise update the result with the latest attempt
-				previousResult[part].answer = result.part1;
-				previousResult[part].answer = result.part2;
-				previousResult[part].verified = verified;
-				outcome += verified ? `${partText} verified answer recorded!` : `No verified answer for ${partText.toLowerCase()} known, updated existing answer.\n`;
+				if (result[part]) {
+
+					// Otherwise update the result with the latest attempt
+					previousResult[part].answer = result[part];
+					previousResult[part].verified = verified;
+					outcome += verified ? `${partText} verified answer recorded!\n` : `No verified answer for ${partText.toLowerCase()} known, updated existing answer.\n`;
+
+				}
 
 			}
 
