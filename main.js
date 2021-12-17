@@ -1,4 +1,4 @@
-import { getSolutionsToRun, getFileTypes, runSolution } from './solution-launcher';
+import { getSolutionsToRun, getFileTypes, runSolution } from './utils/general/solution-launcher';
 
 const solutionsToRun = getSolutionsToRun();
 

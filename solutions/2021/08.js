@@ -3,14 +3,6 @@ import { sum as sumArray } from '../../utils/general/array-tools';
 
 export default function(inputFile) {
 
-	/* Example */
-	// Part 1: 26
-	// Part 2: 61229
-
-	/* Actual */
-	// Part 1: 421
-	// Part 2: 986163
-
 	// Create array of digital display instances from input string
 	let displays = inputFile.map(reading => {
 		let io = reading.split(' | ');

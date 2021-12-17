@@ -2,14 +2,6 @@ import { LavaTube } from '../../utils/2021/lava-tubes';
 import { sum as arraySum } from '../../utils/general/array-tools';
 
 export default function(inputFile) {
-
-	/* Example */
-	// Part 1: 15
-	// Part 2: 1134
-
-	/* Actual */
-	// Part 1: 541
-	// Part 2: 847504
 	
 	// Map input readings to the cave floor
 	const cave = new LavaTube(inputFile);

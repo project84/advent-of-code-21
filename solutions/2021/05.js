@@ -2,14 +2,6 @@ import { parseReadings, GeoThermalMap } from "../../utils/2021/geo-thermals";
 
 export default function (inputFile) {
 
-	/* Example */
-	// Part 1: 5
-	// Part 2: 12
-
-	/* Actual */
-	// Part 1: 8060
-	// Part 2: 21577
-
 	// Convert geo-thermal vent readings to useable format, then create empty map
 	const ventReadings = parseReadings(inputFile);
 	let geoThermals = new GeoThermalMap(1000);

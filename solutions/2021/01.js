@@ -2,14 +2,6 @@ import pairValueComparison from '../../utils/general/pair-value-comparison';
 
 export default function (inputFile) {
 
-	/* Example */
-	// Part 1: 7
-	// Part 2: 5
-
-	/* Actual */
-	// Part 1: 1553
-	// Part 2: 1597
-
 	// Read input file and convert values to integer
 	const measurements = inputFile.map(measurement => parseInt(measurement));
 

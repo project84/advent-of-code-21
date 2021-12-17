@@ -2,14 +2,6 @@ import { DumboOctopi } from '../../utils/2021/dumbo-octopi';
 
 export default function(inputFile) {
 
-	/* Example */
-	// Part 1: 1656
-	// Part 2: 195
-
-	/* Actual */
-	// Part 1: 1620
-	// Part 2: 371
-
 	const cavern = new DumboOctopi(inputFile);
 
 	let flashCount100 = 0;
