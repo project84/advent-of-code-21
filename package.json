@@ -4,7 +4,12 @@
 	"description": "Advent of code 2021 solutions",
 	"main": "main.js",
 	"scripts": {
-		"solution": "npx babel-node main.js"
+		"solution": "npx babel-node main.js",
+		"today": "npx babel-node main.js --today",
+		"all": "npx babel-node main.js --all",
+		"currenMonth": "npx babel-node main.js --currentMonth",
+		"verify-example": "npx babel-node scripts/answer-verification --type example",
+		"verify-actual": "npx babel-node scripts/answer-verification --type actual"
 	},
 	"repository": {
 		"type": "git",
