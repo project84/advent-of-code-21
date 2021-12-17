@@ -2,8 +2,6 @@ import { PathFinder } from '../../utils/2021/navigation';
 
 export default function(inputFile) {
 
-	/* Examples 2-3? */
-
     const cavePassages = new PathFinder(inputFile);
 
 	// Retrieve all valid paths for Part 2, then filter out those with duplicate small caves

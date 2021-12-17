@@ -48,7 +48,7 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 
 			} else {
 
-				if (answer[part]) {
+				if (!(answer[part] == null)) {
 
 					// Otherwise update the answer with the latest attempt
 					previousAnswer[part].answer = answer[part];

@@ -129,12 +129,12 @@
             "actual": {
                 "1": {
                     "part1": {
-                        "answer": true,
-                        "verified": false
+                        "answer": 8060,
+                        "verified": true
                     },
                     "part2": {
-                        "answer": true,
-                        "verified": false
+                        "answer": 21577,
+                        "verified": true
                     },
                     "durationMs": 45
                 }
@@ -201,22 +201,22 @@
                 "1": {
                     "part1": {
                         "answer": 0,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 5353,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 4
                 },
                 "2": {
                     "part1": {
                         "answer": 26,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 61229,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 1
                 }
@@ -225,11 +225,11 @@
                 "1": {
                     "part1": {
                         "answer": 421,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 986163,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 15
                 }
@@ -335,22 +335,22 @@
                 "2": {
                     "part1": {
                         "answer": 19,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 103,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 2
                 },
                 "3": {
                     "part1": {
                         "answer": 226,
-                        "verified": false
+                        "verified": true
                     },
                     "part2": {
                         "answer": 3509,
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 217
                 }
