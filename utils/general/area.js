@@ -2,6 +2,10 @@ export class Area {
 	
 	constructor(readings) {
 		this.map = this.parseInput(readings);
+		this.size = {
+			x: this.map[this.map.length - 1].x + 1,
+			y: this.map[this.map.length - 1].y + 1
+		};
 	}
 
 	parseInput(readings) {
@@ -21,9 +25,17 @@ export class Area {
 		return map;
 	}
 
-	getAdjacentPositions(x, y, includeDiagonal) {
+	getPositionIndex(x, y) {
+		return this.map.findIndex(position => position.x === x && position.y === y);
+	}
+
+	updatePosition(x, y, property, value) {
+		this.map[this.getPositionIndex(x, y)][property] = value;
+	} 
+
+	getNeighbours(x, y, includeDiagonal) {
 		
-		// For given co-ordinates, returns the readings at adjacent positions
+		// For given co-ordinates, returns the readings at neighbouring positions
 		return this.map.filter(position => {
 			return (position.x === x - 1 && position.y === y) ||
 				(position.x === x + 1 && position.y === y) ||
@@ -34,6 +46,21 @@ export class Area {
 				(includeDiagonal && position.x === x - 1 && position.y === y + 1) ||
 				(includeDiagonal && position.x === x + 1 && position.y === y + 1)
 		});
+
+	}
+
+	getNeighboursIndex(x, y, maxX, maxY) {
+
+		let neighbours = [];
+
+		let currentIndex = (y * maxX) + x;
+
+		if (x > 0) neighbours.push(currentIndex - 1);
+		if (x < maxX - 1) neighbours.push(currentIndex + 1);
+		if (y > 0) neighbours.push(currentIndex - maxX);
+		if (y < maxY - 1) neighbours.push(currentIndex + maxX);
+
+		return neighbours;
 
 	}
 

@@ -20,7 +20,7 @@ export default function(inputFile) {
 
 		// Retrieve readings adjacent to current position and determines if it counts
 		// as a low point
-		const adjacentReadings = cave.getAdjacentPositions(reading.x, reading.y);
+		const adjacentReadings = cave.getNeighbours(reading.x, reading.y);
 		if (adjacentReadings.every(adjReading => adjReading.value > reading.value)) {
 			lowPoints.push(reading);
 		}

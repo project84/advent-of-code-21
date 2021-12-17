@@ -5,6 +5,13 @@ export function sum(inputArray) {
 	});
 }
 
+export function multiply(inputArray) {
+	// Multiply all items in a provided array of integers
+	return inputArray.reduce((prev, next) => {
+		return parseInt(prev) * parseInt(next);
+	});
+}
+
 export function deduplicate(inputArray) {
 	// Convert array 
 	const stringified = inputArray.map(item => JSON.stringify(item));

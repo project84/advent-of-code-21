@@ -1,4 +1,4 @@
-import { Area } from './area';
+import { Area } from '../general/area';
 
 export class LavaTube extends Area {
 	constructor(readings) {
@@ -18,7 +18,7 @@ export class LavaTube extends Area {
 			// For a given current position add any *new* adjacent readings that have
 			// a value less than 9
 			readings.push(...this
-				.getAdjacentPositions(unassessedReading.x, unassessedReading.y)
+				.getNeighbours(unassessedReading.x, unassessedReading.y)
 				.filter(reading => {
 					return reading.value < 9 &&
 						!readings.filter(a => a.x === reading.x && a.y === reading.y).length 
