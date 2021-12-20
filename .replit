@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npx babel-node main.js --today"
+run = "npm run today"
