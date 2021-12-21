@@ -717,25 +717,25 @@
             "example": {
                 "1": {
                     "part1": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 35,
+                        "verified": true
                     },
                     "part2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 3351,
+                        "verified": true
                     },
-                    "durationMs": 111
+                    "durationMs": 78
                 }
             },
             "actual": {
                 "1": {
                     "part1": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 5395,
+                        "verified": true
                     },
                     "part2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 17584,
+                        "verified": true
                     },
                     "durationMs": 0
                 }
