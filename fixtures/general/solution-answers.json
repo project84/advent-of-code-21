@@ -712,6 +712,34 @@
                     "durationMs": 112
                 }
             }
+        },
+        "20": {
+            "example": {
+                "1": {
+                    "part1": {
+                        "answer": 35,
+                        "verified": true
+                    },
+                    "part2": {
+                        "answer": 3351,
+                        "verified": true
+                    },
+                    "durationMs": 78
+                }
+            },
+            "actual": {
+                "1": {
+                    "part1": {
+                        "answer": 5395,
+                        "verified": true
+                    },
+                    "part2": {
+                        "answer": 17584,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            }
         }
     }
 }
