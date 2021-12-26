@@ -1,18 +1,19 @@
 export class Area {
 	
-	constructor(readings) {
-		this.map = this.parseInput(readings);
+	constructor(readings, isNumeric) {
+		this.map = this.parseInput(readings, isNumeric);
 		this.calculateSize();
 	}
 
-	parseInput(readings) {
+	parseInput(readings, isNumeric) {
 		
 		// Map is a flattened array of all readings with x and y position
 		let map = [];
 		readings.forEach((row, i) => {
 			map.push(...row.split('').map((reading, j) => {
 				return {
-					value: parseInt(reading),
+					value: isNumeric ? parseInt(reading) : reading,
+					index: (i * row.length) + j,
 					x: j,
 					y: i
 				}
@@ -30,30 +31,14 @@ export class Area {
 	}
 
 	getPositionIndex(x, y) {
-		return this.map.findIndex(position => position.x === x && position.y === y);
+		return (y * this.size.x) + x;
 	}
 
 	updatePosition(x, y, property, value) {
 		this.map[this.getPositionIndex(x, y)][property] = value;
-	} 
-
-	getNeighbours(x, y, includeDiagonal) {
-		
-		// For given co-ordinates, returns the readings at neighbouring positions
-		return this.map.filter(position => {
-			return (position.x === x - 1 && position.y === y) ||
-				(position.x === x + 1 && position.y === y) ||
-				(position.x === x && position.y === y - 1) ||
-				(position.x === x && position.y === y + 1) ||
-				(includeDiagonal && position.x === x - 1 && position.y === y - 1) ||
-				(includeDiagonal && position.x === x + 1 && position.y === y - 1) ||
-				(includeDiagonal && position.x === x - 1 && position.y === y + 1) ||
-				(includeDiagonal && position.x === x + 1 && position.y === y + 1)
-		});
-
 	}
 
-	getRelativeIndex(currentX, currentY, xDelta, yDelta) {
+	getRelativeIndex(currentX, currentY, xDelta = 0, yDelta = 0) {
 
 		// No valid neighbours if attempting to move outside grid
 		if (
@@ -79,18 +64,34 @@ export class Area {
 		
 	}
 
-	getNeighboursIndex(x, y) {
+	getNeighboursIndex(x, y, includeDiagonal) {
 
 		let neighbours = [];
 
-		let currentIndex = (y * this.size.x) + x;
+		// Retrieve and store non-diagonal neighbour indices
+		neighbours.push(this.getRelativeIndex(x, y, -1));
+		neighbours.push(this.getRelativeIndex(x, y, 1));
+		neighbours.push(this.getRelativeIndex(x, y, 0, -1));
+		neighbours.push(this.getRelativeIndex(x, y, 0, 1));
 
-		if (x > 0) neighbours.push(currentIndex - 1);
-		if (x < this.size.x - 1) neighbours.push(currentIndex + 1);
-		if (y > 0) neighbours.push(currentIndex - this.size.x);
-		if (y < this.size.y - 1) neighbours.push(currentIndex + this.size.x);
+		// Retrieve and store diagonal neighbour indices
+		if (includeDiagonal) {
+			neighbours.push(this.getRelativeIndex(x, y, -1, -1));
+			neighbours.push(this.getRelativeIndex(x, y, 1, -1));
+			neighbours.push(this.getRelativeIndex(x, y, -1, 1));
+			neighbours.push(this.getRelativeIndex(x, y, 1, 1));
+		}
+		
+		// Filter out invalid indices
+		return neighbours.filter(neighbour => Number.isInteger(neighbour));
 
-		return neighbours;
+	} 
+
+	getNeighbours(x, y, includeDiagonal) {
+		
+		// For given co-ordinates, returns the readings at neighbouring positions
+		let neighbours = this.getNeighboursIndex(x, y, includeDiagonal);
+		return neighbours.map(index => this.map[index]);
 
 	}
 

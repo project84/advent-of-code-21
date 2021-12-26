@@ -46,15 +46,21 @@ export function getSolutionInfo(year, day) {
 		path: `solutions/${info.fileString}.js`
 	}
 
-	let inputFiles = getDirectoryContent(`input-files/${info.fileString}`).map(file => file.path);
+	let inputFileDir = `input-files/${info.fileString}`;
 
-	info.example = inputFiles.filter(path => path.includes('example'));
-	info.actual = inputFiles.filter(path => path.includes('actual'));
+	if (exists(inputFileDir)) {
 
-	// Check if solution files exist
-	info.solution.exists = exists(info.solution.path);
-	info.exampleExists = info.example.length > 0;
-	info.actualExists = info.actual.length > 0;
+        let inputFiles = getDirectoryContent(inputFileDir).map(file => file.path);
+
+	    info.example = inputFiles.filter(path => path.includes('example'));
+	    info.actual = inputFiles.filter(path => path.includes('actual'));
+
+	    // Check if solution files exist
+	    info.solution.exists = exists(info.solution.path);
+	    info.exampleExists = info.example.length > 0;
+	    info.actualExists = info.actual.length > 0;
+		
+	}
 
 	return info;
 }
