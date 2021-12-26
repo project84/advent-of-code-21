@@ -5,14 +5,14 @@ export class Area {
 		this.calculateSize();
 	}
 
-	parseInput(readings, isNumeric) {
+	parseInput(readings, nonNumeric) {
 		
 		// Map is a flattened array of all readings with x and y position
 		let map = [];
 		readings.forEach((row, i) => {
 			map.push(...row.split('').map((reading, j) => {
 				return {
-					value: isNumeric ? parseInt(reading) : reading,
+					value: nonNumeric ? reading : parseInt(reading),
 					index: (i * row.length) + j,
 					x: j,
 					y: i

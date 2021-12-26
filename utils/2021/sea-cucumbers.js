@@ -3,7 +3,7 @@ import { Area } from '../general/area';
 export class SeaCucumbers extends Area {
 
 	constructor(inputFile) {
-		super(inputFile);
+		super(inputFile, true);
 		
 		this.map = this.map.map(position => {
 

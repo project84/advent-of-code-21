@@ -41,9 +41,9 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 				if (verified) {
 					outcome += `Verified answer for ${partText} already recorded... please check and try again\n`
 				} else {
-					outcome += answer[part] != previousAnswer[part] ? 
+					outcome += answer[part] === previousAnswer[part].answer ? 
 						`${partText} answer verified!\n` :
-						`${partText} answer differs from known result... expected: ${previousResult[part].answer}\n`;
+						`${partText} answer differs from known result... expected: ${previousAnswer[part].answer}\n`;
 				}
 
 			} else {
