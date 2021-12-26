@@ -259,7 +259,7 @@
                         "answer": 847504,
                         "verified": true
                     },
-                    "durationMs": 1439
+                    "durationMs": 404
                 }
             }
         },
@@ -759,6 +759,34 @@
                 "1": {
                     "part1": {
                         "answer": 853776,
+                        "verified": true
+                    },
+                    "part2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 0
+                }
+            }
+        },
+        "25": {
+            "example": {
+                "1": {
+                    "part1": {
+                        "answer": 58,
+                        "verified": true
+                    },
+                    "part2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 4
+                }
+            },
+            "actual": {
+                "1": {
+                    "part1": {
+                        "answer": 504,
                         "verified": true
                     },
                     "part2": {
