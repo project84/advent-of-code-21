@@ -740,6 +740,34 @@
                     "durationMs": 0
                 }
             }
+        },
+        "21": {
+            "example": {
+                "1": {
+                    "part1": {
+                        "answer": 739785,
+                        "verified": true
+                    },
+                    "part2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 9
+                }
+            },
+            "actual": {
+                "1": {
+                    "part1": {
+                        "answer": 853776,
+                        "verified": true
+                    },
+                    "part2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 0
+                }
+            }
         }
     }
 }
