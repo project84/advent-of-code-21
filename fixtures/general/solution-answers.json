@@ -749,8 +749,8 @@
                         "verified": true
                     },
                     "part2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 444356092776315,
+                        "verified": true
                     },
                     "durationMs": 9
                 }
@@ -762,8 +762,8 @@
                         "verified": true
                     },
                     "part2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 301304993766094,
+                        "verified": true
                     },
                     "durationMs": 0
                 }
