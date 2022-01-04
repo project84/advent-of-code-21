@@ -1,7 +1,19 @@
-import { Player, DeterministicDie } from '../../utils/2021/dirac-dice';
+import { Player, DeterministicDie, calculateMultiUniverseWins } from '../../utils/2021/dirac-dice';
 import { PriorityQueue } from '../../utils/general/priority-queue'
 
 export default function(inputFile) {
+
+	// https://topaz.github.io/paste/#XQAAAQBoAwAAAAAAAAA4G8rIJREvntAdJU9+tkueLxoyyGrifhlrTvS5cS5rOG27ntR1n+Ei4eLswyeiivg+ZAAEOpim9SW4uCHWnDJ0RgPSt+VoeYPmngg6V7Gd6KSpSI1v9UIjedAz05MOaf5MlT3AO15VJBfr8xXL1bxjQRs/ckbjDkhztrSD7tz+rWp0oV6XS74m+lVgWNaW66z4CEHp1fHkN6aM19mozxhx1SBiv8LQNhrDu7qL5UzS5OUZb4mVPb/PWS2B65npv4lvDS3cmBU5N9fG/1w9tD4nV5DlRvM9S98h6f3tbQ7eMvfVZjusAvJgISv61U4TLMMXj+CYbQTyFAj0QT84HMlxH+IbVdQDvoNkmGfc3S5BfL4ASWYWMkScpnftM9lxiQaj1YnT+Pc6p9FLdChtcvLm/yXqZZaJnn2oYcsOyq/4jPGydbhR2OOr5Wi/8oAyiFhdoqcqrvBrzoAqOaOm6neyab0Ku4eXaEVecT7IZggozO7fi3kK5RyQPvoGoV96+T01ZHcqqh2g+Jx3EWPxE7joPR4CruHtZLcTXFNhpu6FCdf8GwFa++Yi5jzaAUtgQ0ErAYU9PTOpbSqt2qwc/src2NUplqlW7HP9yFSDE8KVvGzzNGWH66GjPBfMlh13bLu/a2kykpVy4fR0EKeMTAXrwGtEzHiIDYgS2kBtNVW83Vmvn/+BHQgA
+
+	// 2021/21 (example) - 58 ms
+	// Part 1: 739785
+	// Part 2: null
+	// Part 1 answer verified!
+
+	// 2021/21 (actual) - 0 ms
+	// Part 1: 853776
+	// Part 2: null
+	// Part 1 answer verified!
 
 	// Get start positions from input file and instantiate player / die class
 	let p1Start = inputFile[0][inputFile[0].length - 1];
@@ -22,56 +34,56 @@ export default function(inputFile) {
 	    nextPlayer = nextPlayer === '1' ? '2' : '1';
 	}
 
+	let multiUniverseWins = calculateMultiUniverseWins(parseInt(p1Start), 0, parseInt(p2Start), 0);
+
 	// Attempted part 2 solution using priority queue
-	/*
-	let wins = { '1': 0, '2': 0 };
-	let pq = new PriorityQueue();
-	pq.enqueue({
-		players: {
-			'1': new Player(p1Start),
-			'2': new Player(p2Start)
-		},
-		nextPlayer: '1'
-	}, 0);
+	// let wins = { '1': 0, '2': 0 };
+	// let pq = new PriorityQueue();
+	// pq.enqueue({
+	// 	players: {
+	// 		'1': new Player(p1Start),
+	// 		'2': new Player(p2Start)
+	// 	},
+	// 	nextPlayer: '1'
+	// }, 0);
 
-	while (pq.items.length) {
+	// while (pq.items.length) {
 
-        let prev = pq.dequeue().element;
+    //     let prev = pq.dequeue().element;
 
-		for (let r1 = 1; r1 <= 3; r1++) {
-			for (let r2 = 1; r2 <= 3; r2++) {
-				for (let r3 = 1; r3 <= 3; r3++) {
-					let next = {
-						players: {
-							'1': new Player(prev.players['1'].currentPosition, prev.players['1'].score),
-							'2': new Player(prev.players['2'].currentPosition, prev.players['2'].score)
-						},
-							nextPlayer: prev.nextPlayer
-					}
+	// 	for (let r1 = 1; r1 <= 3; r1++) {
+	// 		for (let r2 = 1; r2 <= 3; r2++) {
+	// 			for (let r3 = 1; r3 <= 3; r3++) {
+	// 				let next = {
+	// 					players: {
+	// 						'1': new Player(prev.players['1'].currentPosition, prev.players['1'].score),
+	// 						'2': new Player(prev.players['2'].currentPosition, prev.players['2'].score)
+	// 					},
+	// 						nextPlayer: prev.nextPlayer
+	// 				}
 
-                    let totalRoll = r1 + r2 + r3;
+    //                 let totalRoll = r1 + r2 + r3;
 
-					next.players[next.nextPlayer].move(totalRoll);
+	// 				next.players[next.nextPlayer].move(totalRoll);
 
-					if (next.players[next.nextPlayer].score >= 21) {
-						wins[next.nextPlayer]++
-					} else {
-						let priority = 21 - next.players[next.nextPlayer].score;
-						next.nextPlayer = next.nextPlayer === '1' ? '2' : '1';
-						pq.enqueue(next, priority)
-					}
+	// 				if (next.players[next.nextPlayer].score >= 21) {
+	// 					wins[next.nextPlayer]++
+	// 				} else {
+	// 					let priority = 21 - next.players[next.nextPlayer].score;
+	// 					next.nextPlayer = next.nextPlayer === '1' ? '2' : '1';
+	// 					pq.enqueue(next, priority)
+	// 				}
 
 					
-				}
-			}
-		}
+	// 			}
+	// 		}
+	// 	}
 		
-	}
-	*/
+	// }
 
     return {
 		part1: players[nextPlayer].score * deterministicDie.rollCount,
-		part2: null//Math.max(wins['1'], wins['2'])
+		part2: Math.max(...multiUniverseWins)
 	}
 	
 }
