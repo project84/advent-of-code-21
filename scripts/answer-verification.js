@@ -1,5 +1,5 @@
 const { getParsedDate } = require('../utils/general/date-tools');
-const { recordAnswer } = require('../utils/general/result-recording');
+const { recordAnswer } = require('../utils/general/answer-recording');
 
 const argv = require('minimist')(process.argv.slice(2));
 

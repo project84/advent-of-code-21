@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getSolutionInfo, getFilteredSolutionList, retrieveTextFile } from './file-tools';
 import { deduplicate as deduplicateArray } from './array-tools';
-import { recordAnswer } from './result-recording';
+import { recordAnswer } from './answer-recording';
 
 const argv = require('minimist')(process.argv.slice(2));
 
