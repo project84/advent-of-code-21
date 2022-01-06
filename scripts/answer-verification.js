@@ -14,6 +14,7 @@ if (
     let year;
     let day;
 
+    // Resolve desired date from input variables
     if (argv.today) {
         let currentDate = getParsedDate();
         year = currentDate.year;
@@ -23,6 +24,7 @@ if (
         day = argv.day;
     }
 
+    // Attempt to record verified answer
     let recordingOutcome = recordAnswer(
         { year, day }, 
         argv.type, 
@@ -32,6 +34,7 @@ if (
         true
     );
 
+    // Log result verification outcome
     for (let part = 1; part < 3; part++) {
         if (recordingOutcome[part]) {
             console.log(`Part ${part}: ${recordingOutcome[part]}`);
