@@ -84,11 +84,18 @@ export function runSolution(date, type) {
 
 		const typeString = toRun > 1 ? `${type} #${i + 1}` : type;
 
-		console.log(`${date.fileString} (${typeString}) - ${(duration)} ms`);
-		console.log(`Part 1: ${result.part1}\nPart 2: ${result.part2}`);
-		console.log(recordAnswer(date, type, i + 1, result, duration));
+		let recordingOutcome = recordAnswer(date, type, i + 1, result, duration);
 
-	})
+		console.log(`*** ${date.fileString} (${typeString}) ***`);
+		console.log(`Duration: ${(duration)} ms${recordingOutcome.bestTime ? ' (new best time!)' : ''}`);
+
+		for (let part = 1; part < 3; part++) {
+			console.log(`Part ${part}: ${result[part]} ${recordingOutcome[part] ? `(${recordingOutcome[part]})` : ''}`);
+		}
+
+		console.log('');
+
+	});
 
 	
 }
