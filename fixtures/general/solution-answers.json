@@ -164,7 +164,7 @@
                         "answer": 1605400130036,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 }
             }
         },
@@ -302,7 +302,7 @@
                         "answer": 195,
                         "verified": true
                     },
-                    "durationMs": 20
+                    "durationMs": 18
                 }
             },
             "actual": {
@@ -315,7 +315,7 @@
                         "answer": 371,
                         "verified": true
                     },
-                    "durationMs": 18
+                    "durationMs": 17
                 }
             }
         },
@@ -352,7 +352,7 @@
                         "answer": 3509,
                         "verified": true
                     },
-                    "durationMs": 189
+                    "durationMs": 186
                 }
             },
             "actual": {
@@ -408,7 +408,7 @@
                         "answer": 2188189693529,
                         "verified": true
                     },
-                    "durationMs": 4
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -449,7 +449,7 @@
                         "answer": 2806,
                         "verified": true
                     },
-                    "durationMs": 508
+                    "durationMs": 501
                 }
             }
         },
@@ -464,7 +464,7 @@
                         "answer": 2021,
                         "verified": true
                     },
-                    "durationMs": 6
+                    "durationMs": 5
                 },
                 "2": {
                     "1": {
@@ -530,7 +530,7 @@
                         "answer": 1,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 },
                 "8": {
                     "1": {
@@ -541,7 +541,7 @@
                         "answer": 1,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 },
                 "9": {
                     "1": {
@@ -563,7 +563,7 @@
                         "answer": 15,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 },
                 "11": {
                     "1": {
@@ -618,7 +618,7 @@
                         "answer": 54,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 }
             },
             "actual": {
@@ -737,7 +737,7 @@
                         "answer": 17584,
                         "verified": true
                     },
-                    "durationMs": 759
+                    "durationMs": 751
                 }
             }
         },
@@ -793,7 +793,7 @@
                         "answer": null,
                         "verified": false
                     },
-                    "durationMs": 427
+                    "durationMs": 416
                 }
             }
         }
