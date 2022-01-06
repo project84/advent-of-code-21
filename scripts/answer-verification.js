@@ -23,13 +23,18 @@ if (
         day = argv.day;
     }
 
-    console.log(
-        recordAnswer(
-            { year, day }, 
-            argv.type, 
-            index, 
-            { part1: argv.part1, part2: argv.part2 }, 
-            Infinity, 
-            true)
+    let recordingOutcome = recordAnswer(
+        { year, day }, 
+        argv.type, 
+        index, 
+        { 1: argv.part1, 2: argv.part2 }, 
+        Infinity, 
+        true
     );
+
+    for (let part = 1; part < 3; part++) {
+        if (recordingOutcome[part]) {
+            console.log(`Part ${part}: ${recordingOutcome[part]}`);
+        }
+    }
 }
