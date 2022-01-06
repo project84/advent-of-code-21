@@ -41,8 +41,8 @@ export default function (inputFile) {
 
 	// Convert binary to digit and multiply readings for final result
 	return {
-		part1: parseInt(gammaRate, 2) * parseInt(epsilonRate, 2),
-		part2: parseInt(oxygenGeneratorRating[0], 2) * parseInt(co2scrubberRating[0], 2)
+		1: parseInt(gammaRate, 2) * parseInt(epsilonRate, 2),
+		2: parseInt(oxygenGeneratorRating[0], 2) * parseInt(co2scrubberRating[0], 2)
 	}
 
 }

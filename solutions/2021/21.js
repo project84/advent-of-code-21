@@ -24,8 +24,8 @@ export default function(inputFile) {
 	let multiUniverseWins = calculateMultiUniverseWins(p1Start, p2Start);
 
     return {
-		part1: players[nextPlayer].score * deterministicDie.rollCount,
-		part2: Math.max(...multiUniverseWins)
+		1: players[nextPlayer].score * deterministicDie.rollCount,
+		2: Math.max(...multiUniverseWins)
 	}
 	
 }

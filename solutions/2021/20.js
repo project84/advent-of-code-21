@@ -23,8 +23,8 @@ export default function(inputFile) {
 	}
 	
 	return {
-		part1: lightPixelsAfterSecondEnhancement,
-		part2: arraySum(imageScanner.map.map(pixel => pixel.value))
+		1: lightPixelsAfterSecondEnhancement,
+		2: arraySum(imageScanner.map.map(pixel => pixel.value))
 	}
 	
 }

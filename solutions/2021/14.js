@@ -11,8 +11,8 @@ export default function (inputFile) {
     }
 
     return {
-        part1: countAt10,
-        part2: polymer.countElements()
+        1: countAt10,
+        2: polymer.countElements()
     }
 
 }

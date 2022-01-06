@@ -35,8 +35,8 @@ export default function(inputFile) {
 	});
 
 	return {
-		part1: winners[0].score,
-		part2: winners[winners.length - 1].score
+		1: winners[0].score,
+		2: winners[winners.length - 1].score
 	}
 
 }

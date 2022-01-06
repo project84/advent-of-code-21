@@ -12,8 +12,8 @@ export default function(inputFile) {
     fullCavern.findShortestPath();
 
     return {
-        part1: smallCavern.map[smallCavern.map.length - 1].distance,
-        part2: fullCavern.map[fullCavern.map.length - 1].distance
+        1: smallCavern.map[smallCavern.map.length - 1].distance,
+        2: fullCavern.map[fullCavern.map.length - 1].distance
     }
 
 }

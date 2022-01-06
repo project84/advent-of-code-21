@@ -14,7 +14,7 @@ export default function(inputFile) {
 	const averagePosition = sumArray(crabPositions) / crabPositions.length;
 
 	return {
-		part1: calculateFuelConsumption(crabPositions, [crabPositions[midPoint - 1], crabPositions[midPoint]]),
-		part2: calculateFuelConsumption(crabPositions, [Math.floor(averagePosition), Math.ceil(averagePosition)], true)
+		1: calculateFuelConsumption(crabPositions, [crabPositions[midPoint - 1], crabPositions[midPoint]]),
+		2: calculateFuelConsumption(crabPositions, [Math.floor(averagePosition), Math.ceil(averagePosition)], true)
 	}
 }

@@ -34,8 +34,8 @@ export default function(inputFile) {
 	}
 
 	return {
-		part1: flashCount100,
-		part2: synchronisedFlash + 1
+		1: flashCount100,
+		2: synchronisedFlash + 1
 	}
 
 }

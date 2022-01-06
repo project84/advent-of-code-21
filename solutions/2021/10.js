@@ -37,8 +37,8 @@ export default function(inputFile) {
 
 
 	return {
-		part1: illegalCharScore,
-		part2: autoCompleteScore[Math.floor(autoCompleteScore.length / 2)]
+		1: illegalCharScore,
+		2: autoCompleteScore[Math.floor(autoCompleteScore.length / 2)]
 	}
 
 }
