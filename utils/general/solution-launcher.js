@@ -90,7 +90,7 @@ export function runSolution(date, type) {
 		console.log(`Duration: ${(duration)} ms${recordingOutcome.bestTime ? ' (new best time!)' : ''}`);
 
 		for (let part = 1; part < 3; part++) {
-			console.log(`Part ${part}: ${result[part]} ${recordingOutcome[part] ? `(${recordingOutcome[part]})` : ''}`);
+			console.log(`Part ${part}: ${result[part]} ${recordingOutcome[part] ? `\n  ${recordingOutcome[part]}` : ''}`);
 		}
 
 		console.log('');

@@ -28,7 +28,7 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 			} else {
 				// If the answer has already been verified, and an unverified answer is supplied, 
 				// check if the answer is the same and report back if not
-				outcome[part] = answer[part] === previousAnswer[part].answer ? 'verified!' : `incorrect... expected: ${previousAnswer[part].answer}`;
+				outcome[part] = answer[part] === previousAnswer[part].answer ? 'Verified!' : `Incorrect... expected: ${previousAnswer[part].answer}`;
 			}
 
 		} else {
@@ -36,7 +36,7 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 			// Otherwise update the answer with the latest attempt
 			previousAnswer[part].answer = answer[part];
 			previousAnswer[part].verified = verified;
-			outcome[part] = verified ? 'verified answer recorded!' : 'new answer';
+			outcome[part] = verified ? 'verified answer recorded!' : 'New answer';
 
 		}
 
