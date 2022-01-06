@@ -3,12 +3,781 @@
         "1": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 7,
-                        "verified": false
+                        "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 5,
+                        "verified": true
+                    },
+                    "durationMs": 5
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 1553,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1597,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
+        },
+        "2": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 150,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 900,
+                        "verified": true
+                    },
+                    "durationMs": 7
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 2150351,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1842742223,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
+        },
+        "3": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 198,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 230,
+                        "verified": true
+                    },
+                    "durationMs": 5
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 3901196,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 4412188,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
+        },
+        "4": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 4512,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1924,
+                        "verified": true
+                    },
+                    "durationMs": 6
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 4662,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 12080,
+                        "verified": true
+                    },
+                    "durationMs": 11
+                }
+            }
+        },
+        "5": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 5,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 12,
+                        "verified": true
+                    },
+                    "durationMs": 38
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 8060,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 21577,
+                        "verified": true
+                    },
+                    "durationMs": 45
+                }
+            }
+        },
+        "6": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 5934,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 26984457539,
+                        "verified": true
+                    },
+                    "durationMs": 3
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 353079,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1605400130036,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            }
+        },
+        "7": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 37,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 168,
+                        "verified": true
+                    },
+                    "durationMs": 4
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 335271,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 95851339,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
+        },
+        "8": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 5353,
+                        "verified": true
+                    },
+                    "durationMs": 4
+                },
+                "2": {
+                    "1": {
+                        "answer": 26,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 61229,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 421,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 986163,
+                        "verified": true
+                    },
+                    "durationMs": 15
+                }
+            }
+        },
+        "9": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 15,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1134,
+                        "verified": true
+                    },
+                    "durationMs": 8
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 541,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 847504,
+                        "verified": true
+                    },
+                    "durationMs": 27
+                }
+            }
+        },
+        "10": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 26397,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 288957,
+                        "verified": true
+                    },
+                    "durationMs": 5
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 399153,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2995077699,
+                        "verified": true
+                    },
+                    "durationMs": 2
+                }
+            }
+        },
+        "11": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 1656,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 195,
+                        "verified": true
+                    },
+                    "durationMs": 20
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 1620,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 371,
+                        "verified": true
+                    },
+                    "durationMs": 18
+                }
+            }
+        },
+        "12": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 10,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 36,
+                        "verified": true
+                    },
+                    "durationMs": 3
+                },
+                "2": {
+                    "1": {
+                        "answer": 19,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 103,
+                        "verified": true
+                    },
+                    "durationMs": 2
+                },
+                "3": {
+                    "1": {
+                        "answer": 226,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3509,
+                        "verified": true
+                    },
+                    "durationMs": 198
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 5333,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 146553,
+                        "verified": true
+                    },
+                    "durationMs": 5282
+                }
+            }
+        },
+        "13": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 17,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": "\n■■■■■\n■   ■\n■   ■\n■   ■\n■■■■■\n     \n     ",
+                        "verified": true
+                    },
+                    "durationMs": 4
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 788,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": "\n■  ■   ■■ ■■■  ■  ■ ■■■■ ■  ■ ■■■   ■■  \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■■      ■ ■■■  ■■   ■■■  ■  ■ ■■■  ■    \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■ ■■ \n■ ■  ■  ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■  ■  ■■  ■■■  ■  ■ ■■■■  ■■  ■■■   ■■■ ",
+                        "verified": true
+                    },
+                    "durationMs": 6
+                }
+            }
+        },
+        "14": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 1588,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2188189693529,
+                        "verified": true
+                    },
+                    "durationMs": 4
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 2233,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2884513602164,
+                        "verified": true
+                    },
+                    "durationMs": 2
+                }
+            }
+        },
+        "15": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 40,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 315,
+                        "verified": true
+                    },
+                    "durationMs": 17
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 386,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2806,
+                        "verified": true
+                    },
+                    "durationMs": 508
+                }
+            }
+        },
+        "16": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2021,
+                        "verified": true
+                    },
+                    "durationMs": 6
+                },
+                "2": {
+                    "1": {
+                        "answer": 15,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 7,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "3": {
+                    "1": {
+                        "answer": 11,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 9,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "4": {
+                    "1": {
+                        "answer": 13,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "5": {
+                    "1": {
+                        "answer": 19,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "6": {
+                    "1": {
+                        "answer": 16,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "7": {
+                    "1": {
+                        "answer": 20,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "8": {
+                    "1": {
+                        "answer": 9,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "9": {
+                    "1": {
+                        "answer": 14,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "10": {
+                    "1": {
+                        "answer": 16,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 15,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "11": {
+                    "1": {
+                        "answer": 12,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 46,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "12": {
+                    "1": {
+                        "answer": 23,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 46,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "13": {
+                    "1": {
+                        "answer": 31,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 54,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "14": {
+                    "1": {
+                        "answer": 14,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "15": {
+                    "1": {
+                        "answer": 8,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 54,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 986,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 18234816469452,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
+        },
+        "17": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 45,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 112,
+                        "verified": true
+                    },
+                    "durationMs": 4
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 12561,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3785,
+                        "verified": true
+                    },
+                    "durationMs": 7
+                }
+            }
+        },
+        "18": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 1384,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1384,
+                        "verified": true
+                    },
+                    "durationMs": 7
+                },
+                "2": {
+                    "1": {
+                        "answer": 3488,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3805,
+                        "verified": true
+                    },
+                    "durationMs": 2
+                },
+                "3": {
+                    "1": {
+                        "answer": 4140,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3993,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 3892,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 4909,
+                        "verified": true
+                    },
+                    "durationMs": 112
+                }
+            }
+        },
+        "20": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 35,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3351,
+                        "verified": true
+                    },
+                    "durationMs": 78
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 5395,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 17584,
+                        "verified": true
+                    },
+                    "durationMs": 760
+                }
+            }
+        },
+        "21": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 739785,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 444356092776315,
+                        "verified": true
+                    },
+                    "durationMs": 9
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 853776,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 301304993766094,
+                        "verified": true
+                    },
+                    "durationMs": 6887
+                }
+            }
+        },
+        "25": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 58,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
                         "verified": false
                     },
                     "durationMs": 4
@@ -16,15 +785,15 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
-                        "answer": 1553,
+                    "1": {
+                        "answer": 504,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
                         "verified": false
                     },
-                    "part2": {
-                        "answer": 1597,
-                        "verified": false
-                    },
-                    "durationMs": 1
+                    "durationMs": 427
                 }
             }
         }
