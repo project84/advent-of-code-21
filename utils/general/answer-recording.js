@@ -4,49 +4,43 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 
 	// Retrieve and check previous answers for the date supplied and input file type
     let answers = getPreviousAnswers(date, type, index);
-	let outcome = '';
-
-	// Find existing answer and current best time
 	let previousAnswer = answers[date.year][date.day][type][index];
-	let previousDuration = previousAnswer.durationMs || Infinity;
+	let outcome = {};	
 
 	// Check for new best time and update accordingly
-	if (duration < previousDuration) {
+	if (duration < (previousAnswer.durationMs || Infinity)) {
 		previousAnswer.durationMs = duration;
-		outcome += 'New best time!\n';
+		outcome.bestTime = true;
 	}
+	
+	for (let part = 1; part < 3; part++) {
 
-	// For each part of the executed iteration
-	[ 'part1', 'part2' ].forEach(part => {
-
-		let partText = part[part.length - 1] === '1' ? 'Part 1' : 'Part 2';
+		// For each part of the executed iteration, continue only if a result has been provided
+		if ((answer[part] == null)) {
+			continue;
+		}
 		
 		if (previousAnswer[part].verified) {
-
-			// If the answer has already been verified, and an unverified answer is supplied, 
-			// check if the answer is the same and report back if not
+			
 			if (verified) {
-				outcome += `Verified answer for ${partText} already recorded... please check and try again\n`
+				// If a verified answer is supplied and one already exists, report the error back
+				outcome[part] = 'verified answer already recorded... please check and try again';
 			} else {
-				outcome += answer[part] === previousAnswer[part].answer ? 
-					`${partText} answer verified!\n` :
-					`${partText} answer differs from known result... expected: ${previousAnswer[part].answer}\n`;
+				// If the answer has already been verified, and an unverified answer is supplied, 
+				// check if the answer is the same and report back if not
+				outcome[part] = answer[part] === previousAnswer[part].answer ? 'verified!' : `incorrect... expected: ${previousAnswer[part].answer}`;
 			}
 
 		} else {
 
-			if (!(answer[part] == null)) {
-
-				// Otherwise update the answer with the latest attempt
-				previousAnswer[part].answer = answer[part];
-				previousAnswer[part].verified = verified;
-				outcome += verified ? `${partText} verified answer recorded!\n` : `No verified answer for ${partText.toLowerCase()} known, updated existing answer.\n`;
-
-			}
+			// Otherwise update the answer with the latest attempt
+			previousAnswer[part].answer = answer[part];
+			previousAnswer[part].verified = verified;
+			outcome[part] = verified ? 'verified answer recorded!' : 'new answer';
 
 		}
 
-	});
+	};
 
 	writeFileSync('fixtures/general/solution-answers.json', JSON.stringify(answers, null, 4));
     return outcome;
@@ -69,8 +63,8 @@ function getPreviousAnswers(date, type, index) {
 
 	if (!answers[date.year][date.day][type][index]) {
 		answers[date.year][date.day][type][index] = {
-			part1: { answer: null, verified: false },
-			part2: { answer: null, verified: false },
+			1: { answer: null, verified: false },
+			2: { answer: null, verified: false },
 		}
 	}
 
