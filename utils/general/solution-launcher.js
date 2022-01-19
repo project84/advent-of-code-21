@@ -12,19 +12,6 @@ export function getSolutionsToRun() {
 
 }
 
-export function getFileTypes() {
-	// Determine files to be run based on CLI commands
-	let filesToRun = [ 'example', 'actual' ];
-	if (argv.example != argv.actual) {
-
-		filesToRun = !argv.example ? filesToRun.filter(type => type != 'example') : filesToRun;
-		filesToRun = !argv.actual ? filesToRun.filter(type => type != 'actual') : filesToRun;
-
-	}
-
-	return filesToRun;
-}
-
 export function runSolution(date, type) {
 
 	const toRun = date[type].length;
