@@ -66,6 +66,13 @@ export function getRequestedDates() {
 
     }
 
-    return deduplicateArray(requestedDates);
+    // Return list of requested dates with duplicates removed and sorted by date
+    return deduplicateArray(requestedDates)
+        .sort((a, b) => {
+            if (a.year === b.year) {
+                return a.day - b.day;
+            }
+            return a.year > b.year ? 1 : -1;
+        });
 
 }
