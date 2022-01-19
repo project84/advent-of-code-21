@@ -1,5 +1,5 @@
 import { getSolutionInfo, retrieveTextFile } from './file-tools';
-import { recordAnswer } from './result-recording';
+import { recordAnswer } from './answer-recording';
 import { getRequestedDates } from './cli-tools';
 
 const argv = require('minimist')(process.argv.slice(2));
