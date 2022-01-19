@@ -90,3 +90,29 @@ export function getSolutionTypes() {
 
 	return solutionTypes;
 }
+
+export function validateAnswerVerificationParams(requestedDates, solutionTypes) {
+
+    // Validates the requested attempt to verify solution answers, blocking invalid
+    // or unintended combinations
+    if (!requestedDates.length) {
+        throw new Error('No valid date(s) specified.');
+    }
+
+    let answerSpecified = argv.part1 || argv.part2;
+
+    if (argv.currentAnswer && answerSpecified) {
+        throw new Error('Cannot verify current answer and specify a verified answer.')
+    }
+
+    // Assumes that, in all but exceptional cases, the solution for different days and
+    // example vs actual will always be different
+    if (requestedDates.length > 1 && answerSpecified) {
+        throw new Error('Cannot specify a verified answer for multiple dates.');
+    }
+
+    if (solutionTypes.length > 1 && answerSpecified) {
+        throw new Error('Cannot specify a verified answer for both example and actual solutions.');
+    }
+
+}
