@@ -7,8 +7,8 @@ export default function(inputFile) {
     let packets = bits.parsePackets();
 
     return {
-        part1: (packets.versionSum || 0) + packets.version,
-        part2: packets.value
+        1: (packets.versionSum || 0) + packets.version,
+        2: packets.value
     }
 
 }

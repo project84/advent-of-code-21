@@ -17,8 +17,8 @@ export default function(inputFile) {
 	}
 
 	return {
-		part1: countAt80,
-		part2: schoolOfFish.calculateTotalFish()
+		1: countAt80,
+		2: schoolOfFish.calculateTotalFish()
 	}
 
 }

@@ -3,11 +3,11 @@
         "1": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 7,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 5,
                         "verified": true
                     },
@@ -16,11 +16,11 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 1553,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1597,
                         "verified": true
                     },
@@ -31,24 +31,24 @@
         "2": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 150,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 900,
                         "verified": true
                     },
-                    "durationMs": 8
+                    "durationMs": 7
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 2150351,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1842742223,
                         "verified": true
                     },
@@ -59,12 +59,40 @@
         "3": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 198,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 230,
+                        "verified": true
+                    },
+                    "durationMs": 4
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 3901196,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 4412188,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
+        },
+        "4": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 4512,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1924,
                         "verified": true
                     },
                     "durationMs": 5
@@ -72,54 +100,26 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
-                        "answer": 3901196,
-                        "verified": true
-                    },
-                    "part2": {
-                        "answer": 4412188,
-                        "verified": true
-                    },
-                    "durationMs": 2
-                }
-            }
-        },
-        "4": {
-            "example": {
-                "1": {
-                    "part1": {
-                        "answer": 4512,
-                        "verified": true
-                    },
-                    "part2": {
-                        "answer": 1924,
-                        "verified": true
-                    },
-                    "durationMs": 6
-                }
-            },
-            "actual": {
-                "1": {
-                    "part1": {
+                    "1": {
                         "answer": 4662,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 12080,
                         "verified": true
                     },
-                    "durationMs": 11
+                    "durationMs": 10
                 }
             }
         },
         "5": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 5,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 12,
                         "verified": true
                     },
@@ -128,26 +128,26 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 8060,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 21577,
                         "verified": true
                     },
-                    "durationMs": 45
+                    "durationMs": 42
                 }
             }
         },
         "6": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 5934,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 26984457539,
                         "verified": true
                     },
@@ -156,26 +156,26 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 353079,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1605400130036,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 }
             }
         },
         "7": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 37,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 168,
                         "verified": true
                     },
@@ -184,11 +184,11 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 335271,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 95851339,
                         "verified": true
                     },
@@ -199,22 +199,22 @@
         "8": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 0,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 5353,
                         "verified": true
                     },
                     "durationMs": 4
                 },
                 "2": {
-                    "part1": {
+                    "1": {
                         "answer": 26,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 61229,
                         "verified": true
                     },
@@ -223,67 +223,67 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 421,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 986163,
                         "verified": true
                     },
-                    "durationMs": 15
+                    "durationMs": 13
                 }
             }
         },
         "9": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 15,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1134,
                         "verified": true
                     },
-                    "durationMs": 10
+                    "durationMs": 7
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 541,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 847504,
                         "verified": true
                     },
-                    "durationMs": 404
+                    "durationMs": 27
                 }
             }
         },
         "10": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 26397,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 288957,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 4
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 399153,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 2995077699,
                         "verified": true
                     },
@@ -294,89 +294,89 @@
         "11": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 1656,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 195,
                         "verified": true
                     },
-                    "durationMs": 25
+                    "durationMs": 18
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 1620,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 371,
                         "verified": true
                     },
-                    "durationMs": 22
+                    "durationMs": 17
                 }
             }
         },
         "12": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 10,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 36,
                         "verified": true
                     },
                     "durationMs": 3
                 },
                 "2": {
-                    "part1": {
+                    "1": {
                         "answer": 19,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 103,
                         "verified": true
                     },
                     "durationMs": 2
                 },
                 "3": {
-                    "part1": {
+                    "1": {
                         "answer": 226,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3509,
                         "verified": true
                     },
-                    "durationMs": 217
+                    "durationMs": 186
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 5333,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 146553,
                         "verified": true
                     },
-                    "durationMs": 6215
+                    "durationMs": 5282
                 }
             }
         },
         "13": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 17,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": "\n■■■■■\n■   ■\n■   ■\n■   ■\n■■■■■\n     \n     ",
                         "verified": true
                     },
@@ -385,11 +385,11 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 788,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": "\n■  ■   ■■ ■■■  ■  ■ ■■■■ ■  ■ ■■■   ■■  \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■■      ■ ■■■  ■■   ■■■  ■  ■ ■■■  ■    \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■ ■■ \n■ ■  ■  ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■  ■  ■■  ■■■  ■  ■ ■■■■  ■■  ■■■   ■■■ ",
                         "verified": true
                     },
@@ -400,24 +400,24 @@
         "14": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 1588,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 2188189693529,
                         "verified": true
                     },
-                    "durationMs": 4
+                    "durationMs": 3
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 2233,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 2884513602164,
                         "verified": true
                     },
@@ -428,11 +428,11 @@
         "15": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 40,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 315,
                         "verified": true
                     },
@@ -441,193 +441,193 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 386,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 2806,
                         "verified": true
                     },
-                    "durationMs": 508
+                    "durationMs": 501
                 }
             }
         },
         "16": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 6,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 2021,
                         "verified": true
                     },
-                    "durationMs": 6
+                    "durationMs": 5
                 },
                 "2": {
-                    "part1": {
+                    "1": {
                         "answer": 15,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 7,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "3": {
-                    "part1": {
+                    "1": {
                         "answer": 11,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 9,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "4": {
-                    "part1": {
+                    "1": {
                         "answer": 13,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "5": {
-                    "part1": {
+                    "1": {
                         "answer": 19,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 0,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "6": {
-                    "part1": {
+                    "1": {
                         "answer": 16,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 0,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "7": {
-                    "part1": {
+                    "1": {
                         "answer": 20,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 },
                 "8": {
-                    "part1": {
+                    "1": {
                         "answer": 9,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "9": {
-                    "part1": {
+                    "1": {
                         "answer": 14,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "10": {
-                    "part1": {
+                    "1": {
                         "answer": 16,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 15,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 },
                 "11": {
-                    "part1": {
+                    "1": {
                         "answer": 12,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 46,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "12": {
-                    "part1": {
+                    "1": {
                         "answer": 23,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 46,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "13": {
-                    "part1": {
+                    "1": {
                         "answer": 31,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 54,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "14": {
-                    "part1": {
+                    "1": {
                         "answer": 14,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3,
                         "verified": true
                     },
                     "durationMs": 0
                 },
                 "15": {
-                    "part1": {
+                    "1": {
                         "answer": 8,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 54,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 1
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 986,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 18234816469452,
                         "verified": true
                     },
@@ -638,24 +638,24 @@
         "17": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 45,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 112,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 3
                 }
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 12561,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3785,
                         "verified": true
                     },
@@ -666,33 +666,33 @@
         "18": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 1384,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 1384,
                         "verified": true
                     },
-                    "durationMs": 9
+                    "durationMs": 6
                 },
                 "2": {
-                    "part1": {
+                    "1": {
                         "answer": 3488,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3805,
                         "verified": true
                     },
                     "durationMs": 2
                 },
                 "3": {
-                    "part1": {
+                    "1": {
                         "answer": 4140,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3993,
                         "verified": true
                     },
@@ -701,11 +701,11 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 3892,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 4909,
                         "verified": true
                     },
@@ -716,11 +716,11 @@
         "20": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 35,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 3351,
                         "verified": true
                     },
@@ -729,26 +729,26 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 5395,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 17584,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 751
                 }
             }
         },
         "21": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 739785,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 444356092776315,
                         "verified": true
                     },
@@ -757,26 +757,26 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 853776,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": 301304993766094,
                         "verified": true
                     },
-                    "durationMs": 0
+                    "durationMs": 6887
                 }
             }
         },
         "25": {
             "example": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 58,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": null,
                         "verified": false
                     },
@@ -785,15 +785,15 @@
             },
             "actual": {
                 "1": {
-                    "part1": {
+                    "1": {
                         "answer": 504,
                         "verified": true
                     },
-                    "part2": {
+                    "2": {
                         "answer": null,
                         "verified": false
                     },
-                    "durationMs": 0
+                    "durationMs": 416
                 }
             }
         }

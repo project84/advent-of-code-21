@@ -18,8 +18,8 @@ export default function(inputFile) {
 	const totalDisplayValue = sumArray(displays.map(display => display.outputValue));
 
 	return {
-		part1: uniqueOutputs,
-		part2: totalDisplayValue
+		1: uniqueOutputs,
+		2: totalDisplayValue
 	}
 
 }

@@ -26,8 +26,8 @@ export default function(inputFile) {
 		.sort((a, b) => a - b);
 
 	return {
-		part1: arraySum(lowPoints.map(reading => reading.value + 1)),
-		part2: basins[basins.length - 1] *
+		1: arraySum(lowPoints.map(reading => reading.value + 1)),
+		2: basins[basins.length - 1] *
 			basins[basins.length - 2] *
 			basins[basins.length - 3]
 	}

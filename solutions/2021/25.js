@@ -19,8 +19,8 @@ export default function(inputFile) {
 	} while (cucumbersMoved);
 
 	return {
-		part1: i,
-		part2: null
+		1: i,
+		2: null
 	}
 	
 }

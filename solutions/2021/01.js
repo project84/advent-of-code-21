@@ -11,7 +11,7 @@ export default function (inputFile) {
 	});
 
 	return {
-		part1: pairValueComparison(measurements, 'increase'),
-		part2: pairValueComparison(rollingMeasurements, 'increase')
+		1: pairValueComparison(measurements, 'increase'),
+		2: pairValueComparison(rollingMeasurements, 'increase')
 	}
 }
