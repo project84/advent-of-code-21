@@ -1,56 +1,15 @@
-import readlineSync from 'readline-sync';
-import { getSolutionInfo, getFilteredSolutionList, retrieveTextFile } from './file-tools';
-import { deduplicate as deduplicateArray } from './array-tools';
+import { getSolutionInfo, retrieveTextFile } from './file-tools';
 import { recordAnswer } from './result-recording';
+import { getRequestedDates } from './cli-tools';
 
 const argv = require('minimist')(process.argv.slice(2));
 
 export function getSolutionsToRun() {
-	let datesToRun = [];
 
-	// Set dates to run based on CLI inputs or queries
-	if (argv.all) {
-		let solutionList = getFilteredSolutionList();
-		solutionList.forEach(solution => {
-			datesToRun.push(getSolutionInfo(solution.year, solution.day));
-		});
-	}
+	return getRequestedDates()
+		.map(date => getSolutionInfo(date.year, date.day))
+		.filter(date => date.solution.exists && date.exampleExists && date.actualExists);
 
-	if (argv.year && !argv.day) {
-		let solutionList = getFilteredSolutionList(argv.year)
-		solutionList.forEach(solution => {
-			datesToRun.push(getSolutionInfo(solution.year, solution.day));
-		});
-	}
-
-	if (argv.currentMonth || argv.currentYear) {
-		let solutionList = getFilteredSolutionList(new Date().getFullYear());
-		solutionList.forEach(solution => {
-			datesToRun.push(getSolutionInfo(solution.year, solution.day));
-		});
-	}
-
-	if (argv.today) {
-		datesToRun.push(getSolutionInfo());
-	}
-
-	if (argv.year && argv.day) {
-		datesToRun.push(getSolutionInfo(argv.year, argv.day));
-	}
-
-	if (!datesToRun.length) {
-		let year = readlineSync.question('Which year would you like to run? ');
-		let day = readlineSync.question('Which day would you like to run? ');
-
-		datesToRun.push(getSolutionInfo(year, day));
-	}
-
-	// Remove duplicates and filter to only dates with solution and input files available
-	datesToRun = deduplicateArray(datesToRun).filter(date => {
-		return date.solution.exists && date.exampleExists && date.actualExists;
-	});
-
-	return datesToRun;
 }
 
 export function getFileTypes() {
