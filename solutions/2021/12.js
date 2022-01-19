@@ -9,8 +9,8 @@ export default function(inputFile) {
 	const noDuplicateSmallCaves = allPaths.filter(path => !cavePassages.checkDuplicateSmallCaves(path))
 
     return {
-		part1: noDuplicateSmallCaves.length,
-		part2: allPaths.length
+		1: noDuplicateSmallCaves.length,
+		2: allPaths.length
 	}
 	
 }

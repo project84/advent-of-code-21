@@ -13,7 +13,7 @@ export default function (inputFile) {
 	});
 
 	return {
-		part1: moveSubmarine(commands, false).final,
-		part2: moveSubmarine(commands, true).final
+		1: moveSubmarine(commands, false).final,
+		2: moveSubmarine(commands, true).final
 	};
 }

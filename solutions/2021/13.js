@@ -16,8 +16,8 @@ export default function(inputFile) {
 	});
 
 	return {
-		part1: dotsAfterFirstFold,
-		part2: codePuzzle.getCodeOuput()
+		1: dotsAfterFirstFold,
+		2: codePuzzle.getCodeOuput()
 	}
 
 }

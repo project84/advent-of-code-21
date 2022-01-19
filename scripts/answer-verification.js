@@ -1,5 +1,5 @@
 const { getParsedDate } = require('../utils/general/date-tools');
-const { recordAnswer } = require('../utils/general/result-recording');
+const { recordAnswer } = require('../utils/general/answer-recording');
 
 const argv = require('minimist')(process.argv.slice(2));
 
@@ -14,6 +14,7 @@ if (
     let year;
     let day;
 
+    // Resolve desired date from input variables
     if (argv.today) {
         let currentDate = getParsedDate();
         year = currentDate.year;
@@ -23,13 +24,20 @@ if (
         day = argv.day;
     }
 
-    console.log(
-        recordAnswer(
-            { year, day }, 
-            argv.type, 
-            index, 
-            { part1: argv.part1, part2: argv.part2 }, 
-            Infinity, 
-            true)
+    // Attempt to record verified answer
+    let recordingOutcome = recordAnswer(
+        { year, day }, 
+        argv.type, 
+        index, 
+        { 1: argv.part1, 2: argv.part2 }, 
+        Infinity, 
+        true
     );
+
+    // Log result verification outcome
+    for (let part = 1; part < 3; part++) {
+        if (recordingOutcome[part]) {
+            console.log(`Part ${part}: ${recordingOutcome[part]}`);
+        }
+    }
 }

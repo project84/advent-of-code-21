@@ -33,7 +33,7 @@ export default function (inputFile) {
 	});
 
 	return {
-		part1: nonDiagonalOverlaps,
-		part2: geoThermals.countOverlaps()
+		1: nonDiagonalOverlaps,
+		2: geoThermals.countOverlaps()
 	}
 }

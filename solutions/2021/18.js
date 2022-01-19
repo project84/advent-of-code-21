@@ -25,8 +25,8 @@ export default function(inputFile) {
 	}
 
 	return {
-		part1: calculateMagnitude(sfNumberSum),
-		part2: Math.max(...pairMagnitudes)
+		1: calculateMagnitude(sfNumberSum),
+		2: Math.max(...pairMagnitudes)
 	}
 	
 }

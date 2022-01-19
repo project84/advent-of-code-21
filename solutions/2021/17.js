@@ -17,8 +17,8 @@ export default function(inputFile) {
 
 
     return {
-        part1: probeLauncher.maxYHeight,
-        part2: validVelocityCount
+        1: probeLauncher.maxYHeight,
+        2: validVelocityCount
     }
 
 }
