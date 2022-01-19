@@ -76,3 +76,17 @@ export function getRequestedDates() {
         });
 
 }
+
+export function getSolutionTypes() {
+
+	// Determine solution type requested based on CLI commands
+	let solutionTypes = [ 'example', 'actual' ];
+	if (argv.example != argv.actual) {
+
+		solutionTypes = !argv.example ? solutionTypes.filter(type => type != 'example') : solutionTypes;
+		solutionTypes = !argv.actual ? solutionTypes.filter(type => type != 'actual') : solutionTypes;
+
+	}
+
+	return solutionTypes;
+}
