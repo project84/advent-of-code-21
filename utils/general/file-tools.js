@@ -93,29 +93,3 @@ export function getDirectoryContent(path) {
 	return contentList;
 
 }
-
-export function getFilteredSolutionList(year) {
-	
-	// Retrieve list of files within solutions folder
-	const solutionFolderPath = getAbsolutePath('solutions');
-	const dirContent = getDirectoryContent(solutionFolderPath)
-		.filter(item => item.isFile)
-		.map(file => {
-			const solutionDate = file
-				.path
-				.replace(solutionFolderPath + '/', '')
-				.replace('.js', '')
-				.split('/');
-
-			return {
-				year: parseInt(solutionDate[0]),
-				day: parseInt(solutionDate[1])
-			}
-
-		});
-
-	let filteredList = dirContent.filter(item => item.year === year);
-
-	return year ? filteredList : dirContent;
-
-}
