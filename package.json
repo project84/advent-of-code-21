@@ -7,9 +7,8 @@
 		"solution": "npx babel-node main.js",
 		"today": "npx babel-node main.js --today",
 		"all": "npx babel-node main.js --all",
-		"currenMonth": "npx babel-node main.js --currentMonth",
-		"verify-example": "npx babel-node scripts/answer-verification --type example",
-		"verify-actual": "npx babel-node scripts/answer-verification --type actual"
+		"current-month": "npx babel-node main.js --currentMonth",
+		"verify-answer": "npx babel-node scripts/answer-verification"
 	},
 	"repository": {
 		"type": "git",
