@@ -15,8 +15,8 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 	
 	for (let part = 1; part < 3; part++) {
 
-		// For each part of the executed iteration, continue only if a result has been provided
-		if ((answer[part] == null)) {
+		// For each part of the executed iteration, exit iteration if a result has not been provided
+		if (answer[part] == null && !answer.current) {
 			continue;
 		}
 		
@@ -33,8 +33,8 @@ export function recordAnswer(date, type, index, answer, duration, verified = fal
 
 		} else {
 
-			// Otherwise update the answer with the latest attempt
-			previousAnswer[part].answer = answer[part];
+			// Otherwise update the answer with the latest attempt or supplied verified answer
+			previousAnswer[part].answer = answer.current ? previousAnswer[part].answer : answer[part];
 			previousAnswer[part].verified = verified;
 			outcome[part] = verified ? 'verified answer recorded!' : 'New answer';
 
