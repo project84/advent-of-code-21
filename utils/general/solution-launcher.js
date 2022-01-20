@@ -39,7 +39,7 @@ export function runSolution(date, type) {
 			console.log(`Part ${part}: ${result[part]} ${recordingOutcome[part] ? `\n  - ${recordingOutcome[part]}` : ''}`);
 		}
 
-		console.log('');
+		console.log();
 
 	});
 
