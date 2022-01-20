@@ -101,18 +101,42 @@ export function validateAnswerVerificationParams(requestedDates, solutionTypes) 
 
     let answerSpecified = argv.part1 || argv.part2;
 
-    if (argv.currentAnswer && answerSpecified) {
-        throw new Error('Cannot verify current answer and specify a verified answer.')
+    if (!argv.currentAnswer && !answerSpecified) {
+        throw new Error('Must either verify the current answer or specify a verified answer.');
     }
 
-    // Assumes that, in all but exceptional cases, the solution for different days and
-    // example vs actual will always be different
+    if (argv.currentAnswer && answerSpecified) {
+        throw new Error('Cannot verify the current answer and specify a verified answer.');
+    }
+
+    // The following checks assume that, in all but exceptional cases, the solution for 
+    // different days / puzzles and example vs actual will always be different
     if (requestedDates.length > 1 && answerSpecified) {
         throw new Error('Cannot specify a verified answer for multiple dates.');
     }
 
     if (solutionTypes.length > 1 && answerSpecified) {
         throw new Error('Cannot specify a verified answer for both example and actual solutions.');
+    }
+
+    if (requestedDates.length > 1 && argv.index > 1) {
+        throw new Error('Cannot specify a non-default puzzle index for multiple dates.');
+    }
+
+    if (solutionTypes.length > 1 && argv.index > 1) {
+        throw new Error('Cannot specify a non-default puzzle index for both example and actual solutions.');
+    }
+
+    let dateHasMultiplePuzzles = requestedDates.some(date => date.example.length > 1 || date.actual.length > 1);
+    if (dateHasMultiplePuzzles && answerSpecified && !argv.index) {
+        throw new Error('Cannot specify a verified answer for a date with multiple puzzles without specifying the puzzle to verify.');
+    }
+
+    return {
+        currentAnswer: argv.currentAnswer,
+        part1: argv.part1,
+        part2: argv.part2,
+        index: argv.index
     }
 
 }
