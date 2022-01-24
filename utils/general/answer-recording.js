@@ -79,6 +79,16 @@ export class AnswerRecorder {
 
 	}
 
+	checkAnswerExists(date, type, index) {
+
+		try {
+			return this.answers[date.year][date.day][type][index] != null;
+		} catch {
+			return false;
+		}
+
+	}
+
 	setFocus(date, type, index, createNew = true) {
 
 		this.focus = null;
