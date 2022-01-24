@@ -12,7 +12,7 @@ try {
         solutionTypes.forEach(type => {
 
             let index = params.index || 1;
-            const toVerify = typeof params.index != 'undefined' ? 1 : date[type].length;            
+            const toVerify = typeof params.index != 'undefined' ? 1 : date[ type ].length;
 
             do {
 
@@ -28,8 +28,8 @@ try {
 
                 // Log result verification outcome
                 for (let part = 1; part <= 2; part++) {
-                    if (recorder.outcome[part]) {
-                        console.log(`Part ${part}: ${recorder.outcome[part]}`);
+                    if (recorder.outcome[ part ]) {
+                        console.log(`Part ${part}: ${recorder.outcome[ part ]}`);
                     }
                 }
 
@@ -39,7 +39,7 @@ try {
 
                 // Increment for next index, unless one was specified, in which case increase
                 // such that execution is stopped
-                index += typeof params.index === 'undefined' ? 1 : date[type].length;
+                index += typeof params.index === 'undefined' ? 1 : date[ type ].length;
 
                 console.log();
 
@@ -50,6 +50,6 @@ try {
         });
     });
 
-} catch(err) {
+} catch (err) {
     console.log(`ERROR: ${err.message} Please check and try again...`);
 }
