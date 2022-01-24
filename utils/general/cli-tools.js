@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import { getParsedDate, getPuzzleDates, hasPuzzle } from './date-tools';
+import { getSolutionInfo } from './file-tools';
 import { deduplicate as deduplicateArray } from './array-tools';
 
 const argv = require('minimist')(process.argv.slice(2));
@@ -73,7 +74,8 @@ export function getRequestedDates() {
                 return a.day - b.day;
             }
             return a.year > b.year ? 1 : -1;
-        });
+        })
+        .map(date => getSolutionInfo(date.year, date.day));
 
 }
 
