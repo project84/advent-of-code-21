@@ -7,7 +7,6 @@ const argv = require('minimist')(process.argv.slice(2));
 export function getSolutionsToRun() {
 
 	return getRequestedDates()
-		.map(date => getSolutionInfo(date.year, date.day))
 		.filter(date => date.solution.exists && date.exampleExists && date.actualExists);
 
 }
@@ -35,7 +34,7 @@ export function runSolution(date, type) {
 		console.log(`*** ${date.fileString} (${typeString}) ***`);
 		console.log(`Duration: ${(duration)} ms${recordingOutcome.bestTime ? ' (new best time!)' : ''}`);
 
-		for (let part = 1; part < 3; part++) {
+		for (let part = 1; part <= 2; part++) {
 			console.log(`Part ${part}: ${result[part]} ${recordingOutcome[part] ? `\n  - ${recordingOutcome[part]}` : ''}`);
 		}
 
