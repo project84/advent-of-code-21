@@ -1,5 +1,5 @@
-import { getSolutionInfo, retrieveTextFile } from './file-tools';
-import { recordAnswer } from './answer-recording';
+import { retrieveTextFile } from './file-tools';
+import { AnswerRecorder } from './answer-recording';
 import { getRequestedDates } from './cli-tools';
 
 const argv = require('minimist')(process.argv.slice(2));
@@ -15,6 +15,8 @@ export function runSolution(date, type) {
 
 	const toRun = date[type].length;
 
+	let recorder = new AnswerRecorder();
+
 	date[type].forEach((path, i) => {
 
 		// Retrieve input file
@@ -29,18 +31,19 @@ export function runSolution(date, type) {
 
 		const typeString = toRun > 1 ? `${type} #${i + 1}` : type;
 
-		let recordingOutcome = recordAnswer(date, type, i + 1, result, duration);
+		recorder.recordAnswer(date, type, i + 1, result, duration);
 
 		console.log(`*** ${date.fileString} (${typeString}) ***`);
-		console.log(`Duration: ${(duration)} ms${recordingOutcome.bestTime ? ' (new best time!)' : ''}`);
+		console.log(`Duration: ${(duration)} ms${recorder.outcome.bestTime ? ' (new best time!)' : ''}`);
 
 		for (let part = 1; part <= 2; part++) {
-			console.log(`Part ${part}: ${result[part]} ${recordingOutcome[part] ? `\n  - ${recordingOutcome[part]}` : ''}`);
+			console.log(`Part ${part}: ${result[part]} ${recorder.outcome[part] ? `\n  - ${recorder.outcome[part]}` : ''}`);
 		}
 
 		console.log();
 
 	});
 
+	recorder.writeAnswersToFile();
 	
 }
