@@ -11,7 +11,7 @@
                         "answer": 5,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -39,7 +39,7 @@
                         "answer": 900,
                         "verified": true
                     },
-                    "durationMs": 7
+                    "durationMs": 5
                 }
             },
             "actual": {
@@ -123,7 +123,7 @@
                         "answer": 12,
                         "verified": true
                     },
-                    "durationMs": 38
+                    "durationMs": 37
                 }
             },
             "actual": {
@@ -164,7 +164,7 @@
                         "answer": 1605400130036,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 }
             }
         },
@@ -315,7 +315,7 @@
                         "answer": 371,
                         "verified": true
                     },
-                    "durationMs": 17
+                    "durationMs": 16
                 }
             }
         },
@@ -330,7 +330,7 @@
                         "answer": 36,
                         "verified": true
                     },
-                    "durationMs": 3
+                    "durationMs": 2
                 },
                 "2": {
                     "1": {
@@ -380,7 +380,7 @@
                         "answer": "\n■■■■■\n■   ■\n■   ■\n■   ■\n■■■■■\n     \n     ",
                         "verified": true
                     },
-                    "durationMs": 4
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -393,7 +393,7 @@
                         "answer": "\n■  ■   ■■ ■■■  ■  ■ ■■■■ ■  ■ ■■■   ■■  \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■■      ■ ■■■  ■■   ■■■  ■  ■ ■■■  ■    \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■ ■■ \n■ ■  ■  ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■  ■  ■■  ■■■  ■  ■ ■■■■  ■■  ■■■   ■■■ ",
                         "verified": true
                     },
-                    "durationMs": 6
+                    "durationMs": 5
                 }
             }
         },
@@ -436,7 +436,7 @@
                         "answer": 315,
                         "verified": true
                     },
-                    "durationMs": 17
+                    "durationMs": 15
                 }
             },
             "actual": {
@@ -530,7 +530,7 @@
                         "answer": 1,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 },
                 "8": {
                     "1": {
@@ -563,7 +563,7 @@
                         "answer": 15,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 },
                 "11": {
                     "1": {
@@ -618,7 +618,7 @@
                         "answer": 54,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 }
             },
             "actual": {
@@ -674,7 +674,7 @@
                         "answer": 1384,
                         "verified": true
                     },
-                    "durationMs": 6
+                    "durationMs": 5
                 },
                 "2": {
                     "1": {
