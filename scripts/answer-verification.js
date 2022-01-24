@@ -1,43 +1,55 @@
-const { getParsedDate } = require('../utils/general/date-tools');
-const { recordAnswer } = require('../utils/general/answer-recording');
+import { getRequestedDates, getSolutionTypes, validateAnswerVerificationParams } from '../utils/general/cli-tools';
+import { AnswerRecorder } from '../utils/general/answer-recording';
 
-const argv = require('minimist')(process.argv.slice(2));
+const requestedDates = getRequestedDates();
+const solutionTypes = getSolutionTypes();
 
-if (
-    !(argv.today || (argv.year && argv.day)) ||
-    !argv.type ||
-    (!argv.part1 && !argv.part2)
-) {
-    console.log('Missing input parameter(s), please check and try again');
-} else {
-    let index = argv.index || 1;
-    let year;
-    let day;
+try {
+    let params = validateAnswerVerificationParams(requestedDates, solutionTypes);
+    let recorder = new AnswerRecorder();
 
-    // Resolve desired date from input variables
-    if (argv.today) {
-        let currentDate = getParsedDate();
-        year = currentDate.year;
-        day = currentDate.day;
-    } else {
-        year = argv.year;
-        day = argv.day;
-    }
+    requestedDates.forEach(date => {
+        solutionTypes.forEach(type => {
 
-    // Attempt to record verified answer
-    let recordingOutcome = recordAnswer(
-        { year, day }, 
-        argv.type, 
-        index, 
-        { 1: argv.part1, 2: argv.part2 }, 
-        Infinity, 
-        true
-    );
+            let index = params.index || 1;
+            const toVerify = typeof params.index != 'undefined' ? 1 : date[type].length;            
 
-    // Log result verification outcome
-    for (let part = 1; part < 3; part++) {
-        if (recordingOutcome[part]) {
-            console.log(`Part ${part}: ${recordingOutcome[part]}`);
-        }
-    }
+            do {
+
+                const typeString = toVerify > 1 ? `${type} #${index}` : type;
+                console.log(`*** ${date.fileString} (${typeString}) ***`);
+
+                recorder.verifyAnswer(
+                    { year: date.year, day: date.day },
+                    type,
+                    index,
+                    { 1: params.part1, 2: params.part2, current: params.currentAnswer }
+                )
+
+                // Log result verification outcome
+                for (let part = 1; part <= 2; part++) {
+                    if (recorder.outcome[part]) {
+                        console.log(`Part ${part}: ${recorder.outcome[part]}`);
+                    }
+                }
+
+                if (recorder.outcome.message) {
+                    console.log(recorder.outcome.message);
+                }
+
+                // Increment for next index, unless one was specified, in which case increase
+                // such that execution is stopped
+                index += typeof params.index === 'undefined' ? 1 : date[type].length;
+
+                console.log();
+
+            } while (index <= toVerify)
+
+            recorder.writeAnswersToFile();
+
+        });
+    });
+
+} catch(err) {
+    console.log(`ERROR: ${err.message} Please check and try again...`);
 }
