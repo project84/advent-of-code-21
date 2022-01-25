@@ -32,8 +32,6 @@ export function getContainingFolder(path) {
 
 export function checkFolder(folderPath) {
 
-	console.log(folderPath);
-
 	// Check for existence of containing folder, create if it doesn't exist
 	if (!exists(folderPath)) {
 		fs.mkdirSync(folderPath, { recursive: true });
