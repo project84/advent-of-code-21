@@ -1,8 +1,7 @@
 import { argv, getRequestedDates, getSolutionTypes, validateAnswerVerificationParams, validateInitialisationParams } from './utils/general/cli-tools';
 import { runSolutions } from './utils/general/solution-launcher';
 import { printKnownAnswers, verifyAnswers } from './utils/general/answer-verification';
-import { writeFile } from './utils/general/file-tools';
-import { copyFileSync, mkdirSync } from 'fs';
+import { writeFile, copyFile, checkFolder } from './utils/general/file-tools';
 
 try {
 
@@ -39,8 +38,8 @@ try {
 			let initialiseParams = validateInitialisationParams(requestedDates);
 
 			// Create empty solution file for the requested date, and empty input file folder
-			copyFileSync('fixtures/general/solution-template.js', initialiseParams.path);
-			mkdirSync('input-files/' + initialiseParams.date);
+			copyFile('fixtures/general/solution-template.js', initialiseParams.path);
+			checkFolder('input-files/' + initialiseParams.date);
 
 			// Record verified answer if supplied
 			if (initialiseParams['1']) {
