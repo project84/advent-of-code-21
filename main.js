@@ -1,7 +1,8 @@
-import { argv, getRequestedDates, getSolutionTypes, validateAnswerVerificationParams } from './utils/general/cli-tools';
+import { argv, getRequestedDates, getSolutionTypes, validateAnswerVerificationParams, validateInitialisationParams } from './utils/general/cli-tools';
 import { runSolutions } from './utils/general/solution-launcher';
 import { printKnownAnswers, verifyAnswers } from './utils/general/answer-verification';
 import { writeFile } from './utils/general/file-tools';
+import { copyFileSync, mkdirSync } from 'fs';
 
 try {
 
@@ -30,6 +31,20 @@ try {
 	if (argv.known) {
 
 		printKnownAnswers(requestedDates, solutionTypes);
+
+	}
+
+	if (argv.initialise) {
+
+		let params = validateInitialisationParams(requestedDates);
+		copyFileSync('fixtures/general/solution-template.js', params.path);
+		mkdirSync('input-files/' + params.date);
+
+		if (params['1']) {
+			verifyAnswers(requestedDates, [ 'example' ], params);
+		}
+		
+		console.log(params.date + ' solution initialised - input files must be added to the repo manually.')
 
 	}
 

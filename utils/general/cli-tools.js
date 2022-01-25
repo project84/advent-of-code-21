@@ -142,3 +142,28 @@ export function validateAnswerVerificationParams(requestedDates, solutionTypes) 
     }
 
 }
+
+export function validateInitialisationParams(requestedDates) {
+
+    // Validates the requested attempt to initialise a solution, blocking invalid
+    // or unintended combinations
+    if (!requestedDates.length) {
+        throw new Error('No valid date(s) specified.');
+    }
+
+    if (requestedDates.length > 1) {
+        throw new Error('Only one solution can be initialised at a time');
+    }
+
+    let solutionToInitialise = requestedDates[0];
+    if (solutionToInitialise.solution.exists) {
+        throw new Error('Solution already initialised');
+    }
+
+    return {
+        date: solutionToInitialise.fileString,
+        path: solutionToInitialise.solution.path,
+        1: argv.part1
+    };
+
+}
