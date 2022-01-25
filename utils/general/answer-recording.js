@@ -49,10 +49,8 @@ export class AnswerRecorder {
 		this.outcome = {};
 		this.setFocus(date, type, index, !answer.current);
 
-		// Focus will only ever not be set when verification of the current answer
-		// has been specified, but no answer has previously been recorded
+		// Exit answer verification if focus hasn't been set
 		if (!this.focus) {
-			this.outcome.message = 'No current answer recorded for specified date';
 			return;
 		}
 
@@ -125,6 +123,10 @@ export class AnswerRecorder {
 		}
 
 		writeFileSync('fixtures/general/solution-answers.json', JSON.stringify(this.answers, null, 4));
+	}
+
+	getOutcome(part) {
+		return part ? this.outcome[part] : this.outcome;
 	}
 
 }
