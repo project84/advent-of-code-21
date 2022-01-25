@@ -9,7 +9,8 @@
 		"all": "npx babel-node main.js --solution --all",
 		"current-month": "npx babel-node main.js --solution --currentMonth",
 		"current-year": "npx babel-node main.js --solution --currentYear",
-		"verify-answer": "npx babel-node main.js --verify"
+		"verify-answer": "npx babel-node main.js --verify",
+		"get-answer": "npx babel-node main.js --known"
 	},
 	"repository": {
 		"type": "git",
