@@ -39,7 +39,7 @@
                         "answer": 900,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -95,7 +95,7 @@
                         "answer": 1924,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -659,7 +659,7 @@
                         "answer": 3785,
                         "verified": true
                     },
-                    "durationMs": 7
+                    "durationMs": 6
                 }
             }
         },
