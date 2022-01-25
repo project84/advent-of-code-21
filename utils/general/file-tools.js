@@ -24,6 +24,22 @@ export function exists(filePath) {
 	return fileExists;
 
 }
+export function getContainingFolder(path) {
+
+	return path.slice(0, path.lastIndexOf('/'));
+
+}
+
+export function checkFolder(folderPath) {
+
+	console.log(folderPath);
+
+	// Check for existence of containing folder, create if it doesn't exist
+	if (!exists(folderPath)) {
+		fs.mkdirSync(folderPath, { recursive: true });
+	}
+
+}
 
 export function retrieveTextFile(filePath, isList) {
 
@@ -98,12 +114,18 @@ export function getDirectoryContent(path) {
 
 export function writeFile(path, content, options) {
 
-	// Check for existence of containing folder, create if it doesn't exist
-	let folderPath = path.slice(0, path.lastIndexOf('/'));
-	if (!exists(folderPath)) {
-		fs.mkdirSync(folderPath);
+	checkFolder(getContainingFolder(path));
+	fs.writeFileSync(path, content, options);
+
+}
+
+export function copyFile(src, dest, options) {
+
+	if (!exists(src)) {
+		throw new Error('Cannot copy file as source does not exist');
 	}
 
-	fs.writeFileSync(path, content, options);
+	checkFolder(getContainingFolder(dest));
+	fs.copyFileSync(src, dest, options);
 
 }
