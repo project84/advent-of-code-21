@@ -3,7 +3,7 @@ import { getParsedDate, getPuzzleDates, hasPuzzle } from './date-tools';
 import { getSolutionInfo } from './file-tools';
 import { deduplicate as deduplicateArray } from './array-tools';
 
-const argv = require('minimist')(process.argv.slice(2));
+export const argv = require('minimist')(process.argv.slice(2));
 
 export function getRequestedDates() {
 
@@ -135,9 +135,9 @@ export function validateAnswerVerificationParams(requestedDates, solutionTypes) 
     }
 
     return {
-        currentAnswer: argv.currentAnswer,
-        part1: argv.part1,
-        part2: argv.part2,
+        current: argv.currentAnswer,
+        1: argv.part1,
+        2: argv.part2,
         index: argv.index
     }
 
