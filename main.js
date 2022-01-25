@@ -2,9 +2,6 @@ import { argv, getRequestedDates, getSolutionTypes, validateAnswerVerificationPa
 import { runSolutions } from './utils/general/solution-launcher';
 import { printKnownAnswers, verifyAnswers } from './utils/general/answer-verification';
 import { writeFile } from './utils/general/file-tools';
-import { AnswerRecorder } from './utils/general/answer-recording';
-
-let recorder = new AnswerRecorder();
 
 try {
 
