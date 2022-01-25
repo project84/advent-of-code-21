@@ -4,14 +4,14 @@
 	"description": "Advent of code 2021 solutions",
 	"main": "main.js",
 	"scripts": {
-		"solution": "npx babel-node main.js --solution",
-		"today": "npx babel-node main.js --solution --today",
-		"all": "npx babel-node main.js --solution --all",
-		"current-month": "npx babel-node main.js --solution --currentMonth",
-		"current-year": "npx babel-node main.js --solution --currentYear",
-		"verify-answer": "npx babel-node main.js --verify",
-		"get-answer": "npx babel-node main.js --known",
-		"initialise": "npx babel-node main.js --initialise"
+		"solution": "npx babel-node main.js --exType solution",
+		"today": "npx babel-node main.js --exType solution --today",
+		"all": "npx babel-node main.js --exType solution --all",
+		"current-month": "npx babel-node main.js --exType solution --currentMonth",
+		"current-year": "npx babel-node main.js --exType solution --currentYear",
+		"verify-answer": "npx babel-node main.js --exType verify",
+		"get-answer": "npx babel-node main.js --exType known",
+		"initialise": "npx babel-node main.js --exType initialise"
 	},
 	"repository": {
 		"type": "git",
