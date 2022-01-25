@@ -6,6 +6,10 @@ export class AnswerRecorder {
 		this.answers = JSON.parse(readFileSync('fixtures/general/solution-answers.json', 'utf-8'));
 	}
 
+	getOutcome(part) {
+		return part ? this.outcome[part] : this.outcome;
+	}
+
 	recordAnswer(date, type, index, answer, duration) {
 
 		// Reset outcome object and set focus based on input params
@@ -109,6 +113,7 @@ export class AnswerRecorder {
 
 		try {
 			this.focus = this.answers[date.year][date.day][type][index];
+			return;
 		} catch {
 			return;
 		}
@@ -125,8 +130,28 @@ export class AnswerRecorder {
 		writeFileSync('fixtures/general/solution-answers.json', JSON.stringify(this.answers, null, 4));
 	}
 
-	getOutcome(part) {
-		return part ? this.outcome[part] : this.outcome;
+	printKnownAnswer(date, type, index) {
+
+		// Set focus, exiting if the requested answer is not known
+		this.setFocus(date, type, index, false);
+		if (!this.focus) {
+			return;
+		}
+
+		// Log current known duration for answer
+		console.log(`Best time: ${this.focus.durationMs} ms`);
+
+		for (let part = 1; part <= 2; part++) {
+
+			let record = this.focus[part];
+			if (!record.answer) {
+				continue;
+			}
+
+			console.log(`Part ${part}: ${record.answer}\n  - ${record.verified ? `Verified!` : 'Not verified...'}`);
+		}
+		
+
 	}
 
 }

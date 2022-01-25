@@ -42,3 +42,31 @@ export function verifyAnswers(requestedDates, solutionTypes, params) {
 
     recorder.writeAnswersToFile();
 }
+
+export function printKnownAnswers(requestedDates, solutionTypes) {
+
+    let recorder = new AnswerRecorder();
+
+    requestedDates.forEach(date => {
+        solutionTypes.forEach(type => {
+
+            const toPrint = date[type].length;
+
+            for (let index = 1; index <= toPrint; index++) {
+
+                const typeString = toPrint > 1 ? `${type} #${index}` : type;
+                console.log(`*** ${date.fileString} (${typeString}) ***`);  
+
+                if (!recorder.checkAnswerExists(date, type, index)) {
+                    continue;
+                }
+    
+                recorder.printKnownAnswer(date, type, index);
+                console.log();
+
+            }
+
+        });
+    });
+
+}
