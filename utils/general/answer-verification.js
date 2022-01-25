@@ -12,7 +12,7 @@ export function verifyAnswers(requestedDates, solutionTypes, params) {
 
             do {
 
-                if (params.currentAnswer && !recorder.checkAnswerExists(date, type, index)) {
+                if (params.current && !recorder.checkAnswerExists(date, type, index)) {
                     continue;
                 }
 
