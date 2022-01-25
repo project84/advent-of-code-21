@@ -47,20 +47,22 @@ export function getSolutionInfo(year, day) {
 	}
 
 	let inputFileDir = `input-files/${info.fileString}`;
+	info.example = [];
+	info.actual = [];
 
 	if (exists(inputFileDir)) {
 
         let inputFiles = getDirectoryContent(inputFileDir).map(file => file.path);
 
-	    info.example = inputFiles.filter(path => path.includes('example'));
-	    info.actual = inputFiles.filter(path => path.includes('actual'));
-
-	    // Check if solution files exist
-	    info.solution.exists = exists(info.solution.path);
-	    info.exampleExists = info.example.length > 0;
-	    info.actualExists = info.actual.length > 0;
+	    info.example.push(...inputFiles.filter(path => path.includes('example')));
+	    info.actual.push(...inputFiles.filter(path => path.includes('actual')));
 		
 	}
+
+	// Check if solution files exist
+	info.solution.exists = exists(info.solution.path);
+	info.exampleExists = info.example.length > 0;
+	info.actualExists = info.actual.length > 0;
 
 	return info;
 }
@@ -94,28 +96,14 @@ export function getDirectoryContent(path) {
 
 }
 
-export function getFilteredSolutionList(year) {
-	
-	// Retrieve list of files within solutions folder
-	const solutionFolderPath = getAbsolutePath('solutions');
-	const dirContent = getDirectoryContent(solutionFolderPath)
-		.filter(item => item.isFile)
-		.map(file => {
-			const solutionDate = file
-				.path
-				.replace(solutionFolderPath + '/', '')
-				.replace('.js', '')
-				.split('/');
+export function writeFile(path, content, options) {
 
-			return {
-				year: parseInt(solutionDate[0]),
-				day: parseInt(solutionDate[1])
-			}
+	// Check for existence of containing folder, create if it doesn't exist
+	let folderPath = path.slice(0, path.lastIndexOf('/'));
+	if (!exists(folderPath)) {
+		fs.mkdirSync(folderPath);
+	}
 
-		});
-
-	let filteredList = dirContent.filter(item => item.year === year);
-
-	return year ? filteredList : dirContent;
+	fs.writeFileSync(path, content, options);
 
 }
