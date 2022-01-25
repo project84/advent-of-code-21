@@ -1,49 +1,45 @@
 import { retrieveTextFile } from './file-tools';
 import { AnswerRecorder } from './answer-recording';
-import { getRequestedDates } from './cli-tools';
 
-const argv = require('minimist')(process.argv.slice(2));
-
-export function getSolutionsToRun() {
-
-	return getRequestedDates()
-		.filter(date => date.solution.exists && date.exampleExists && date.actualExists);
-
-}
-
-export function runSolution(date, type) {
-
-	const toRun = date[type].length;
+export function runSolutions(requestedDates, solutionTypes) {
 
 	let recorder = new AnswerRecorder();
 
-	date[type].forEach((path, i) => {
+	requestedDates.forEach(date => {
+		solutionTypes.forEach(type => {
 
-		// Retrieve input file
-		const inputFile = retrieveTextFile(path, true);
-		const startTime = new Date();
+			const toRun = date[type].length;	
 
-		// Run solution for specified day and log result
-		const result = require('../../' + date.solution.path).default(inputFile);
+			date[type].forEach((path, i) => {
 
-		const endTime = new Date();
-		const duration = endTime - startTime;
+				// Retrieve input file
+				const inputFile = retrieveTextFile(path, true);
+				const startTime = new Date();
 
-		const typeString = toRun > 1 ? `${type} #${i + 1}` : type;
+				// Run solution for specified day and log result
+				const result = require('../../' + date.solution.path).default(inputFile);
 
-		recorder.recordAnswer(date, type, i + 1, result, duration);
+				const endTime = new Date();
+				const duration = endTime - startTime;
 
-		console.log(`*** ${date.fileString} (${typeString}) ***`);
-		console.log(`Duration: ${(duration)} ms${recorder.outcome.bestTime ? ' (new best time!)' : ''}`);
+				const typeString = toRun > 1 ? `${type} #${i + 1}` : type;
 
-		for (let part = 1; part <= 2; part++) {
-			console.log(`Part ${part}: ${result[part]} ${recorder.outcome[part] ? `\n  - ${recorder.outcome[part]}` : ''}`);
-		}
+				recorder.recordAnswer(date, type, i + 1, result, duration);
 
-		console.log();
+				console.log(`*** ${date.fileString} (${typeString}) ***`);
+				console.log(`Duration: ${(duration)} ms${recorder.getOutcome().bestTime ? ' (new best time!)' : ''}`);
 
+				for (let part = 1; part <= 2; part++) {
+					console.log(`Part ${part}: ${result[part]} ${recorder.getOutcome(part) ? `\n  - ${recorder.getOutcome(part)}` : ''}`);
+				}
+
+				console.log();
+
+			});
+
+		});
 	});
 
-	recorder.writeAnswersToFile();
+	recorder.writeAnswersToFile();	
 	
 }
