@@ -95,3 +95,15 @@ export function getDirectoryContent(path) {
 	return contentList;
 
 }
+
+export function writeFile(path, content, options) {
+
+	// Check for existence of containing folder, create if it doesn't exist
+	let folderPath = path.slice(0, path.lastIndexOf('/'));
+	if (!exists(folderPath)) {
+		fs.mkdirSync(folderPath);
+	}
+
+	fs.writeFileSync(path, content, options);
+
+}
