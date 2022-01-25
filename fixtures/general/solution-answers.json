@@ -185,12 +185,58 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 2,
+                        "verified": true
+                    },
+                    "durationMs": 54
+                },
+                "2": {
+                    "1": {
+                        "answer": 4,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "3": {
+                    "1": {
+                        "answer": 2,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 11,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "4": {
+                    "1": {
+                        "answer": 2,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "durationMs": 0
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 2592,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2360,
+                        "verified": true
+                    },
+                    "durationMs": 6
+                }
+            }
         }
     },
     "2021": {
