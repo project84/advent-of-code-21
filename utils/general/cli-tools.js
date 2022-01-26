@@ -101,7 +101,7 @@ export function validateAnswerVerificationParams(requestedDates, solutionTypes) 
         throw new Error('No valid date(s) specified.');
     }
 
-    let answerSpecified = argv.part1 || argv.part2;
+    let answerSpecified = argv.part1 != null || argv.part2 != null;
 
     if (!argv.currentAnswer && !answerSpecified) {
         throw new Error('Must either verify the current answer or specify a verified answer.');
