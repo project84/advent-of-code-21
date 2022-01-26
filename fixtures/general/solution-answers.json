@@ -285,9 +285,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 48
                 },
                 "2": {
                     "1": {
@@ -295,9 +296,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
                 },
                 "3": {
                     "1": {
@@ -305,9 +307,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
                 },
                 "4": {
                     "1": {
@@ -315,12 +318,80 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "5": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "6": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                },
+                "7": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "8": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                },
+                "9": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 255,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 55,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
         }
     },
     "2021": {
