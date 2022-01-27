@@ -2,14 +2,6 @@ import { parseReadings, GeoThermalMap } from "../../utils/2021/geo-thermals";
 
 export default function (inputFile) {
 
-	/* Example */
-	// Step 1: 5
-	// Step 2: 12
-
-	/* Actual */
-	// Step 1: 8060
-	// Step 2: 21577
-
 	// Convert geo-thermal vent readings to useable format, then create empty map
 	const ventReadings = parseReadings(inputFile);
 	let geoThermals = new GeoThermalMap(1000);
@@ -41,7 +33,7 @@ export default function (inputFile) {
 	});
 
 	return {
-		step1: nonDiagonalOverlaps,
-		step2: geoThermals.countOverlaps()
+		1: nonDiagonalOverlaps,
+		2: geoThermals.countOverlaps()
 	}
 }

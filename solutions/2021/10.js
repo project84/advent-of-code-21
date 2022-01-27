@@ -5,14 +5,6 @@ const charScores = require('../../fixtures/2021/chunk-character-scores');
 
 export default function(inputFile) {
 
-	/* Example */
-	// Step 1: 26397
-	// Step 2: 288957
-
-	/* Actual */
-	// Step 1: 399153
-	// Step 2: 2995077699
-
 	// Check navigation readings for illegal lines, and reduce all others to incomplete chunks
 	let navigationOutput = inputFile
 		.map(x => checkIllegalChunks({ value: x }));
@@ -45,8 +37,8 @@ export default function(inputFile) {
 
 
 	return {
-		step1: illegalCharScore,
-		step2: autoCompleteScore[Math.floor(autoCompleteScore.length / 2)]
+		1: illegalCharScore,
+		2: autoCompleteScore[Math.floor(autoCompleteScore.length / 2)]
 	}
 
 }

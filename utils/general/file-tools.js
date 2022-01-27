@@ -24,6 +24,20 @@ export function exists(filePath) {
 	return fileExists;
 
 }
+export function getContainingFolder(path) {
+
+	return path.slice(0, path.lastIndexOf('/'));
+
+}
+
+export function checkFolder(folderPath) {
+
+	// Check for existence of containing folder, create if it doesn't exist
+	if (!exists(folderPath)) {
+		fs.mkdirSync(folderPath, { recursive: true });
+	}
+
+}
 
 export function retrieveTextFile(filePath, isList) {
 
@@ -46,10 +60,18 @@ export function getSolutionInfo(year, day) {
 		path: `solutions/${info.fileString}.js`
 	}
 
-	let inputFiles = getDirectoryContent(`input-files/${info.fileString}`).map(file => file.path);
+	let inputFileDir = `input-files/${info.fileString}`;
+	info.example = [];
+	info.actual = [];
 
-	info.example = inputFiles.filter(path => path.includes('example'));
-	info.actual = inputFiles.filter(path => path.includes('actual'));
+	if (exists(inputFileDir)) {
+
+        let inputFiles = getDirectoryContent(inputFileDir).map(file => file.path);
+
+	    info.example.push(...inputFiles.filter(path => path.includes('example')));
+	    info.actual.push(...inputFiles.filter(path => path.includes('actual')));
+		
+	}
 
 	// Check if solution files exist
 	info.solution.exists = exists(info.solution.path);
@@ -88,28 +110,20 @@ export function getDirectoryContent(path) {
 
 }
 
-export function getFilteredSolutionList(year) {
-	
-	// Retrieve list of files within solutions folder
-	const solutionFolderPath = getAbsolutePath('solutions');
-	const dirContent = getDirectoryContent(solutionFolderPath)
-		.filter(item => item.isFile)
-		.map(file => {
-			const solutionDate = file
-				.path
-				.replace(solutionFolderPath + '/', '')
-				.replace('.js', '')
-				.split('/');
+export function writeFile(path, content, options) {
 
-			return {
-				year: parseInt(solutionDate[0]),
-				day: parseInt(solutionDate[1])
-			}
+	checkFolder(getContainingFolder(path));
+	fs.writeFileSync(path, content, options);
 
-		});
+}
 
-	let filteredList = dirContent.filter(item => item.year === year);
+export function copyFile(src, dest, options) {
 
-	return year ? filteredList : dirContent;
+	if (!exists(src)) {
+		throw new Error('Cannot copy file as source does not exist');
+	}
+
+	checkFolder(getContainingFolder(dest));
+	fs.copyFileSync(src, dest, options);
 
 }

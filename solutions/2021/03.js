@@ -2,14 +2,6 @@ import analyseDiagnostics from '../../utils/2021/diagnostic-analysis';
 
 export default function (inputFile) {
 
-	/* Example */
-	// Step 1: 198
-	// Step 2: 230
-
-	/* Actual */
-	// Step 1: 3901196
-	// Step 2: 4412188
-
 	const reportItemLength = inputFile[0].length;
 
 	let gammaRate = '';
@@ -49,8 +41,8 @@ export default function (inputFile) {
 
 	// Convert binary to digit and multiply readings for final result
 	return {
-		step1: parseInt(gammaRate, 2) * parseInt(epsilonRate, 2),
-		step2: parseInt(oxygenGeneratorRating[0], 2) * parseInt(co2scrubberRating[0], 2)
+		1: parseInt(gammaRate, 2) * parseInt(epsilonRate, 2),
+		2: parseInt(oxygenGeneratorRating[0], 2) * parseInt(co2scrubberRating[0], 2)
 	}
 
 }

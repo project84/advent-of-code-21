@@ -1,4 +1,4 @@
-import { Area } from './area';
+import { Area } from '../general/area';
 
 export class DumboOctopi extends Area {
 
@@ -21,7 +21,7 @@ export class DumboOctopi extends Area {
 
 			// For each flashing octopus, find adjacent octopi and increase their energy level by one
 			octopus.flashing = true;
-			const adjacentOctopi = this.getAdjacentPositions(octopus.x, octopus.y, true);
+			const adjacentOctopi = this.getNeighbours(octopus.x, octopus.y, true);
 
 			adjacentOctopi.forEach(adjOctopi => {
 				const octIndex = this.map.findIndex(o => {
