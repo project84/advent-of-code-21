@@ -163,7 +163,7 @@ export function validateInitialisationParams(requestedDates) {
     return {
         date: solutionToInitialise.fileString,
         path: solutionToInitialise.solution.path,
-        1: argv.part1
+        1: argv.answer
     };
 
 }
