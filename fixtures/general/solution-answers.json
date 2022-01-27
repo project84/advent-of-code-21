@@ -401,8 +401,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 1001996,
+                        "verified": true
                     },
                     "durationMs": 6
                 }
@@ -410,12 +410,12 @@
             "actual": {
                 "1": {
                     "1": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 569999,
+                        "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 17836115,
+                        "verified": true
                     },
                     "durationMs": 0
                 }
