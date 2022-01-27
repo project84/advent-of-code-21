@@ -1,18 +1,18 @@
 export class Area {
 	
-	constructor(readings, isNumeric) {
+	constructor(readings, isNumeric = true) {
 		this.map = this.parseInput(readings, isNumeric);
 		this.calculateSize();
 	}
 
-	parseInput(readings, nonNumeric) {
+	parseInput(readings, isNumeric) {
 		
 		// Map is a flattened array of all readings with x and y position
 		let map = [];
 		readings.forEach((row, i) => {
 			map.push(...row.split('').map((reading, j) => {
 				return {
-					value: nonNumeric ? reading : parseInt(reading),
+					value: isNumeric ? parseInt(reading) : reading,
 					index: (i * row.length) + j,
 					x: j,
 					y: i
