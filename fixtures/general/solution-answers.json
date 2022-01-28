@@ -420,6 +420,34 @@
                     "durationMs": 0
                 }
             }
+        },
+        "7": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 65412,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 65412,
+                        "verified": true
+                    },
+                    "durationMs": 37
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 46065,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 14134,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            }
         }
     },
     "2021": {
