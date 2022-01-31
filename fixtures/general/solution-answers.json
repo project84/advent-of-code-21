@@ -476,6 +476,21 @@
                     "durationMs": 0
                 }
             }
+        },
+        "9": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 605,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    }
+                }
+            },
+            "actual": {}
         }
     },
     "2021": {
