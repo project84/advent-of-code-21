@@ -485,12 +485,25 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 982,
+                        "verified": true
+                    },
+                    "durationMs": 5
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 117,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 909,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            }
         }
     },
     "2021": {
