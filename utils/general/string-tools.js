@@ -1,3 +1,5 @@
+export const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
 export function countMatches(str, reStr, reOptions = 'g') {
     let re = new RegExp(reStr, reOptions);
     return (str.match(re) || []).length;
@@ -20,5 +22,17 @@ export function countIllegalChars(str, illegalChars) {
     });
 
     return illegalCharCount;
+
+}
+
+export function getNextCharacter(char) {
+
+    let index = alphabet.indexOf(char.toLowerCase());
+
+    if (index < 0) {
+        return;
+    }
+
+    return alphabet[(index + 1) % 26];
 
 }
