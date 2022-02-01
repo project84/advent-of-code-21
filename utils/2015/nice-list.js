@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import { countDuplicateChars, countIllegalChars, countVowels, countMatches } from '../general/string-tools';
+import { getDuplicateChars, countIllegalChars, getVowels, getMatches } from '../general/string-tools';
 
 export class NaughtyNiceList {
 
@@ -30,12 +30,12 @@ export class NaughtyNiceList {
         // Checks whether the provided string meets the nice criteria based on
         // original or revised criteria
         return !revised ? 
-            countVowels(str) >= 3 &&
-            countDuplicateChars(str) &&
+            getVowels(str).length >= 3 &&
+            getDuplicateChars(str).length &&
             !countIllegalChars(str, this.illegalChars) :
 
-            countMatches(str, '(..).*\\1{1,}') &&
-            countMatches(str, '(.).\\1{1,}');
+            getMatches(str, '(..).*\\1{1,}').length &&
+            getMatches(str, '(.).\\1{1,}').length;
 
     }
 
