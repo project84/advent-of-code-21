@@ -541,21 +541,21 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": "ghjbbcdd",
+                        "verified": true
                     },
-                    "durationMs": 29
+                    "durationMs": 9
                 }
             },
             "actual": {
                 "1": {
                     "1": {
-                        "answer": null,
-                        "verified": false
+                        "answer": "cqjxxyzz",
+                        "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": "cqkaabcc",
+                        "verified": true
                     },
                     "durationMs": 0
                 }
