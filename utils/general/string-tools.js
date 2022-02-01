@@ -18,7 +18,7 @@ export function countIllegalChars(str, illegalChars) {
     let illegalCharCount = 0;
 
     illegalChars.forEach(illegalChar => {
-        illegalCharCount += countMatches(str, illegalChar);
+        illegalCharCount += getMatches(str, illegalChar).length;
     });
 
     return illegalCharCount;
