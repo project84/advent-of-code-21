@@ -288,7 +288,7 @@
                         "answer": 0,
                         "verified": true
                     },
-                    "durationMs": 48
+                    "durationMs": 47
                 },
                 "2": {
                     "1": {
@@ -432,7 +432,7 @@
                         "answer": 65412,
                         "verified": true
                     },
-                    "durationMs": 37
+                    "durationMs": 6
                 }
             },
             "actual": {
@@ -460,7 +460,7 @@
                         "answer": 19,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 2
                 }
             },
             "actual": {
@@ -488,7 +488,7 @@
                         "answer": 982,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 4
                 }
             },
             "actual": {
