@@ -5,21 +5,12 @@ export function getMatches(str, reStr, reOptions = 'g') {
     return (str.match(re) || []);
 }
 
-export function countMatches(str, reStr, reOptions = 'g') {
-    let re = new RegExp(reStr, reOptions);
-    return (str.match(re) || []).length;
-}
-
-export function countVowels(str) {
-    return countMatches(str, 'a|e|i|o|u');
+export function getVowels(str) {
+    return getMatches(str, 'a|e|i|o|u');
 }
 
 export function getDuplicateChars(str) {
     return getMatches(str, '(.)\\1{1,}');
-}
-
-export function countDuplicateChars(str) {
-    return countMatches(str, '(.)\\1{1,}');
 }
 
 export function countIllegalChars(str, illegalChars) {
