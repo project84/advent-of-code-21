@@ -560,6 +560,144 @@
                     "durationMs": 0
                 }
             }
+        },
+        "12": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "durationMs": 6
+                },
+                "2": {
+                    "1": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "3": {
+                    "1": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "4": {
+                    "1": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "5": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "6": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "7": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "8": {
+                    "1": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "9": {
+                    "1": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 4,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "10": {
+                    "1": {
+                        "answer": 15,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 0,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "11": {
+                    "1": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 191164,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 87842,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                }
+            }
         }
     },
     "2021": {
