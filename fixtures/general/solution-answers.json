@@ -707,12 +707,25 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 286,
+                        "verified": true
+                    },
+                    "durationMs": 7
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 709,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 668,
+                        "verified": true
+                    },
+                    "durationMs": 337
+                }
+            }
         }
     },
     "2021": {
