@@ -60,10 +60,10 @@ npm run initialise -- <options>
 ```
 
 ### Options
-Accepts all [date](#date-options), however only one date can be initialised at a time. An answer for the first example puzzle can be optionally supplied with the `answer` option.
+Accepts all [date](#date-options) options, however only one date can be initialised at a time. An answer for the first example puzzle can be optionally supplied with the `answer` option.
 
 ```
-npm run verify-answer -- --year 2021 --1 --answer 123
+npm run initialise -- --year 2021 --1 --answer 123
 ```
 
 ## Date options
