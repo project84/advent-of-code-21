@@ -1564,23 +1564,23 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 45000,
+                        "verified": true
                     },
-                    "durationMs": 38
+                    "durationMs": 2
                 }
             },
             "actual": {
                 "1": {
                     "1": {
                         "answer": 68775,
-                        "verified": false
+                        "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 202585,
+                        "verified": true
                     },
-                    "durationMs": 25
+                    "durationMs": 7
                 }
             }
         }
