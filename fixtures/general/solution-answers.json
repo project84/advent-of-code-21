@@ -1554,5 +1554,35 @@
                 }
             }
         }
+    },
+    "2022": {
+        "1": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 24000,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 38
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 68775,
+                        "verified": false
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 25
+                }
+            }
+        }
     }
 }
