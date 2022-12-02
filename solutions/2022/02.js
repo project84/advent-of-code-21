@@ -1,4 +1,4 @@
-import rockPaperSciccors from '../../fixtures/2022/rock-paper-scissors.json'
+import { calculateRockPaperScissorsMatchScore, resolveRockPaperScissorsStrategy } from '../../utils/2022/rock-paper-scissors';
 
 export default function (inputFile) {
 
@@ -7,16 +7,10 @@ export default function (inputFile) {
 		return { opponent, player }
 	});
 
-	const strategyScore = rounds.reduce((score, round) => {
-		const shapeScore = rockPaperSciccors.shapes.find((shape) => shape.player === round.player).score;
-		const outcome = rockPaperSciccors.outcomes.find((outcome) => outcome.opponent === round.opponent && outcome.player === round.player);
-		const outcomeScore = rockPaperSciccors.scores.find((score) => score.isOpponentWin === outcome.isOpponentWin &&  score.isPlayerWin === outcome.isPlayerWin).score;
-
-		return score + shapeScore + outcomeScore;
-	}, 0)
+	const strategicRounds = resolveRockPaperScissorsStrategy(rounds);
 
 	return {
-		1: strategyScore,
-		2: null
+		1: calculateRockPaperScissorsMatchScore(rounds),
+		2: calculateRockPaperScissorsMatchScore(strategicRounds)
 	}
 }

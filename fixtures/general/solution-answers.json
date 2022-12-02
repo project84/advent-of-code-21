@@ -1592,10 +1592,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 12,
+                        "verified": true
                     },
-                    "durationMs": 25
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -1605,8 +1605,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 13889,
+                        "verified": true
                     },
                     "durationMs": 2
                 }

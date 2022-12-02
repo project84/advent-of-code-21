@@ -91,5 +91,22 @@
       "isOpponentWin": true,
       "score": 0
     }
+  ],
+  "strategy": [
+    {
+      "player": "X",
+      "isPlayerWin": false,
+      "isOpponentWin": true
+    },
+    {
+      "player": "Y",
+      "isPlayerWin": false,
+      "isOpponentWin": false
+    },
+    {
+      "player": "Z",
+      "isPlayerWin": true,
+      "isOpponentWin": false
+    }
   ]
 }
