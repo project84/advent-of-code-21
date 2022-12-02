@@ -1,0 +1,95 @@
+{
+  "shapes": [
+    {
+      "name": "rock",
+      "opponent": "A",
+      "player": "X",
+      "score": 1
+    },
+    {
+      "name": "paper",
+      "opponent": "B",
+      "player": "Y",
+      "score": 2
+    },
+    {
+      "name": "scissors",
+      "opponent": "C",
+      "player": "Z",
+      "score": 3
+    }
+  ],
+  "outcomes": [
+    {
+      "opponent": "A",
+      "player": "X",
+      "isPlayerWin": false,
+      "isOpponentWin": false
+    },
+    {
+      "opponent": "A",
+      "player": "Y",
+      "isPlayerWin": true,
+      "isOpponentWin": false
+    },
+    {
+      "opponent": "A",
+      "player": "Z",
+      "isPlayerWin": false,
+      "isOpponentWin": true
+    },
+    {
+      "opponent": "B",
+      "player": "X",
+      "isPlayerWin": false,
+      "isOpponentWin": true
+    },
+    {
+      "opponent": "B",
+      "player": "Y",
+      "isPlayerWin": false,
+      "isOpponentWin": false
+    },
+    {
+      "opponent": "B",
+      "player": "Z",
+      "isPlayerWin": true,
+      "isOpponentWin": false
+    },
+    {
+      "opponent": "C",
+      "player": "X",
+      "isPlayerWin": true,
+      "isOpponentWin": false
+    },
+    {
+      "opponent": "C",
+      "player": "Y",
+      "isPlayerWin": false,
+      "isOpponentWin": true
+    },
+    {
+      "opponent": "C",
+      "player": "Z",
+      "isPlayerWin": false,
+      "isOpponentWin": false
+    }
+  ],
+  "scores": [
+    {
+      "isPlayerWin": true,
+      "isOpponentWin": false,
+      "score": 6
+    },
+    {
+      "isPlayerWin": false,
+      "isOpponentWin": false,
+      "score": 3
+    },
+    {
+      "isPlayerWin": false,
+      "isOpponentWin": true,
+      "score": 0
+    }
+  ]
+}

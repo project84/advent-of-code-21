@@ -1594,10 +1594,23 @@
                     "2": {
                         "answer": null,
                         "verified": false
-                    }
+                    },
+                    "durationMs": 25
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 14827,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 2
+                }
+            }
         }
     }
 }
