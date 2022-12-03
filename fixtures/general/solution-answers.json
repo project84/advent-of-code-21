@@ -1611,6 +1611,21 @@
                     "durationMs": 2
                 }
             }
+        },
+        "3": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 157,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    }
+                }
+            },
+            "actual": {}
         }
     }
 }
