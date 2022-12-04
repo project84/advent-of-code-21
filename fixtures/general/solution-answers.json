@@ -1639,6 +1639,34 @@
                     "durationMs": 14
                 }
             }
+        },
+        "4": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 2,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 6
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 562,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    },
+                    "durationMs": 3
+                }
+            }
         }
     }
 }
