@@ -1,6 +1,6 @@
 export default function (inputFile) {
 
-	const assignments = inputFile.map((pair) => {
+	return inputFile.map((pair) => {
 		const [ elf1, elf2 ] = pair.split(',');
 		return {
 			elf1: {
@@ -12,21 +12,15 @@ export default function (inputFile) {
 				end: +elf2.split('-')[1]
 			}
 		}
-	});
-
-	const { contained, overlapping } = assignments.reduce((totals, pair) => ({
-		contained: totals.contained + 
+	}).reduce((totals, pair) => ({
+		1: totals['1'] + 
 			+((pair.elf1.start >= pair.elf2.start && pair.elf1.end <= pair.elf2.end) ||
 			(pair.elf2.start >= pair.elf1.start && pair.elf2.end <= pair.elf1.end)),
-		overlapping: totals.overlapping +
+		2: totals['2'] +
 			+((pair.elf1.start >= pair.elf2.start && pair.elf1.start <= pair.elf2.end) ||
 			(pair.elf1.end >= pair.elf2.start && pair.elf1.end <= pair.elf2.end) ||
 			(pair.elf2.start >= pair.elf1.start && pair.elf2.start <= pair.elf1.end) ||
 			(pair.elf2.end >= pair.elf1.start && pair.elf2.end <= pair.elf1.end))
-	}), { contained: 0, overlapping: 0 })
-
-	return {
-		1: contained,
-		2: overlapping
-	}
+	}), { 1: 0, 2: 0 });
+	
 }

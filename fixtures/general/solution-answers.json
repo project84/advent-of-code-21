@@ -1651,7 +1651,7 @@
                         "answer": 4,
                         "verified": true
                     },
-                    "durationMs": 6
+                    "durationMs": 2
                 }
             },
             "actual": {
@@ -1664,7 +1664,7 @@
                         "answer": 924,
                         "verified": true
                     },
-                    "durationMs": 3
+                    "durationMs": 2
                 }
             }
         }
