@@ -14,14 +14,19 @@ export default function (inputFile) {
 		}
 	});
 
-	const contained = assignments.reduce((total, pair) => 
-		total + 
-		+((pair.elf1.start >= pair.elf2.start && pair.elf1.end <= pair.elf2.end) ||
-		(pair.elf2.start >= pair.elf1.start && pair.elf2.end <= pair.elf1.end)), 
-	0)
+	const { contained, overlapping } = assignments.reduce((totals, pair) => ({
+		contained: totals.contained + 
+			+((pair.elf1.start >= pair.elf2.start && pair.elf1.end <= pair.elf2.end) ||
+			(pair.elf2.start >= pair.elf1.start && pair.elf2.end <= pair.elf1.end)),
+		overlapping: totals.overlapping +
+			+((pair.elf1.start >= pair.elf2.start && pair.elf1.start <= pair.elf2.end) ||
+			(pair.elf1.end >= pair.elf2.start && pair.elf1.end <= pair.elf2.end) ||
+			(pair.elf2.start >= pair.elf1.start && pair.elf2.start <= pair.elf1.end) ||
+			(pair.elf2.end >= pair.elf1.start && pair.elf2.end <= pair.elf1.end))
+	}), { contained: 0, overlapping: 0 })
 
 	return {
 		1: contained,
-		2: null
+		2: overlapping
 	}
 }

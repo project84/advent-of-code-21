@@ -1648,8 +1648,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 4,
+                        "verified": true
                     },
                     "durationMs": 6
                 }
@@ -1661,8 +1661,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 924,
+                        "verified": true
                     },
                     "durationMs": 3
                 }
