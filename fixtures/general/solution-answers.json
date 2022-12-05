@@ -1667,6 +1667,21 @@
                     "durationMs": 2
                 }
             }
+        },
+        "5": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": "CMZ",
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    }
+                }
+            },
+            "actual": {}
         }
     }
 }
