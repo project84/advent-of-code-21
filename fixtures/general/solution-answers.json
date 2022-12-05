@@ -809,7 +809,7 @@
                         "answer": 1842742223,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 }
             }
         },
@@ -865,7 +865,7 @@
                         "answer": 12080,
                         "verified": true
                     },
-                    "durationMs": 10
+                    "durationMs": 6
                 }
             }
         },
@@ -893,7 +893,7 @@
                         "answer": 21577,
                         "verified": true
                     },
-                    "durationMs": 42
+                    "durationMs": 36
                 }
             }
         },
@@ -949,7 +949,7 @@
                         "answer": 95851339,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 0
                 }
             }
         },
@@ -988,7 +988,7 @@
                         "answer": 986163,
                         "verified": true
                     },
-                    "durationMs": 13
+                    "durationMs": 10
                 }
             }
         },
@@ -1072,7 +1072,7 @@
                         "answer": 371,
                         "verified": true
                     },
-                    "durationMs": 16
+                    "durationMs": 12
                 }
             }
         },
@@ -1109,7 +1109,7 @@
                         "answer": 3509,
                         "verified": true
                     },
-                    "durationMs": 186
+                    "durationMs": 124
                 }
             },
             "actual": {
@@ -1122,7 +1122,7 @@
                         "answer": 146553,
                         "verified": true
                     },
-                    "durationMs": 5282
+                    "durationMs": 3609
                 }
             }
         },
@@ -1150,7 +1150,7 @@
                         "answer": "\n■  ■   ■■ ■■■  ■  ■ ■■■■ ■  ■ ■■■   ■■  \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■■      ■ ■■■  ■■   ■■■  ■  ■ ■■■  ■    \n■ ■     ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■ ■■ \n■ ■  ■  ■ ■  ■ ■ ■  ■    ■  ■ ■  ■ ■  ■ \n■  ■  ■■  ■■■  ■  ■ ■■■■  ■■  ■■■   ■■■ ",
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 4
                 }
             }
         },
@@ -1206,7 +1206,7 @@
                         "answer": 2806,
                         "verified": true
                     },
-                    "durationMs": 501
+                    "durationMs": 381
                 }
             }
         },
@@ -1416,7 +1416,7 @@
                         "answer": 3785,
                         "verified": true
                     },
-                    "durationMs": 6
+                    "durationMs": 5
                 }
             }
         },
@@ -1494,7 +1494,7 @@
                         "answer": 17584,
                         "verified": true
                     },
-                    "durationMs": 751
+                    "durationMs": 519
                 }
             }
         },
@@ -1522,7 +1522,7 @@
                         "answer": 301304993766094,
                         "verified": true
                     },
-                    "durationMs": 6887
+                    "durationMs": 6061
                 }
             }
         },
@@ -1567,7 +1567,7 @@
                         "answer": 45000,
                         "verified": true
                     },
-                    "durationMs": 2
+                    "durationMs": 1
                 }
             },
             "actual": {
@@ -1623,7 +1623,7 @@
                         "answer": 70,
                         "verified": true
                     },
-                    "durationMs": 4
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -1679,7 +1679,7 @@
                         "answer": "MCD",
                         "verified": true
                     },
-                    "durationMs": 2
+                    "durationMs": 1
                 }
             },
             "actual": {
