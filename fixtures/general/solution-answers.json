@@ -1580,7 +1580,7 @@
                         "answer": 202585,
                         "verified": true
                     },
-                    "durationMs": 7
+                    "durationMs": 6
                 }
             }
         },
@@ -1651,7 +1651,7 @@
                         "answer": 4,
                         "verified": true
                     },
-                    "durationMs": 2
+                    "durationMs": 1
                 }
             },
             "actual": {
@@ -1690,7 +1690,7 @@
                     },
                     "2": {
                         "answer": "RBTWJWMCF",
-                        "verified": false
+                        "verified": true
                     },
                     "durationMs": 2
                 }
