@@ -1676,10 +1676,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": "MCD",
+                        "verified": true
                     },
-                    "durationMs": 22
+                    "durationMs": 5
                 }
             },
             "actual": {
@@ -1689,10 +1689,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
+                        "answer": "RBTWJWMCF",
                         "verified": false
                     },
-                    "durationMs": 4
+                    "durationMs": 2
                 }
             }
         }

@@ -14,19 +14,25 @@ export default function (inputFile) {
 		return stacks;
 	}, []);
 
-	const moved = instructions.reduce((stacks, instruction, j) => {
+	const oneByOne = instructions.reduce((moved, instruction) => {
 		const [ itemsToMove, from, to ] = instruction.match(/\d+/g).map((d) => +d);
 		for (let i = 0; i < itemsToMove; i++) {
-			const item = stacks[from - 1].pop();
-			stacks[to - 1] = [ ...(stacks[to - 1] || []), item ];
+			const item = moved[from - 1].pop();
+			moved[to - 1] = [ ...(moved[to - 1] || []), item ];
 		}
-		return stacks;
-	}, stacks);
+		return moved;
+	}, JSON.parse(JSON.stringify(stacks)));
 
-	const topItems = moved.reduce((topItems, stack) => topItems + stack[stack.length - 1], '');
+	const allAtOnce = instructions.reduce((moved, instruction) => {
+		const [ itemsToMove, from, to ] = instruction.match(/\d+/g).map((d) => +d);
+		const toMove = moved[from - 1].splice(moved[from - 1].length - itemsToMove);
+		moved[to - 1].push(...toMove);
+		
+		return moved;
+	}, JSON.parse(JSON.stringify(stacks)));
 
 	return {
-		1: topItems,
-		2: null
+		1: oneByOne.reduce((topItems, stack) => topItems + stack[stack.length - 1], ''),
+		2: allAtOnce.reduce((topItems, stack) => topItems + stack[stack.length - 1], '')
 	}
 }
