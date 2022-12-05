@@ -20,6 +20,7 @@ export default function (inputFile) {
 			const item = moved[from - 1].pop();
 			moved[to - 1] = [ ...(moved[to - 1] || []), item ];
 		}
+		
 		return moved;
 	}, JSON.parse(JSON.stringify(stacks)));
 
