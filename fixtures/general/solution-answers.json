@@ -1636,7 +1636,7 @@
                         "answer": 2518,
                         "verified": true
                     },
-                    "durationMs": 14
+                    "durationMs": 13
                 }
             }
         },
@@ -1679,7 +1679,7 @@
                         "answer": "MCD",
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 2
                 }
             },
             "actual": {
