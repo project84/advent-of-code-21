@@ -11,10 +11,21 @@ export default function (inputFile) {
 		}
 
 		i++;
+	}	
+
+	let messagePosition;
+	i = 0;
+
+	while (!messagePosition) {
+		if ([...new Set(dataStream.slice(i, i + 14))].length === 14) {
+			messagePosition = i + 14;
+		}
+
+		i++;
 	}
 
 	return {
 		1: markerPosition,
-		2: null
+		2: messagePosition
 	}
 }
