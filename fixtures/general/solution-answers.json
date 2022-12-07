@@ -1704,12 +1704,25 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 24933642,
+                        "verified": true
+                    },
+                    "durationMs": 3
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 1908462,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3979145,
+                        "verified": true
+                    },
+                    "durationMs": 4
+                }
+            }
         }
     }
 }
