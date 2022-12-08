@@ -1732,8 +1732,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 8,
+                        "verified": true
                     },
                     "durationMs": 5
                 }
@@ -1745,8 +1745,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 535680,
+                        "verified": true
                     },
                     "durationMs": 105
                 }
