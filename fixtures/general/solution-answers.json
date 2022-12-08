@@ -1723,6 +1723,21 @@
                     "durationMs": 2
                 }
             }
+        },
+        "8": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 21,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    }
+                }
+            },
+            "actual": {}
         }
     }
 }
