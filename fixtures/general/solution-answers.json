@@ -1595,7 +1595,7 @@
                         "answer": 12,
                         "verified": true
                     },
-                    "durationMs": 4
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -1735,7 +1735,7 @@
                         "answer": 8,
                         "verified": true
                     },
-                    "durationMs": 5
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -1749,6 +1749,45 @@
                         "verified": true
                     },
                     "durationMs": 105
+                }
+            }
+        },
+        "9": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 13,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 3
+                },
+                "2": {
+                    "1": {
+                        "answer": 88,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 36,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 6376,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2607,
+                        "verified": true
+                    },
+                    "durationMs": 13
                 }
             }
         }
