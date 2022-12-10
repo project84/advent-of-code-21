@@ -1790,6 +1790,21 @@
                     "durationMs": 13
                 }
             }
+        },
+        "10": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 13140,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    }
+                }
+            },
+            "actual": {}
         }
     }
 }
