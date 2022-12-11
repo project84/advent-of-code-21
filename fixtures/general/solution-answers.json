@@ -1827,12 +1827,25 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
+                        "answer": 2713310158,
                         "verified": false
-                    }
+                    },
+                    "durationMs": 5
                 }
             },
-            "actual": {}
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 113232,
+                        "verified": false
+                    },
+                    "2": {
+                        "answer": 29703395016,
+                        "verified": false
+                    },
+                    "durationMs": 0
+                }
+            }
         }
     }
 }
