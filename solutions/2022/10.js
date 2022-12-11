@@ -4,18 +4,23 @@ export default function (inputFile) {
 
 	const { cycles, image } = inputFile.reduce(({ cycles, currentCycle, currentValue, image }, command) => {
 
+		// Every command (irrespective of what the command is) increments the cycle, with the value unchanged
 		currentCycle++;
 		cycles[currentCycle] = currentValue;
 
+		// After each cycle, the next pixel can be determined
 		image += getPixel(currentCycle, currentValue);
 
+		// Determine if the command is adding to the value
 		const [, add] = command.split(' ');
 
 		if (isFinite(add)) {
+			// Adding to the value requires another cycle, including calculation of the next pixel
 			currentCycle++;
 			cycles[currentCycle] = currentValue;
-
 			image+= getPixel(currentCycle, currentValue);
+
+			// Value is only changed after the second cycle
 			currentValue += +add;
 		}
 

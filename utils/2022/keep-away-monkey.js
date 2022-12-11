@@ -2,29 +2,34 @@ export class Monkey {
     constructor(description, worryReduction = true) {
         const [items, operation, test, pass, fail] = description;
         
+        // Starting items are a comma separated list (always positive)
         this.startItems = items.match(/\d+?\b/g).map((item) => +item);
 
-        const operationParts = operation.split(' = ')[1].split(' ');
+        // Determine worry level operation
+        const [, operator, value] = operation.split(' = ')[1].split(' ');
 
-        this.operationValue = +operationParts[2];
-        if (operationParts[1] === '+') {
-            this.operationValue ? 
-                this.operation = (x) => x + this.operationValue : 
+        // Resolve function from description to avoid repeat processing
+        if (operator === '+') {
+            +value ? 
+                this.operation = (x) => x + +value : 
                 this.operation = (x) => x + x;
         } else {
-            this.operationValue ? 
-                this.operation = (x) => x * this.operationValue : 
+            +value ? 
+                this.operation = (x) => x * +value : 
                 this.operation = (x) => x * x;
         }
 
-        this.test = +test.match(/\d+?\b/)[0];
-        this.pass = +pass.match(/\d+?\b/)[0];
-        this.fail = +fail.match(/\d+?\b/)[0];
+        // Store test value and monkeys to throw to after test
+        [this.test] = test.match(/\d+?\b/);
+        [this.pass] = pass.match(/\d+?\b/);
+        [this.fail] = fail.match(/\d+?\b/);
 
         this.reset(worryReduction);
     }
 
     reset(worryReduction, reducer) {
+        // Set whether worry recution applies, the factor to reduce large numbers by,
+        // the current set of items and the count of items inspected by the monkey
         this.worryReduction = worryReduction;
         this.reducer = reducer;
         this.items = [...this.startItems];
@@ -32,13 +37,17 @@ export class Monkey {
     }
 
     throw() {
+        // The monkey has inspected a new item
         this.inspected++;
 
+        // Remove item from the list and calculate the new worry level
         const item = this.items.shift();
         const worryValue = this.worryReduction ? 
             Math.floor(this.operation(item) / 3) : 
             this.operation(item) % this.reducer ;
 
+        // Return the new worry level of the item and the monkey it is thrown to 
+        // after testing
         return {
             item: worryValue,
             throwTo: !(worryValue % this.test) ? this.pass : this.fail
@@ -47,6 +56,7 @@ export class Monkey {
 
 
     catch(item) {
+        // Add a received item to the current items list
         this.items.push(item);
     }
 }
