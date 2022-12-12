@@ -24,19 +24,8 @@ export function getPuzzleDates() {
 
 	// Generates and returns a list of all possible dates that have puzzles
 	let dateWindow = getPuzzleDateWindow();
-	let puzzleDates = [];
 
-	for (let year = dateWindow.earliest.year; year <= dateWindow.latest.year; year++) {
-
-		let targetDay = year <= dateWindow.latest.year ? 25 : dateWindow.latest.day;
-
-		for (let day = dateWindow.earliest.day; day <= targetDay; day++) {
-			puzzleDates.push({ year, day });
-		};
-
-	}
-
-	return puzzleDates;
+	return Object.keys(dateWindow).flatMap((year) => dateWindow[year].map((day) => ({ year: +year, day })));
 
 }
 
@@ -48,10 +37,8 @@ export function hasPuzzle(year, day) {
 
 	let dateWindow = getPuzzleDateWindow();
 
-	let yearValid = year >= dateWindow.earliest.year && year <= dateWindow.latest.year;
-	let dayValid = day >= dateWindow.earliest.day && day <= dateWindow.latest.day;
-
-	return yearValid && dayValid;
+	return Object.keys(dateWindow).map((y) => +y).includes(year) && 
+		dateWindow[year].includes(day);
 
 }
 
@@ -59,17 +46,15 @@ export function getPuzzleDateWindow() {
 
 	// Calculates the window of dates that have puzzles, which is the first 25 days of December
 	// for every year from 2015 until the current date
-	let currentDate = getParsedDate();
+	const currentDate = getParsedDate();
+	const isDecember = currentDate.month === 11;
 
-	return {
-		earliest: {
-			year: 2015,
-			day: 1
-		},
-		latest: {
-			year: currentDate.month === 11 ? currentDate.year : currentDate.year - 1,
-			day: currentDate.month === 11 ? currentDate.day : 25
-		}
-	}
+	return Object.fromEntries(
+		Array.from({ length: (isDecember ? currentDate.year + 1 : currentDate.year) - 2015 }, 
+		(_, i) => {
+			const year = 2015 + i;
+			return [ year, Array.from({ length: year === currentDate.year && isDecember ? currentDate.day : 25 }, (_, i) => i + 1) ]
+		})
+	);
 
 }

@@ -3,23 +3,29 @@ import { PriorityQueue } from './priority-queue';
 
 export class PathFinder extends Area {
 
-    constructor(readings) {
-        super(readings);
-        this.map = this.map.map((node, i) => {
-            node.index = i;
-            node.neighbours = this.getNeighboursIndex(node.x, node.y);
-            node.distance = Infinity;
-            
-            return node;
-        });
-        this.map[0].distance = 0;
+    constructor(readings, isNumeric) {
+        super(readings, isNumeric);
+        this.reset();        
     }
 
-    findShortestPath() {
+    reset() {
+        this.map = this.map.map((node) => ({
+            ...node,
+            ...{
+                neighbours: node.neighbours ?? this.getNeighboursIndex(node.x, node.y),
+                visited: false,
+                distance: Infinity
+            }
+        }));
+    }
+
+    findShortestPath(startIndex = 0, filter, distanceCalculator) {
+
+        this.map[startIndex].distance = 0;
 
         // Initialise priority queue and add source node
         let pq = new PriorityQueue();
-        pq.enqueue(this.map[0], this.map[0].distance);
+        pq.enqueue(this.map[startIndex], this.map[startIndex].distance);
 
         while (pq.items.length) {
 
@@ -29,12 +35,14 @@ export class PathFinder extends Area {
             this.map[nextNode.index].visited = true;
 
             // Find neighbours of the current node that haven't yet been visited
-            const nextNeighbours = nextNode.neighbours.filter(neighbour => !this.map[neighbour].visited);
+            const nextNeighbours = nextNode.neighbours.filter(neighbour => 
+                !this.map[neighbour].visited && filter ? filter(nextNode.value, this.map[neighbour].value) : true
+            );
             nextNeighbours.forEach(neighbour => {
 
                 // Calculate the distance of the neighbour from the current visited node
                 // and update if it is less than the current distance to that node
-                const distanceFromNext = this.map[neighbour].value + nextNode.distance;
+                const distanceFromNext = distanceCalculator ? distanceCalculator(nextNode, this.map[neighbour]) : this.map[neighbour].value + nextNode.distance;
                 if (distanceFromNext < (this.map[neighbour].distance)) {
                     this.map[neighbour].distance = distanceFromNext;
                     pq.enqueue(this.map[neighbour], distanceFromNext);
