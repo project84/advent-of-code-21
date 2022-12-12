@@ -1927,8 +1927,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 29,
+                        "verified": true
                     },
                     "durationMs": 8
                 }
@@ -1940,8 +1940,8 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
+                        "answer": 321,
+                        "verified": true
                     },
                     "durationMs": 1
                 }

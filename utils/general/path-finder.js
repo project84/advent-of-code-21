@@ -11,8 +11,11 @@ export class PathFinder extends Area {
     reset() {
         this.map = this.map.map((node) => ({
             ...node,
-            neighbours: node.neighbours ?? this.getNeighboursIndex(node.x, node.y),
-            distance: Infinity
+            ...{
+                neighbours: node.neighbours ?? this.getNeighboursIndex(node.x, node.y),
+                visited: false,
+                distance: Infinity
+            }
         }));
     }
 
