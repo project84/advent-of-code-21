@@ -5,14 +5,15 @@ export class PathFinder extends Area {
 
     constructor(readings, isNumeric) {
         super(readings, isNumeric);
-        this.map = this.map.map((node, i) => {
-            node.index = i;
-            node.neighbours = this.getNeighboursIndex(node.x, node.y);
-            node.distance = Infinity;
-            
-            return node;
-        });
-        
+        this.reset();        
+    }
+
+    reset() {
+        this.map = this.map.map((node) => ({
+            ...node,
+            neighbours: node.neighbours ?? this.getNeighboursIndex(node.x, node.y),
+            distance: Infinity
+        }));
     }
 
     findShortestPath(startIndex = 0, filter, distanceCalculator) {

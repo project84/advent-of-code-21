@@ -66,21 +66,21 @@ export class Area {
 
 	getNeighboursIndex(x, y, includeDiagonal) {
 
-		let neighbours = [];
-
-		// Retrieve and store non-diagonal neighbour indices
-		neighbours.push(this.getRelativeIndex(x, y, -1));
-		neighbours.push(this.getRelativeIndex(x, y, 1));
-		neighbours.push(this.getRelativeIndex(x, y, 0, -1));
-		neighbours.push(this.getRelativeIndex(x, y, 0, 1));
-
-		// Retrieve and store diagonal neighbour indices
-		if (includeDiagonal) {
-			neighbours.push(this.getRelativeIndex(x, y, -1, -1));
-			neighbours.push(this.getRelativeIndex(x, y, 1, -1));
-			neighbours.push(this.getRelativeIndex(x, y, -1, 1));
-			neighbours.push(this.getRelativeIndex(x, y, 1, 1));
-		}
+		// Retrieve and store non-diagonal neighbour indices and diagnols if required
+		let neighbours = [
+			...[
+			this.getRelativeIndex(x, y, -1),
+			this.getRelativeIndex(x, y, 1),
+			this.getRelativeIndex(x, y, 0, -1),
+			this.getRelativeIndex(x, y, 0, 1)
+			],
+			...(includeDiagonal ? [
+				this.getRelativeIndex(x, y, -1, -1),
+				this.getRelativeIndex(x, y, 1, -1),
+				this.getRelativeIndex(x, y, -1, 1),
+				this.getRelativeIndex(x, y, 1, 1)
+			] : [])
+		];
 		
 		// Filter out invalid indices
 		return neighbours.filter(neighbour => Number.isInteger(neighbour));
