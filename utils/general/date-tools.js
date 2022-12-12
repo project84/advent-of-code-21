@@ -49,7 +49,7 @@ export function hasPuzzle(year, day) {
 	let dateWindow = getPuzzleDateWindow();
 
 	let yearValid = year >= dateWindow.earliest.year && year <= dateWindow.latest.year;
-	let dayValid = day >= dateWindow.earliest.day && day <= dateWindow.latest.day;
+	let dayValid = day >= 1 && day <= (year === dateWindow.latest.year ? dateWindow.latest.day : 25);
 
 	return yearValid && dayValid;
 
