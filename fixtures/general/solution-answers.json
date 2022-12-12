@@ -1696,6 +1696,78 @@
                 }
             }
         },
+        "6": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 7,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 19,
+                        "verified": true
+                    },
+                    "durationMs": 1
+                },
+                "2": {
+                    "1": {
+                        "answer": 5,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 23,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "3": {
+                    "1": {
+                        "answer": 6,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 23,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "4": {
+                    "1": {
+                        "answer": 10,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 29,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                },
+                "5": {
+                    "1": {
+                        "answer": 11,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 26,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 1275,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3605,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            }
+        },
         "7": {
             "example": {
                 "1": {
@@ -1843,7 +1915,7 @@
                         "answer": 29703395016,
                         "verified": true
                     },
-                    "durationMs": 68
+                    "durationMs": 59
                 }
             }
         }
