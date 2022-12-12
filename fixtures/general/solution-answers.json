@@ -1902,7 +1902,7 @@
                         "answer": 2713310158,
                         "verified": true
                     },
-                    "durationMs": 30
+                    "durationMs": 19
                 }
             },
             "actual": {
@@ -1915,7 +1915,7 @@
                         "answer": 29703395016,
                         "verified": true
                     },
-                    "durationMs": 57
+                    "durationMs": 52
                 }
             }
         },
@@ -1930,7 +1930,7 @@
                         "answer": 29,
                         "verified": true
                     },
-                    "durationMs": 8
+                    "durationMs": 4
                 }
             },
             "actual": {
@@ -1943,7 +1943,7 @@
                         "answer": 321,
                         "verified": true
                     },
-                    "durationMs": 1
+                    "durationMs": 2171
                 }
             }
         }
