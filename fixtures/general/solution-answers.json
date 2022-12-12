@@ -1595,7 +1595,7 @@
                         "answer": 12,
                         "verified": true
                     },
-                    "durationMs": 4
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -1765,6 +1765,157 @@
                         "verified": true
                     },
                     "durationMs": 0
+                }
+            }
+        },
+        "7": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 95437,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 24933642,
+                        "verified": true
+                    },
+                    "durationMs": 2
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 1908462,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 3979145,
+                        "verified": true
+                    },
+                    "durationMs": 2
+                }
+            }
+        },
+        "8": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 21,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 8,
+                        "verified": true
+                    },
+                    "durationMs": 3
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 1690,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 535680,
+                        "verified": true
+                    },
+                    "durationMs": 105
+                }
+            }
+        },
+        "9": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 13,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 1,
+                        "verified": true
+                    },
+                    "durationMs": 3
+                },
+                "2": {
+                    "1": {
+                        "answer": 88,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 36,
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 6376,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2607,
+                        "verified": true
+                    },
+                    "durationMs": 13
+                }
+            }
+        },
+        "10": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 13140,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": "\n##..##..##..##..##..##..##..##..##..##..\n###...###...###...###...###...###...###.\n####....####....####....####....####....\n#####.....#####.....#####.....#####.....\n######......######......######......####\n#######.......#######.......#######.....",
+                        "verified": true
+                    },
+                    "durationMs": 2
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 14760,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": "\n####.####..##..####.###..#..#.###..####.\n#....#....#..#.#....#..#.#..#.#..#.#....\n###..###..#....###..#..#.#..#.#..#.###..\n#....#....#.##.#....###..#..#.###..#....\n#....#....#..#.#....#.#..#..#.#.#..#....\n####.#.....###.####.#..#..##..#..#.####.",
+                        "verified": true
+                    },
+                    "durationMs": 0
+                }
+            }
+        },
+        "11": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 10605,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 2713310158,
+                        "verified": true
+                    },
+                    "durationMs": 30
+                }
+            },
+            "actual": {
+                "1": {
+                    "1": {
+                        "answer": 113232,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": 29703395016,
+                        "verified": true
+                    },
+                    "durationMs": 59
                 }
             }
         }

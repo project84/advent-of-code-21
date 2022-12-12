@@ -2,11 +2,13 @@ import { calculateRockPaperScissorsMatchScore, resolveRockPaperScissorsStrategy 
 
 export default function (inputFile) {
 
+	// Parse instructions to list of moves played by each player
 	const rounds = inputFile.map((round) => {
 		const [opponent, player] = round.split(' ');
 		return { opponent, player }
 	});
 
+	// Map move for the player based on the provided strategy
 	const strategicRounds = resolveRockPaperScissorsStrategy(rounds);
 
 	return {
