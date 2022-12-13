@@ -18,7 +18,7 @@ export class AnswerRecorder {
 
 		// Check for new best time and update accordingly
 		let previousDuration = this.focus.durationMs;
-		if (duration < (Number.isInteger(previousDuration) ? previousDuration : Infinity)) {
+		if (this.focus[1].verified && this.focus[2].verified && duration < (Number.isInteger(previousDuration) ? previousDuration : Infinity)) {
 			this.focus.durationMs = duration;
 			this.outcome.bestTime = true;
 			this.updated = true;
