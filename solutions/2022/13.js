@@ -9,10 +9,9 @@ export default function (inputFile) {
 
   const validPackets = packetPairs.map((pair, i) => {
     const [left, right] = pair;
-    return validatePacketPair(left, right).isValid ? i + 1 : 0;
+    const valid = validatePacketPair(left, right)
+    return valid ? i + 1 : 0;
   });
-
-  console.log(validPackets);
 
   return {
     1: sum(validPackets),
@@ -21,36 +20,35 @@ export default function (inputFile) {
 }
 
 const validatePacketPair = (left, right) => {
-  console.log(left, right);
+  let valid;
+  let i = 0;
 
-	if (!left.length) {
-		return right.length ? { isValid: true } : { isInvalid: true }
-	}
+  while (valid === undefined && i < Math.max(...[left.length, right.length])) {
+    const leftValue = left[i];
+    const rightValue = right[i];
 
-  return left.reduce((validity, leftValue, i) => {
-    if (validity.isValid || validity.isInvalid) {
-      return validity;
+    if (leftValue === undefined && rightValue !== undefined) {
+      valid = true;
+    } else if (rightValue === undefined && leftValue !== undefined) {
+      valid = false;
+    } else if (!Array.isArray(leftValue) && !Array.isArray(rightValue)) {
+
+      if (leftValue < rightValue) {
+        valid = true;
+      }
+
+      if (leftValue > rightValue) {
+        valid = false
+      }
+
+    } else {
+
+      valid = validatePacketPair([leftValue].flat(), [rightValue].flat());
+
     }
 
-    let rightValue = right[i];
-		console.log(leftValue, rightValue)
+    i++;
+  }
 
-    if (!Array.isArray(leftValue) && !Array.isArray(rightValue)) {
-      if (leftValue < rightValue) {
-        validity.isValid = true;
-      } else if (leftValue > rightValue) {
-        validity.isInvalid = true;
-      } 
-
-      return validity;
-    } 
-
-		if (i === left.length - 1 && right[i + 1] !== undefined) {
-			validity.isValid = true;
-			return validity;
-		}
-
-    return validatePacketPair([leftValue].flat(), [rightValue].flat());
-
-  }, {});
-};
+  return valid;
+}
