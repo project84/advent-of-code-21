@@ -1955,9 +1955,10 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
-                        "verified": false
-                    }
+                        "answer": 140,
+                        "verified": true
+                    },
+                    "durationMs": 3
                 }
             },
             "actual": {
@@ -1967,7 +1968,7 @@
                         "verified": true
                     },
                     "2": {
-                        "answer": null,
+                        "answer": 22184,
                         "verified": false
                     }
                 }

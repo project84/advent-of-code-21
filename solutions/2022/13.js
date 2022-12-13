@@ -1,4 +1,4 @@
-import { sum } from '../../utils/general/array-tools'
+import { multiply, sum } from '../../utils/general/array-tools'
 
 export default function (inputFile) {
   const packetPairs = Array.from(
@@ -9,13 +9,19 @@ export default function (inputFile) {
 
   const validPackets = packetPairs.map((pair, i) => {
     const [left, right] = pair;
-    const valid = validatePacketPair(left, right)
-    return valid ? i + 1 : 0;
+    return validatePacketPair(left, right) ? i + 1 : 0;
   });
+
+  const allPackets = [...packetPairs.flat(), [[2]], [[6]]].sort((a, b) => validatePacketPair(a, b) ? -1 : 1);
+
+  const decoderKey = multiply([
+    allPackets.findIndex((packet) => JSON.stringify(packet) === JSON.stringify([[2]])) + 1,
+    allPackets.findIndex((packet) => JSON.stringify(packet) === JSON.stringify([[6]])) + 1
+  ])
 
   return {
     1: sum(validPackets),
-    2: null,
+    2: decoderKey,
   };
 }
 
