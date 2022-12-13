@@ -1,31 +1,30 @@
 export default function (inputFile) {
+  const dataStream = inputFile[0].split("");
 
-	const dataStream = inputFile[0].split('');
-	
-	let markerPosition;
-	let i = 0;
+  let markerPosition;
+  let i = 0;
 
-	while (!markerPosition) {
-		if ([...new Set(dataStream.slice(i, i + 4))].length === 4) {
-			markerPosition = i + 4;
-		}
+  while (!markerPosition) {
+    if ([...new Set(dataStream.slice(i, i + 4))].length === 4) {
+      markerPosition = i + 4;
+    }
 
-		i++;
-	}	
+    i++;
+  }
 
-	let messagePosition;
-	i = 0;
+  let messagePosition;
+  i = 0;
 
-	while (!messagePosition) {
-		if ([...new Set(dataStream.slice(i, i + 14))].length === 14) {
-			messagePosition = i + 14;
-		}
+  while (!messagePosition) {
+    if ([...new Set(dataStream.slice(i, i + 14))].length === 14) {
+      messagePosition = i + 14;
+    }
 
-		i++;
-	}
+    i++;
+  }
 
-	return {
-		1: markerPosition,
-		2: messagePosition
-	}
+  return {
+    1: markerPosition,
+    2: messagePosition,
+  };
 }

@@ -1,40 +1,40 @@
-import { sum } from '../../utils/general/array-tools';
+import { sum } from "../../utils/general/array-tools";
+import { getPixel } from "../../utils/2022/communicator-display";
 
 export default function (inputFile) {
+  const { cycles, image } = inputFile.reduce(
+    ({ cycles, currentCycle, currentValue, image }, command) => {
+      // Every command (irrespective of what the command is) increments the cycle, with the value unchanged
+      currentCycle++;
+      cycles[currentCycle] = currentValue;
 
-	const { cycles, image } = inputFile.reduce(({ cycles, currentCycle, currentValue, image }, command) => {
+      // After each cycle, the next pixel can be determined
+      image += getPixel(currentCycle, currentValue);
 
-		// Every command (irrespective of what the command is) increments the cycle, with the value unchanged
-		currentCycle++;
-		cycles[currentCycle] = currentValue;
+      // Determine if the command is adding to the value
+      const [, add] = command.split(" ");
 
-		// After each cycle, the next pixel can be determined
-		image += getPixel(currentCycle, currentValue);
+      if (isFinite(add)) {
+        // Adding to the value requires another cycle, including calculation of the next pixel
+        currentCycle++;
+        cycles[currentCycle] = currentValue;
+        image += getPixel(currentCycle, currentValue);
 
-		// Determine if the command is adding to the value
-		const [, add] = command.split(' ');
+        // Value is only changed after the second cycle
+        currentValue += +add;
+      }
 
-		if (isFinite(add)) {
-			// Adding to the value requires another cycle, including calculation of the next pixel
-			currentCycle++;
-			cycles[currentCycle] = currentValue;
-			image+= getPixel(currentCycle, currentValue);
+      return { cycles, currentCycle, currentValue, image };
+    },
+    { cycles: {}, currentCycle: 0, currentValue: 1, image: "" }
+  );
 
-			// Value is only changed after the second cycle
-			currentValue += +add;
-		}
-
-		return { cycles, currentCycle, currentValue, image }
-
-	}, { cycles: {}, currentCycle: 0, currentValue: 1, image: '' });
-
-	return {
-		1: sum(Array.from({ length: 6 }, (_, i) => 20 + i * 40).map((cycle) => cycles[cycle] * cycle)),
-		2: image
-	}
-}
-
-const getPixel = (cycle, value) => {
-	const position = (cycle - 1) % 40;
-	return `${!position ? '\n' : ''}${ position >= value - 1 && position <= value + 1 ? '#' : '.' }`;
+  return {
+    1: sum(
+      Array.from({ length: 6 }, (_, i) => 20 + i * 40).map(
+        (cycle) => cycles[cycle] * cycle
+      )
+    ),
+    2: image,
+  };
 }
