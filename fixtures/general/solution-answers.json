@@ -1974,6 +1974,21 @@
                     "durationMs": 10
                 }
             }
+        },
+        "14": {
+            "example": {
+                "1": {
+                    "1": {
+                        "answer": 24,
+                        "verified": true
+                    },
+                    "2": {
+                        "answer": null,
+                        "verified": false
+                    }
+                }
+            },
+            "actual": {}
         }
     }
 }
