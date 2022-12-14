@@ -1,5 +1,5 @@
-import { validatePacketPair } from "../../utils/2022/packet-validator";
-import { multiply, sum } from "../../utils/general/array-tools";
+import { validatePacketPair } from '../../utils/2022/packet-validator';
+import { multiply, sum } from '../../utils/general/array-tools';
 
 export default function (inputFile) {
   // Parse input file to find pairs of packets for initial comparison
