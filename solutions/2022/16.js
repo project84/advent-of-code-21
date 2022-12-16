@@ -21,8 +21,17 @@ export default function (inputFile) {
     { valves: {}, closedValves: [] }
   );
 
+  const valveDistanceMap = closedValves.reduce(
+    (map, valve) => {
+      map[valve] = findPathsToAllValves(valve, valves, closedValves);
+
+      return map;
+    },
+    { AA: findPathsToAllValves('AA', valves, closedValves) }
+  );
+
   return {
-    1: findOptimalPath(valves, 'AA', closedValves, 30),
+    1: findOptimalPath(valves, valveDistanceMap, 'AA', closedValves, 30),
     2: null,
   };
 }
@@ -56,16 +65,23 @@ const findShortestPathBetweenValves = (startValve, targetValve, valves) => {
   return toVisit[targetValve].distance;
 };
 
+const findPathsToAllValves = (valve, valves, closedValves) =>
+  Object.fromEntries(
+    closedValves
+      .filter((v) => v !== valve)
+      .map((v) => [v, findShortestPathBetweenValves(valve, v, valves)])
+  );
+
 const findOptimalPath = (
   valves,
+  valveDistanceMap,
   currentPosition,
   closedValves,
   minutes,
   releasedPressure = 0
 ) =>
   closedValves.reduce((totalPressure, valve) => {
-    const timeToOpen =
-      findShortestPathBetweenValves(currentPosition, valve, valves) + 1;
+    const timeToOpen = valveDistanceMap[currentPosition][valve] + 1;
 
     if (timeToOpen > minutes) {
       return totalPressure;
@@ -75,6 +91,7 @@ const findOptimalPath = (
       releasedPressure + (minutes - timeToOpen) * valves[valve].flowRate;
     const pressure = findOptimalPath(
       valves,
+      valveDistanceMap,
       valve,
       closedValves.filter((o) => o !== valve),
       minutes - timeToOpen,
