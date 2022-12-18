@@ -5,7 +5,7 @@ export class TetrisCave {
 
     this.gasJets = jetPattern[0].split('').map((jet) => (jet === '>' ? 1 : -1));
 
-    this.settledRockPositions = new Set();
+    this.settledRockPositions = {};
     this.rockShapeIndex = 0;
 
     this.rock = new TetrisRock(this.width);
@@ -18,22 +18,10 @@ export class TetrisCave {
     let movementIndex = 0;
     while (!this.rock.isSettled) {
       if (movementIndex % 2) {
-        this.rock.move(
-          'y',
-          -1,
-          this.width,
-          this.height,
-          this.settledRockPositions
-        );
+        this.rock.move('y', -1, this.width, this.settledRockPositions);
       } else {
         const distance = this.gasJets.shift();
-        this.rock.move(
-          'x',
-          distance,
-          this.width,
-          this.height,
-          this.settledRockPositions
-        );
+        this.rock.move('x', distance, this.width, this.settledRockPositions);
         this.gasJets.push(distance);
       }
       movementIndex++;
@@ -43,7 +31,10 @@ export class TetrisCave {
 
   addSettledRocks(positions) {
     positions.forEach((position) => {
-      this.settledRockPositions.add(`${position.x}|${position.y}`);
+      if (!this.settledRockPositions[position.y]) {
+        this.settledRockPositions[position.y] = new Set();
+      }
+      this.settledRockPositions[position.y].add(position.x);
       this.height = Math.max(this.height, position.y + 1);
     });
   }
@@ -95,7 +86,7 @@ class TetrisRock {
     }
   }
 
-  move(axis, distance, width, height, settledRockPositions) {
+  move(axis, distance, width, settledRockPositions) {
     const newPosition = this.position.map((part) => ({
       ...part,
       [axis]: part[axis] + distance,
@@ -106,7 +97,10 @@ class TetrisRock {
           part.x >= 0 &&
           part.x < width &&
           part.y >= 0 &&
-          !settledRockPositions.has(`${part.x}|${part.y}`)
+          !(
+            settledRockPositions[part.y] &&
+            settledRockPositions[part.y].has(part.x)
+          )
       )
     ) {
       this.position = newPosition;
