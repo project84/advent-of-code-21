@@ -7,14 +7,14 @@ export default function (inputFile) {
     cave.dropRock();
   }
 
-  const cave2 = new TetrisCave(7, inputFile);
+  //   const cave2 = new TetrisCave(7, inputFile);
 
-  for (let i = 0; i < 1000000000000; i++) {
-    cave2.dropRock();
-  }
+  //   for (let i = 0; i < 1000000000000; i++) {
+  //     cave2.dropRock();
+  //   }
 
   return {
     1: cave.height,
-    2: cave2.height,
+    2: null,
   };
 }
