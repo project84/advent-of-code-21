@@ -17,10 +17,8 @@ export default function (inputFile) {
     return cubes;
   }, {});
 
-  const surfaceArea = sum(Object.values(cubes));
-
   return {
-    1: surfaceArea,
+    1: sum(Object.values(cubes)),
     2: null,
   };
 }
